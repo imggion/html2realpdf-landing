@@ -1,0 +1,34 @@
+{
+  "name": "html2realpdf-landing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "postinstall": "patch-package",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@imggion/html2realpdf": "^0.1.14",
+    "html2pdf.js": "^0.14.0",
+    "next": "16.2.10",
+    "pdfjs-dist": "^6.1.200",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "shiki": "4.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.13",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "16.2.10",
+    "patch-package": "^8.0.1",
+    "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "postcss": "8.5.19"
+  }
+}

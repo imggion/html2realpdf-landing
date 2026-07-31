@@ -1,0 +1,23 @@
+# html2realpdf
+
+> html2realpdf is an open-source, browser-first HTML-to-PDF library that generates native, selectable, searchable, vector-based PDF documents instead of whole-page screenshots.
+
+## Primary links
+
+- Repository: https://github.com/imggion/html2realpdf
+- npm: https://www.npmjs.com/package/@imggion/html2realpdf
+- CSS support: https://github.com/imggion/html2realpdf/blob/main/docs/css-support.md
+- License: MIT
+
+## Technical summary
+
+- Written in Zig and compiled to WebAssembly.
+- Ships a typed TypeScript API.
+- Accepts HTML strings, DOM elements, and mounted framework refs.
+- Keeps text selectable and searchable, links as PDF annotations, embedded font subsets, and supported graphics as vectors.
+- Runs in modern browsers and supports React and Vue integration through the DOM boundary.
+- Provides an html2pdf.js-style compatibility builder for common migration workflows.
+
+## Install
+
+`npm install @imggion/html2realpdf`
