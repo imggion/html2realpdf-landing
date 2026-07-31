@@ -52,10 +52,10 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "html2realpdf — A real PDF, not a screenshot.",
+        url: "/opengraph-image.png",
+        width: 1280,
+        height: 720,
+        alt: "html2realpdf logo",
       },
     ],
   },
@@ -63,7 +63,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
-    images: ["/opengraph-image"],
+    images: [
+      {
+        url: "/opengraph-image.png",
+        alt: "html2realpdf logo",
+      },
+    ],
   },
   robots: {
     index: true,
