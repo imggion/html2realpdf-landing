@@ -7,15 +7,6 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: process.cwd(),
   },
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "raw.githubusercontent.com",
-        pathname: "/imggion/html2realpdf/**",
-      },
-    ],
-  },
 };
 
 export default nextConfig;

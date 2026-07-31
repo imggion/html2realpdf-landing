@@ -16,21 +16,6 @@ export const metadata: Metadata = {
   creator: "imggion",
   publisher: "imggion",
   category: "Developer Tools",
-  keywords: [
-    "HTML to PDF JavaScript",
-    "client-side HTML to PDF",
-    "html2pdf.js alternative",
-    "selectable PDF",
-    "searchable PDF",
-    "HTML to PDF browser",
-    "JavaScript PDF library",
-    "WebAssembly PDF generator",
-    "TypeScript PDF library",
-    "React HTML to PDF",
-    "Vue HTML to PDF",
-    "vector PDF generator",
-    "PDF invoice generator",
-  ],
   manifest: "/site.webmanifest",
   icons: {
     icon: [
@@ -42,12 +27,12 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "/",
+    canonical: siteUrl.toString(),
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "/",
+    url: siteUrl.toString(),
     siteName: siteConfig.name,
     title: siteConfig.title,
     description: siteConfig.description,
@@ -56,7 +41,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image.png",
         width: 1280,
         height: 720,
-        alt: "html2realpdf logo",
+        alt: "html2realpdf browser HTML-to-PDF library logo",
       },
     ],
   },
@@ -67,7 +52,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/opengraph-image.png",
-        alt: "html2realpdf logo",
+        alt: "html2realpdf browser HTML-to-PDF library logo",
       },
     ],
   },

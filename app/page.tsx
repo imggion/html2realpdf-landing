@@ -7,7 +7,7 @@ import { WindowDownloadButton } from "@/app/_components/window-download-button";
 import { getRepositoryStars } from "@/lib/github";
 import { siteConfig, siteUrl } from "@/lib/site";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3_600;
 
 const comparisonRows = [
   {
@@ -111,25 +111,40 @@ const highlightedCodePromise = Promise.all([
   codeToHtml(compatibilityCode, { lang: "typescript", theme: "kanagawa-wave" }),
 ]);
 
-const softwareStructuredData = {
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "html2realpdf",
-  applicationCategory: "DeveloperApplication",
-  applicationSubCategory: "HTML to PDF JavaScript library",
-  operatingSystem: "Modern web browsers",
-  description: siteConfig.description,
-  url: siteUrl.toString(),
-  codeRepository: siteConfig.repository,
-  downloadUrl: siteConfig.npm,
-  softwareVersion: "0.1.1",
-  programmingLanguage: ["TypeScript", "Zig", "WebAssembly"],
-  license: "https://opensource.org/license/mit",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": new URL("/#website", siteUrl).toString(),
+      url: siteUrl.toString(),
+      name: siteConfig.name,
+      alternateName: "html2realpdf HTML-to-PDF library",
+      description: siteConfig.description,
+      inLanguage: "en",
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": new URL("/#software", siteUrl).toString(),
+      name: siteConfig.name,
+      applicationCategory: "DeveloperApplication",
+      applicationSubCategory: "Browser HTML-to-PDF library",
+      operatingSystem: "Modern web browsers",
+      description: siteConfig.description,
+      url: siteUrl.toString(),
+      image: new URL(siteConfig.logo, siteUrl).toString(),
+      codeRepository: siteConfig.repository,
+      downloadUrl: siteConfig.npm,
+      softwareVersion: siteConfig.version,
+      programmingLanguage: ["TypeScript", "Zig", "WebAssembly"],
+      license: "https://opensource.org/license/mit",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+      },
+    },
+  ],
 };
 
 function ArrowIcon() {
@@ -245,12 +260,13 @@ export default async function Home() {
         <section className="hero section" id="top" aria-labelledby="hero-title">
           <div className="heroCopy">
             <h1 id="hero-title">
-              HTML to PDF.
-              <span>A real PDF.</span>
+              HTML to PDF with native,{" "}
+              <span>selectable text.</span>
             </h1>
             <p className="heroLead">
-              Generate native, selectable, searchable PDFs from HTML in the browser.
-              Powered by Zig, WebAssembly, and a typed TypeScript API—not a screenshot
+              An open-source, browser-first HTML-to-PDF library for JavaScript and
+              TypeScript. Create searchable PDFs with native text and supported vector
+              graphics via Zig and WebAssembly—without a headless browser or screenshot
               pipeline.
             </p>
 
@@ -290,6 +306,7 @@ export default async function Home() {
           <div
             className="heroWindow window"
             aria-label="Native PDF output preview"
+            data-nosnippet
           >
             <div className="windowTitlebar">
               <span>OUTPUT_PREVIEW.PDF</span>
@@ -306,14 +323,14 @@ export default async function Home() {
               <b>125%</b>
             </div>
             <div className="previewStage">
-              <article className="pdfPage">
+              <div className="pdfPage">
                 <div className="pdfHeader">
                   <span>ACME.STUDIO</span>
                   <b>INVOICE</b>
                 </div>
                 <div className="pdfRule" />
                 <p className="pdfKicker">Invoice #0042 · Jul 15, 2026</p>
-                <h2>Design systems<br />that ship.</h2>
+                <p className="pdfDocumentTitle">Design systems<br />that ship.</p>
                 <p className="selectableText">
                   <span>Selectable text.</span> Search it, copy it, feed it to your tools.
                   No OCR required.
@@ -324,7 +341,7 @@ export default async function Home() {
                 </div>
                 <div className="pdfTotal"><span>Total</span><b>$7,200</b></div>
                 <a href="#quick-start">pay.acme.example/inv-0042</a>
-              </article>
+              </div>
             </div>
             <div className="windowStatusbar">
               <span>Page 1 of 1</span>
@@ -334,7 +351,7 @@ export default async function Home() {
         </section>
 
         <aside className="techStrip" aria-label="Technology and license">
-          <span>TYPE: OPEN SOURCE LIBRARY</span>
+          <span>OPEN SOURCE LIBRARY · V{siteConfig.version}</span>
           <span>ZIG</span>
           <span>WEBASSEMBLY</span>
           <span>TYPESCRIPT</span>
@@ -438,7 +455,7 @@ export default async function Home() {
 
         <section className="section benchmarkSection" aria-labelledby="benchmark-title">
           <div className="benchmarkCopy">
-            <h2 id="benchmark-title">Optimized for everything</h2>
+            <h2 id="benchmark-title">html2realpdf vs. html2pdf.js benchmark</h2>
             <p>
               In one deterministic 30-page stress-report run, html2realpdf produced a
               smaller native PDF and completed faster than html2pdf.js.
@@ -639,7 +656,7 @@ export default async function Home() {
 
       <script
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(softwareStructuredData).replace(/</g, "\\u003c"),
+          __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
         }}
         type="application/ld+json"
       />

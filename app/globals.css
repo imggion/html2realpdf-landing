@@ -625,7 +625,7 @@ p {
   text-transform: uppercase;
 }
 
-.pdfPage h2 {
+.pdfDocumentTitle {
   margin-bottom: 18px;
   font-size: 31px;
   letter-spacing: -0.06em;
@@ -865,7 +865,7 @@ p {
   letter-spacing: 1px;
 }
 
-.analyticsCover h3 {
+.analyticsDocumentTitle {
   margin: 0 0 8px;
   font-size: 30px;
   letter-spacing: -0.035em;
@@ -2107,7 +2107,7 @@ p {
     padding: 28px 26px;
   }
 
-  .pdfPage h2 {
+  .pdfDocumentTitle {
     font-size: 26px;
   }
 

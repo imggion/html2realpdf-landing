@@ -1,7 +1,7 @@
 {
   "name": "html2realpdf",
   "short_name": "html2realpdf",
-  "description": "Generate native, selectable, searchable PDFs from HTML in the browser.",
+  "description": "Generate selectable, searchable PDFs from HTML in the browser with an open-source TypeScript library.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

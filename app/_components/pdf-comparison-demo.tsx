@@ -140,7 +140,7 @@ function AnalyticsReportPages() {
         <ReportTitleBar page="01" />
         <header className="analyticsCover">
           <p className="analyticsEyebrow">QUARTERLY BUSINESS REVIEW</p>
-          <h3>Northstar Commerce Analytics</h3>
+          <p className="analyticsDocumentTitle">Northstar Commerce Analytics</p>
           <p>Executive performance report — Q2 2026</p>
         </header>
 
@@ -156,7 +156,7 @@ function AnalyticsReportPages() {
           </tbody>
         </table>
 
-        <h4 className="analyticsSectionTitle">Revenue trend</h4>
+        <p className="analyticsSectionTitle">Revenue trend</p>
         <div className="analyticsChart"><RevenueChart /></div>
         <p className="analyticsInsight">
           <strong>Executive insight:</strong> Revenue acceleration was driven by
@@ -167,7 +167,7 @@ function AnalyticsReportPages() {
 
       <section className="analyticsPage analyticsPageBreak" aria-label="Regional performance">
         <ReportTitleBar page="02" />
-        <h3 className="analyticsSectionTitle">Regional performance</h3>
+        <p className="analyticsSectionTitle">Regional performance</p>
         <table className="analyticsDataTable">
           <caption>Revenue and margin by region</caption>
           <thead>
@@ -182,14 +182,14 @@ function AnalyticsReportPages() {
           </tbody>
         </table>
 
-        <h4 className="analyticsSectionTitle">Customer mix</h4>
+        <p className="analyticsSectionTitle">Customer mix</p>
         <div className="analyticsChart"><CustomerMixChart /></div>
         <ReportFooter page="02" />
       </section>
 
       <section className="analyticsPage analyticsPageBreak analyticsAppendix" aria-label="Appendix and methodology">
         <ReportTitleBar page="03" />
-        <h3 className="analyticsSectionTitle">Appendix and methodology</h3>
+        <p className="analyticsSectionTitle">Appendix and methodology</p>
         <p><strong>Revenue recognition:</strong> Net revenue excludes VAT, refunds, marketplace fees, and promotional credits. Subscription revenue is recognized daily over the contracted service period.</p>
         <p><strong>Customer definitions:</strong> Active customers completed at least one paid transaction during the trailing 90-day period. Churn represents customers becoming inactive during the quarter divided by active customers at quarter start.</p>
         <p><strong>Data quality:</strong> Figures reconcile to the management ledger as of 8 July 2026. Currency conversion uses the European Central Bank monthly average rate for each transaction month.</p>
@@ -229,7 +229,7 @@ function downloadBlob(blob: Blob, filename: string) {
 }
 
 export function PdfComparisonDemo() {
-  const reportRef = useRef<HTMLElement>(null);
+  const reportRef = useRef<HTMLDivElement>(null);
   const previewRef = useRef<HTMLElement>(null);
   const previewTriggerRef = useRef<HTMLButtonElement | null>(null);
   const returnFocusRef = useRef(false);
@@ -482,15 +482,15 @@ export function PdfComparisonDemo() {
       </div>
 
       <div className="demoWorkspace">
-        <div className="demoSourcePanel">
+        <div className="demoSourcePanel" data-nosnippet>
           <div className="demoPanelBar">
             <span>NORTHSTAR_ANALYTICS.HTML</span>
             <span>same input</span>
           </div>
           <div className="demoReportViewport" tabIndex={0}>
-            <article className="demoReport" ref={reportRef}>
+            <div className="demoReport" ref={reportRef}>
               <AnalyticsReportPages />
-            </article>
+            </div>
           </div>
         </div>
 

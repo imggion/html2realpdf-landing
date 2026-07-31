@@ -4,6 +4,7 @@
 
 ## Primary links
 
+- Website: https://html2realpdf.imggion.com/
 - Repository: https://github.com/imggion/html2realpdf
 - npm: https://www.npmjs.com/package/@imggion/html2realpdf
 - CSS support: https://github.com/imggion/html2realpdf/blob/main/docs/css-support.md
@@ -11,6 +12,7 @@
 
 ## Technical summary
 
+- Current release: 0.1.14.
 - Written in Zig and compiled to WebAssembly.
 - Ships a typed TypeScript API.
 - Accepts HTML strings, DOM elements, and mounted framework refs.
