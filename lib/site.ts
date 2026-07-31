@@ -1,4 +1,4 @@
-const fallbackUrl = "https://html2realpdf.dev";
+const fallbackUrl = "https://html2realpdf.imggion.com";
 
 export const siteUrl = new URL(
   process.env.NEXT_PUBLIC_SITE_URL?.trim() || fallbackUrl,

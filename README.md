@@ -19,7 +19,7 @@ Set `NEXT_PUBLIC_SITE_URL` to the final public origin before deployment. It is u
 NEXT_PUBLIC_SITE_URL=https://your-domain.example npm run build
 ```
 
-The fallback is `https://html2realpdf.dev`.
+The fallback is `https://html2realpdf.imggion.com`.
 
 ## Validation
 
