@@ -1,0 +1,39 @@
+# dependencies
+/node_modules
+
+# Next.js
+/.next
+/out
+
+# production
+/build
+
+# testing
+/coverage
+
+# local environment files
+.env*
+!.env.example
+
+# deployment
+.vercel
+
+# tooling caches
+.eslintcache
+.turbo
+
+# misc
+.DS_Store
+*.pem
+*.log
+
+# package-manager debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+bun-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
