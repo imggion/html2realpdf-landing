@@ -2,6 +2,7 @@ import Image from "next/image";
 import { codeToHtml } from "shiki";
 import { CopyCommandButton } from "@/app/_components/copy-command-button";
 import { PdfComparisonDemo } from "@/app/_components/pdf-comparison-demo";
+import { TrackedOutboundLink } from "@/app/_components/tracked-outbound-link";
 import { WindowDownloadButton } from "@/app/_components/window-download-button";
 import { getRepositoryStars } from "@/lib/github";
 import { siteConfig, siteUrl } from "@/lib/site";
@@ -215,14 +216,16 @@ export default async function Home() {
             <a href="#faq">FAQ</a>
           </nav>
 
-          <a
+          <TrackedOutboundLink
             aria-label={
               repositoryStars === null
                 ? "GitHub repository"
                 : `GitHub repository, ${repositoryStars} stars`
             }
             className="button buttonCompact githubButton"
+            destination="github"
             href={siteConfig.repository}
+            placement="header"
             rel="noreferrer"
             target="_blank"
           >
@@ -234,7 +237,7 @@ export default async function Home() {
                 {formattedStars}
               </span>
             ) : null}
-          </a>
+          </TrackedOutboundLink>
         </div>
       </header>
 
@@ -252,23 +255,27 @@ export default async function Home() {
             </p>
 
             <div className="heroActions">
-              <a
+              <TrackedOutboundLink
                 className="button buttonPrimary"
+                destination="npm"
                 href={siteConfig.npm}
+                placement="hero"
                 rel="noreferrer"
                 target="_blank"
               >
                 Install from npm
                 <ArrowIcon />
-              </a>
-              <a
+              </TrackedOutboundLink>
+              <TrackedOutboundLink
                 className="button"
+                destination="github"
                 href={siteConfig.repository}
+                placement="hero"
                 rel="noreferrer"
                 target="_blank"
               >
                 Read the docs
-              </a>
+              </TrackedOutboundLink>
             </div>
 
             <div className="installLine" aria-label={`Install command: ${installCommand}`}>
@@ -573,12 +580,26 @@ export default async function Home() {
             <p>Open source. MIT licensed. Available on npm.</p>
           </div>
           <div className="finalActions">
-            <a className="button buttonPrimary" href={siteConfig.npm} rel="noreferrer" target="_blank">
+            <TrackedOutboundLink
+              className="button buttonPrimary"
+              destination="npm"
+              href={siteConfig.npm}
+              placement="final"
+              rel="noreferrer"
+              target="_blank"
+            >
               Install html2realpdf <ArrowIcon />
-            </a>
-            <a className="button" href={siteConfig.repository} rel="noreferrer" target="_blank">
+            </TrackedOutboundLink>
+            <TrackedOutboundLink
+              className="button"
+              destination="github"
+              href={siteConfig.repository}
+              placement="final"
+              rel="noreferrer"
+              target="_blank"
+            >
               View on GitHub
-            </a>
+            </TrackedOutboundLink>
           </div>
         </section>
       </main>
@@ -593,8 +614,24 @@ export default async function Home() {
           <p>© {currentYear} Imggion</p>
         </div>
         <nav aria-label="Footer navigation">
-          <a href={siteConfig.repository} rel="noreferrer" target="_blank">GitHub</a>
-          <a href={siteConfig.npm} rel="noreferrer" target="_blank">npm</a>
+          <TrackedOutboundLink
+            destination="github"
+            href={siteConfig.repository}
+            placement="footer"
+            rel="noreferrer"
+            target="_blank"
+          >
+            GitHub
+          </TrackedOutboundLink>
+          <TrackedOutboundLink
+            destination="npm"
+            href={siteConfig.npm}
+            placement="footer"
+            rel="noreferrer"
+            target="_blank"
+          >
+            npm
+          </TrackedOutboundLink>
           <a href={siteConfig.cssSupport} rel="noreferrer" target="_blank">CSS support</a>
           <a href={`${siteConfig.repository}/blob/main/LICENSE.md`} rel="noreferrer" target="_blank">MIT License</a>
         </nav>

@@ -3,9 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import type { PdfDocument, PdfPreview } from "@imggion/html2realpdf";
+import { track } from "@vercel/analytics";
 
 type Engine = "screenshot" | "real";
 type DemoAction = `${Engine}-${"download" | "preview"}`;
+type AnalyticsEngine = "html2pdf.js" | "html2realpdf";
 type PreviewState =
   | {
       engine: "screenshot";
@@ -19,6 +21,10 @@ type PreviewState =
 
 const screenshotFilename = "northstar-analytics-screenshot.pdf";
 const realFilename = "northstar-analytics-real.pdf";
+const analyticsEngine: Record<Engine, AnalyticsEngine> = {
+  real: "html2realpdf",
+  screenshot: "html2pdf.js",
+};
 
 const screenshotOptions = {
   margin: 0,
@@ -411,15 +417,16 @@ export function PdfComparisonDemo() {
     try {
       if (engine === "screenshot") {
         downloadBlob(await createScreenshotPdf(), screenshotFilename);
-        return;
+      } else {
+        const pdf = await createRealPdf();
+        try {
+          pdf.download(realFilename);
+        } finally {
+          pdf.dispose();
+        }
       }
 
-      const pdf = await createRealPdf();
-      try {
-        pdf.download(realFilename);
-      } finally {
-        pdf.dispose();
-      }
+      track("demo_pdf_downloaded", { engine: analyticsEngine[engine] });
     } catch (caughtError) {
       setError(errorMessage(caughtError));
     } finally {
@@ -441,12 +448,13 @@ export function PdfComparisonDemo() {
         const renderedPreview = await createPdfPreview(await createScreenshotPdf());
         previewImageUrlsRef.current = renderedPreview.pages.map((page) => page.url);
         setPreview({ engine, ...renderedPreview });
-        return;
+      } else {
+        const pdf = await createRealPdf();
+        realPdfRef.current = pdf;
+        setPreview({ engine: "real", pageCount: pdf.pageCount });
       }
 
-      const pdf = await createRealPdf();
-      realPdfRef.current = pdf;
-      setPreview({ engine: "real", pageCount: pdf.pageCount });
+      track("demo_pdf_previewed", { engine: analyticsEngine[engine] });
     } catch (caughtError) {
       disposePreviewAssets();
       setError(errorMessage(caughtError));

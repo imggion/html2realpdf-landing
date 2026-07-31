@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { track } from "@vercel/analytics";
 
 type CopyState = "idle" | "copied" | "error";
 
@@ -59,6 +60,7 @@ export function CopyCommandButton({ command }: Readonly<{ command: string }>) {
     try {
       await copyText(command);
       setState("copied");
+      track("install_command_copied");
     } catch {
       setState("error");
     }
