@@ -6,7 +6,7 @@ export const siteUrl = new URL(
 
 export const siteConfig = {
   name: "html2realpdf",
-  title: "Client-Side HTML to PDF with Selectable Text | html2realpdf",
+  title: "Real PDFs from HTML, Not Screenshots | html2realpdf",
   description:
     "Generate selectable, searchable PDFs from HTML in the browser. Open-source TypeScript library powered by Zig/WebAssembly—no headless browser required.",
   version: "0.1.14",
