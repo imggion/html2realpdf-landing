@@ -28,3 +28,7 @@ npm run lint
 npm run typecheck
 npm run build
 ```
+
+## License
+
+This landing page is available under the [MIT License](./LICENSE).
