@@ -1,0 +1,18 @@
+{
+  "title": "Classes",
+  "pages": [
+    "index",
+    "canvas-to-svg-error",
+    "compat-worker",
+    "html2-real-pdf",
+    "html2-real-pdf-error",
+    "invalid-source-error",
+    "pdf-document",
+    "pdf-preview",
+    "resource-load-error",
+    "unsupported-compatibility-feature-error",
+    "unsupported-css-error",
+    "unsupported-environment-error",
+    "wasm-render-error"
+  ]
+}

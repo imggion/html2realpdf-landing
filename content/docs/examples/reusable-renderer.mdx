@@ -1,0 +1,62 @@
+---
+title: Reusable Renderer
+description: Reuse one renderer and registered font across several documents.
+---
+
+Use an explicit renderer when several documents share font registrations and execution settings.
+
+```ts
+import { createRenderer } from "@imggion/html2realpdf";
+
+const fontData = await fetch("/fonts/Inter-Regular.ttf").then((response) =>
+  response.arrayBuffer(),
+);
+
+const renderer = await createRenderer({
+  execution: "worker",
+  fonts: [
+    {
+      family: "Inter",
+      data: fontData,
+      weight: 400,
+      style: "normal",
+    },
+  ],
+});
+
+try {
+  for (const record of records) {
+    const pdf = await renderer.render(
+      `<p style="font-family: Inter">Record ${record.id}</p>`,
+      {
+        page: { format: "a4", unit: "mm", margin: 15 },
+        metadata: { title: `Record ${record.id}` },
+      },
+    );
+
+    try {
+      await uploadPdf(record.id, pdf.toBlob());
+    } finally {
+      pdf.dispose();
+    }
+  }
+} finally {
+  renderer.dispose();
+}
+```
+
+## Ownership
+
+The renderer owns its Worker or main-thread WebAssembly context and registered fonts.
+
+Each `PdfDocument` owns its byte buffer, tracked object URLs, and previews. Dispose each document before disposing the renderer.
+
+## Main-thread fallback
+
+Use `execution: "main"` only when Worker execution is unavailable.
+
+```ts
+const renderer = await createRenderer({ execution: "main" });
+```
+
+Synchronous work on this backend can block browser interaction.

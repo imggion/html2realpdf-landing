@@ -1,8 +1,16 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
+import { JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { NextProvider } from "fumadocs-core/framework/next";
 import { siteConfig, siteUrl } from "@/lib/site";
 import "./globals.css";
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-jetbrains-mono",
+});
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -83,9 +91,13 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={jetBrainsMono.variable}
+      data-scroll-behavior="smooth"
+    >
       <body>
-        {children}
+        <NextProvider>{children}</NextProvider>
         <Analytics />
       </body>
     </html>

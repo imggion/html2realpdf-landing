@@ -1,0 +1,30 @@
+{
+  "slug": "multilingual-report",
+  "title": "Multilingual brief",
+  "format": "A4",
+  "orientation": "Portrait",
+  "pageCount": 1,
+  "fileSize": "105 KB",
+  "categories": [
+    "documents",
+    "reports"
+  ],
+  "filename": "multilingual-report.pdf",
+  "pdfUrl": "/playground/multilingual-report.pdf?v=avely-v1",
+  "thumbnailUrl": "/playground/multilingual-report-page-1-avely-v1.png",
+  "thumbnailAlt": "Green and white multilingual international market brief",
+  "sourceUrl": "/playground/multilingual-report.json?v=avely-v1",
+  "source": {
+    "html": "<main aria-label=\"Multilingual market report\">\n  <section>\n    <p class=\"eyebrow\">International market brief</p>\n    <h1>One report, four markets.</h1>\n    <p class=\"muted\">A multilingual layout demonstrating Unicode text, repeated structure, and regional figures.</p>\n    <table class=\"numbers\">\n      <tr>\n        <td><span>Markets</span><strong>04</strong>\n        </td>\n        <td><span>Revenue</span><strong>€8.4M</strong>\n        </td>\n        <td><span>Growth</span><strong>+17%</strong>\n        </td>\n      </tr>\n    </table>\n    <article class=\"language\"><strong>Italiano</strong>\n      <p>La crescita è sostenuta dalla domanda enterprise e da una maggiore fidelizzazione.</p>\n    </article>\n    <article class=\"language\"><strong>Français</strong>\n      <p>La croissance repose sur les comptes stratégiques et une meilleure fidélisation.</p>\n    </article>\n    <article class=\"language\"><strong>Deutsch</strong>\n      <p>Das Wachstum wird durch Unternehmenskunden und eine stärkere Bindung getragen.</p>\n    </article>\n    <article class=\"language\"><strong>English</strong>\n      <p>Growth is driven by enterprise demand and stronger customer retention.</p>\n    </article>\n  </section>\n</main>",
+    "css": "* { box-sizing: border-box; }\n      body { margin: 0; color: #122445; background: #ffffff; font-family: Arial, sans-serif; font-size: 11pt; line-height: 1.45; }\n      h1, h2, h3, p { margin-top: 0; }\n      h1 { margin-bottom: 12pt; font-size: 27pt; line-height: 1.05; }\n      h2 { margin-bottom: 8pt; font-size: 17pt; }\n      h3 { margin-bottom: 5pt; font-size: 11pt; text-transform: uppercase; letter-spacing: 0.06em; }\n      p { margin-bottom: 9pt; }\n      .eyebrow { color: #16865c; font-size: 8pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }\n      .muted { color: #5a6679; }\n      .rule { height: 2pt; margin: 16pt 0; background: #16865c; }\n      .card { padding: 12pt; border: 1pt solid #d7dde7; background: #f7f9fc; }\n      .page + .page { break-before: page; page-break-before: always; }\n      table { width: 100%; border-collapse: collapse; }\n      th, td { padding: 7pt; border-bottom: 1pt solid #d7dde7; text-align: left; vertical-align: top; }\n      th { color: #5a6679; font-size: 8pt; letter-spacing: 0.05em; text-transform: uppercase; }\n      \n      .language { margin-bottom: 14pt; padding: 12pt; border-left: 4pt solid #16865c; background: #f3faf7; }\n      .language strong { display: block; margin-bottom: 4pt; }\n      .numbers { width: 100%; margin: 18pt 0; border-collapse: separate; border-spacing: 8pt; }\n      .numbers td { width: 33.333%; padding: 12pt; border: 1pt solid #d7dde7; background: #f7f9fc; }\n      .numbers strong { display: block; color: #16865c; font-size: 22pt; }",
+    "page": {
+      "format": [
+        595.2756,
+        841.8898
+      ],
+      "orientation": "portrait",
+      "unit": "pt",
+      "margin": 36
+    }
+  }
+}

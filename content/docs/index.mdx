@@ -1,0 +1,49 @@
+---
+title: html2realpdf documentation
+description: Render selectable PDF documents from HTML in a browser.
+---
+
+html2realpdf converts an HTML string or mounted element into PDF bytes. The public JavaScript package calls a Zig renderer compiled to WebAssembly.
+
+<Callout title="Browser API">
+
+You can import the package during server rendering. Call its rendering APIs only in a browser. They need DOM, Worker, and WebAssembly APIs.
+
+</Callout>
+
+## Start here
+
+1. [Install the package](./getting-started/installation).
+2. [Render your first PDF](./getting-started/quick-start).
+3. [Use it in Next.js](./getting-started/nextjs).
+4. [Review the public API](./api-reference).
+
+## Choose an API
+
+| API | Use it when |
+| --- | --- |
+| [`renderPdf`](./api-reference/generated/functions/render-pdf) | You need a direct render with the package default Worker renderer. |
+| [`createRenderer`](./api-reference/generated/functions/create-renderer) | You render more than once, register fonts, choose the execution backend, or need explicit renderer disposal. |
+| [`html2pdf`](./api-reference/generated/functions/html2pdf) | You are moving a supported PDF workflow from html2pdf.js. |
+
+Every successful render returns a [`PdfDocument`](./api-reference/generated/classes/pdf-document). Export or download its bytes, then call `dispose()`.
+
+## Input and output
+
+The input can be an HTML string, a mounted `Element`, or a ref-shaped object with a `current` element. Mounted elements preserve computed styles and live browser state.
+
+The output contains PDF bytes, a page count, and structured diagnostics. Supported text, links, and vector graphics remain native PDF content.
+
+## Read by task
+
+- [Configure page geometry and rendering](./guides/configuration)
+- [Register fonts](./guides/fonts)
+- [Control pagination](./guides/pagination)
+- [Load images and stylesheets](./guides/images)
+- [Preview a generated PDF](./guides/preview)
+- [Check current limitations](./guides/limitations)
+- [Troubleshoot a render](./guides/troubleshooting)
+
+## LLM index
+
+Use the [LLM documentation index](/docs/llm.txt) to give an agent the complete documentation tree, page URLs, and descriptions in a compact text file.

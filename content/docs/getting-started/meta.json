@@ -1,0 +1,10 @@
+{
+  "title": "Getting Started",
+  "defaultOpen": true,
+  "pages": [
+    "[html2realpdf documentation](/docs)",
+    "installation",
+    "quick-start",
+    "nextjs"
+  ]
+}

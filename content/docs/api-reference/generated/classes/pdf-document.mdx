@@ -1,0 +1,217 @@
+---
+title: "PdfDocument"
+description: "Successful PDF output returned by the renderer."
+apiSymbol: "PdfDocument"
+apiKind: "class"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Successful PDF output returned by the renderer.
+
+Byte exports are defensive copies. The document owns previews and object URLs
+created through it; `dispose` releases them and invalidates future exports.
+Instances are renderer-owned results and cannot be constructed directly.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export declare class PdfDocument
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/pdf-document.ts#L18" line={18} />
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `diagnostics` | `readonly Diagnostic[]` | Yes | Yes | None | Diagnostics retained from both browser snapshotting and native rendering. |
+| `pageCount` | `number` | Yes | Yes | None | Number of pages reported by the native renderer. |
+
+## Methods
+
+### `toUint8Array()`
+
+Returns a defensive copy of the PDF bytes.
+
+<ApiSignature>
+
+```ts
+toUint8Array(): Uint8Array<ArrayBufferLike>;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+This API does not accept parameters.
+
+#### Returns
+
+<ReturnType>`Uint8Array<ArrayBufferLike>`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/pdf-document.ts#L40" line={40} />
+
+### `toArrayBuffer()`
+
+Returns a standalone copy suitable for storage or transfer APIs.
+
+<ApiSignature>
+
+```ts
+toArrayBuffer(): ArrayBuffer;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+This API does not accept parameters.
+
+#### Returns
+
+<ReturnType>`ArrayBuffer`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/pdf-document.ts#L46" line={46} />
+
+### `toBlob()`
+
+Returns a new `application/pdf` Blob.
+
+<ApiSignature>
+
+```ts
+toBlob(): Blob;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+This API does not accept parameters.
+
+#### Returns
+
+<ReturnType>`Blob`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/pdf-document.ts#L51" line={51} />
+
+### `createObjectURL()`
+
+Creates an object URL tracked by this document.
+
+<ApiSignature>
+
+```ts
+createObjectURL(): string;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+This API does not accept parameters.
+
+#### Returns
+
+<ReturnType>`string`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/pdf-document.ts#L61" line={61} />
+
+### `revokeObjectURL()`
+
+Revokes an object URL previously created by this document.
+
+<ApiSignature>
+
+```ts
+revokeObjectURL(url: string): void;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `url` | `string` | Yes | None | Object URL created by this document. |
+
+#### Returns
+
+<ReturnType>`void`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/pdf-document.ts#L68" line={68} />
+
+### `preview()`
+
+Replaces a target's contents with the package canvas preview.
+
+<ApiSignature>
+
+```ts
+preview(target: HTMLElement, options?: PdfPreviewOptions): Promise<PdfPreview>;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `target` | `HTMLElement` | Yes | None | Target stage or preview element. |
+| `options` | `PdfPreviewOptions` | No | `{}` | Options for this operation. |
+
+#### Returns
+
+<ReturnType>`Promise<PdfPreview>`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/pdf-document.ts#L78" line={78} />
+
+### `download()`
+
+Starts a browser download and revokes its temporary object URL.
+
+<ApiSignature>
+
+```ts
+download(filename?: string): void;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `filename` | `string` | No | `"file.pdf"` | Download filename. |
+
+#### Returns
+
+<ReturnType>`void`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/pdf-document.ts#L89" line={89} />
+
+### `dispose()`
+
+Disposes owned previews, revokes object URLs, and invalidates byte exports.
+
+<ApiSignature>
+
+```ts
+dispose(): void;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+This API does not accept parameters.
+
+#### Returns
+
+<ReturnType>`void`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/pdf-document.ts#L101" line={101} />

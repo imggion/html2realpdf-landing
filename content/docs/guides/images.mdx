@@ -1,0 +1,63 @@
+---
+title: Images and Resources
+description: Resolve image and stylesheet resources before the WebAssembly render.
+---
+
+Mounted elements use the source document URL for relative resources. String input can set an explicit `baseUrl`.
+
+```ts
+const pdf = await renderPdf(
+  `<img src="assets/logo.png" alt="Example Company" />`,
+  { baseUrl: "https://example.com/reports/" },
+);
+```
+
+The image resolves to `https://example.com/reports/assets/logo.png`.
+
+## Protected or virtual resources
+
+Use `resourceResolver` when a resource cannot be fetched directly.
+
+```ts
+const pdf = await renderPdf(source, {
+  async resourceResolver(request) {
+    if (request.kind === "image" && request.url.pathname === "/private/logo.png") {
+      return fetch(request.url, {
+        headers: { Authorization: `Bearer ${token}` },
+      }).then((response) => response.blob());
+    }
+
+    return null;
+  },
+});
+```
+
+For an image, return a `Blob`, data URL, replacement URL, or `null`. For a stylesheet, a returned string is CSS source.
+
+Register fonts through `createRenderer`. The resource resolver handles images and stylesheets, not fonts.
+
+## Failed resources
+
+The default `resourcePolicy` is `error`. Use `omit` only when a missing resource can be removed without making the document misleading.
+
+```ts
+const pdf = await renderPdf(source, {
+  resourcePolicy: "omit",
+});
+```
+
+Inspect `pdf.diagnostics` to find omitted resources.
+
+## Canvas content
+
+A live canvas can be converted through a chart library SVG exporter.
+
+```ts
+const pdf = await renderPdf(dashboard, {
+  canvasToSvg: ({ canvas, cssWidth, cssHeight }) =>
+    chartFor(canvas).toSvg({ width: cssWidth, height: cssHeight }),
+  canvasFallback: "error",
+});
+```
+
+Set `canvasFallback: "rasterize"` only when raster output for that canvas is acceptable.

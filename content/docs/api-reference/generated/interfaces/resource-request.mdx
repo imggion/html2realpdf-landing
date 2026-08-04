@@ -1,0 +1,31 @@
+---
+title: "ResourceRequest"
+description: "Resource requested while materializing a self-contained snapshot."
+apiSymbol: "ResourceRequest"
+apiKind: "interface"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Resource requested while materializing a self-contained snapshot.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export interface ResourceRequest {
+    kind: "image" | "stylesheet";
+    url: URL;
+}
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L147" line={147} />
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `kind` | `"image" \| "stylesheet"` | Yes | No | None | Resource class. Fonts are registered on `createRenderer` instead. |
+| `url` | `URL` | Yes | No | None | Absolute URL resolved against `baseUrl` or the source document. |

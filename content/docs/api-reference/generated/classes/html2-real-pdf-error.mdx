@@ -1,0 +1,44 @@
+---
+title: "Html2RealPdfError"
+description: "Base error carrying a machine-readable wrapper error code."
+apiSymbol: "Html2RealPdfError"
+apiKind: "class"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Base error carrying a machine-readable wrapper error code.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export declare class Html2RealPdfError extends Error
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/errors.ts#L8" line={8} />
+
+## Constructor
+
+<ApiSignature>
+
+```ts
+constructor(message: string, code: string, options?: ErrorOptions);
+```
+
+</ApiSignature>
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `message` | `string` | Yes | None | Human-readable error message. |
+| `code` | `string` | Yes | None | Stable value suitable for control flow and telemetry. |
+| `options` | `ErrorOptions` | No | None | Optional error cause. |
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `__constructor` | `any` | Yes | No | None | Not documented. |
+| `code` | `string` | Yes | Yes | None | Stable value suitable for control flow and telemetry. |

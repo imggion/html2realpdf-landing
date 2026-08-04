@@ -1,0 +1,65 @@
+---
+title: Troubleshooting
+description: Diagnose environment, source, resource, CSS, and WebAssembly failures.
+---
+
+Start with the error class and the document diagnostics. Public wrapper errors include stable codes.
+
+## Rendering requires a browser
+
+`UnsupportedEnvironmentError` means the render call ran without the required browser APIs.
+
+In Next.js, move the call into a client component event or effect. Importing the package is not the same as calling the renderer.
+
+## A ref is null
+
+`InvalidSourceError` can mean the ref has not mounted.
+
+```ts
+if (!reportRef.current) return;
+const pdf = await renderPdf(reportRef);
+```
+
+Do not start the render during the component render phase.
+
+## A resource failed to load
+
+`ResourceLoadError` identifies an image, stylesheet, canvas, or SVG resource that could not be materialized.
+
+Check these values:
+
+- `baseUrl`
+- browser CORS rules
+- authentication headers
+- `resourceResolver`
+- `resourcePolicy`
+
+## Unsupported CSS rejected the render
+
+`UnsupportedCssError` is expected when the selected policy is `error` and the snapshot contains unsupported input.
+
+Inspect the CSS support matrix. Remove the property, choose a supported layout, or use `unsupportedCss: "warn"` when a warning is acceptable.
+
+## Worker startup fails
+
+The default backend uses a Worker. If the environment has WebAssembly but cannot start that Worker, create a main-thread renderer.
+
+```ts
+const renderer = await createRenderer({ execution: "main" });
+```
+
+Main-thread WebAssembly work can block the UI. Treat this as a fallback.
+
+## WASM render failure
+
+`WasmRenderError` exposes a numeric `status`. Record the status, error code, and related diagnostics before reducing the input to a small reproduction.
+
+## The PDF is blank or clipped
+
+Check the page geometry and root width first.
+
+- Do not duplicate margins.
+- Avoid fixed page-height simulations.
+- Remove `overflow: hidden` from content that must fragment.
+- Set a deterministic `viewport` for responsive layouts.
+- Use `layoutContext: "page"` when the root should size against the PDF content box.

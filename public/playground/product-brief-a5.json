@@ -1,0 +1,30 @@
+{
+  "slug": "product-brief-a5",
+  "title": "Product brochure",
+  "format": "A5",
+  "orientation": "Portrait",
+  "pageCount": 2,
+  "fileSize": "105 KB",
+  "categories": [
+    "documents",
+    "small-formats"
+  ],
+  "filename": "product-brief-a5.pdf",
+  "pdfUrl": "/playground/product-brief-a5.pdf?v=avely-v1",
+  "thumbnailUrl": "/playground/product-brief-a5-page-1-avely-v1.png",
+  "thumbnailAlt": "Warm beige cover of a compact notebook product brochure",
+  "sourceUrl": "/playground/product-brief-a5.json?v=avely-v1",
+  "source": {
+    "html": "<main aria-label=\"Field notes product brochure\">\n  <section class=\"page cover\"><span class=\"product-mark\">FIELD NOTES 02</span>\n    <p class=\"eyebrow\" style=\"margin-top: 42pt\">Limited field edition</p>\n    <h1>A smaller notebook for bigger observations.</h1>\n    <p class=\"muted\">A compact A5 product brief with native type, color, and structured content.</p>\n    <div class=\"rule\"></div>\n    <p class=\"price\">€24</p>\n  </section>\n  <section class=\"page\" style=\"break-before:page;page-break-before:always\">\n    <p class=\"eyebrow\">Made for daily work</p>\n    <h2>Simple materials. Useful details.</h2>\n    <article class=\"feature\">\n      <h3>Lay-flat binding</h3>\n      <p>Thread-sewn pages stay open while you sketch, plan, or take notes.</p>\n    </article>\n    <article class=\"feature\">\n      <h3>Recycled stock</h3>\n      <p>120 gsm warm-white paper balances opacity with a tactile finish.</p>\n    </article>\n    <article class=\"feature\">\n      <h3>Flexible grid</h3>\n      <p>A quiet 5 mm dot grid supports writing, diagrams, and quick calculations.</p>\n    </article>\n    <div class=\"card\">\n      <h3>Specifications</h3>\n      <p>A5 · 148 × 210 mm · 96 pages · FSC-certified paper</p>\n    </div>\n  </section>\n</main>",
+    "css": "* { box-sizing: border-box; }\n      body { margin: 0; color: #122445; background: #ffffff; font-family: Arial, sans-serif; font-size: 11pt; line-height: 1.45; }\n      h1, h2, h3, p { margin-top: 0; }\n      h1 { margin-bottom: 12pt; font-size: 27pt; line-height: 1.05; }\n      h2 { margin-bottom: 8pt; font-size: 17pt; }\n      h3 { margin-bottom: 5pt; font-size: 11pt; text-transform: uppercase; letter-spacing: 0.06em; }\n      p { margin-bottom: 9pt; }\n      .eyebrow { color: #d95f39; font-size: 8pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }\n      .muted { color: #5a6679; }\n      .rule { height: 2pt; margin: 16pt 0; background: #d95f39; }\n      .card { padding: 12pt; border: 1pt solid #d7dde7; background: #f7f9fc; }\n      .page + .page { break-before: page; page-break-before: always; }\n      table { width: 100%; border-collapse: collapse; }\n      th, td { padding: 7pt; border-bottom: 1pt solid #d7dde7; text-align: left; vertical-align: top; }\n      th { color: #5a6679; font-size: 8pt; letter-spacing: 0.05em; text-transform: uppercase; }\n      \n      .cover { padding: 20pt; background: #f7e8dd; }\n      .product-mark { display: inline-block; padding: 6pt 9pt; background: #122445; color: #fff; font-size: 8pt; font-weight: 700; }\n      .feature { margin-bottom: 12pt; padding-bottom: 12pt; border-bottom: 1pt solid #d7b9a7; }\n      .price { color: #d95f39; font-size: 28pt; font-weight: 700; }",
+    "page": {
+      "format": [
+        419.5276,
+        595.2756
+      ],
+      "orientation": "portrait",
+      "unit": "pt",
+      "margin": 24
+    }
+  }
+}

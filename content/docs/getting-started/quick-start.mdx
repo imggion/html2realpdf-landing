@@ -1,0 +1,68 @@
+---
+title: Quick Start
+description: Render a mounted HTML element and download the PDF.
+---
+
+Add an element to the page, pass it to `renderPdf`, and release the returned document.
+
+```html
+<article id="invoice">
+  <h1>Invoice 42</h1>
+  <p>Total: EUR 120.00</p>
+  <a href="https://example.com/invoices/42">View invoice</a>
+</article>
+```
+
+```ts
+import { renderPdf } from "@imggion/html2realpdf";
+
+const invoice = document.querySelector<HTMLElement>("#invoice");
+if (!invoice) throw new Error("Invoice element not found");
+
+const pdf = await renderPdf(invoice, {
+  page: {
+    format: "a4",
+    unit: "mm",
+    margin: [15, 12],
+  },
+  mediaType: "print",
+});
+
+try {
+  pdf.download("invoice.pdf");
+  console.table(pdf.diagnostics);
+} finally {
+  pdf.dispose();
+}
+```
+
+## Use a string
+
+HTML strings are supported when the content does not depend on mounted browser state.
+
+```ts
+const pdf = await renderPdf(`
+  <main>
+    <h1>Receipt</h1>
+    <p>Payment received.</p>
+  </main>
+`);
+```
+
+String input is evaluated in an inert document. Use `baseUrl` and `resourceResolver` when it contains relative or protected resources.
+
+## Export bytes
+
+Use the returned document for download, storage, or an in-page preview.
+
+```ts
+const blob = pdf.toBlob();
+const buffer = pdf.toArrayBuffer();
+const bytes = pdf.toUint8Array();
+```
+
+Each byte export is a copy. A disposed document rejects later export calls.
+
+## Keep ownership clear
+
+Call `dispose()` for each document. A reusable renderer also needs its own `dispose()` call. See the [reusable renderer example](../examples/reusable-renderer).

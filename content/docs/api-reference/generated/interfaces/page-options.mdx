@@ -1,0 +1,35 @@
+---
+title: "PageOptions"
+description: "Explicit page geometry. Supplying this overrides captured `@page` geometry."
+apiSymbol: "PageOptions"
+apiKind: "interface"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Explicit page geometry. Supplying this overrides captured `@page` geometry.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export interface PageOptions {
+    format?: PageFormat;
+    orientation?: PageOrientation;
+    unit?: LengthUnit;
+    margin?: Margin;
+}
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L104" line={104} />
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `format` | `PageFormat` | No | No | `a4` | Page size. Defaults to `a4`. |
+| `orientation` | `PageOrientation` | No | No | `portrait` | Page orientation. Defaults to `portrait`. |
+| `unit` | `LengthUnit` | No | No | `pt` | Unit for custom dimensions and margins. Defaults to `pt`. |
+| `margin` | `Margin` | No | No | `zero on every edge` | Page margins. Defaults to zero on every edge. |

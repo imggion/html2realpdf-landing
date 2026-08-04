@@ -1,0 +1,29 @@
+{
+  "slug": "shipping-label-a6",
+  "title": "Shipping label",
+  "format": "A6",
+  "orientation": "Portrait",
+  "pageCount": 1,
+  "fileSize": "103 KB",
+  "categories": [
+    "small-formats"
+  ],
+  "filename": "shipping-label-a6.pdf",
+  "pdfUrl": "/playground/shipping-label-a6.pdf?v=avely-v1",
+  "thumbnailUrl": "/playground/shipping-label-a6-page-1-avely-v1.png",
+  "thumbnailAlt": "Black and white Avely.me shipping label",
+  "sourceUrl": "/playground/shipping-label-a6.json?v=avely-v1",
+  "source": {
+    "html": "<main aria-label=\"Shipping label\">\n  <section class=\"label\">\n    <div class=\"label-row\"><strong>AVELY.ME</strong><br/><small>PRIORITY · TRACKED</small>\n    </div>\n    <div class=\"label-row\"><small>SHIP TO</small>\n      <h2 style=\"margin-top:5pt\">MAYA CHEN</h2>\n      <p>42 Example Street<br/>London EC1A 4HD<br/>United Kingdom</p>\n    </div>\n    <table class=\"label-grid\">\n      <tr>\n        <td><small>FROM</small><br/><strong>ROME HQ</strong>\n        </td>\n        <td><small>WEIGHT</small><br/><strong>1.24 KG</strong>\n        </td>\n      </tr>\n      <tr>\n        <td><small>SERVICE</small><br/><strong>AV-24</strong>\n        </td>\n        <td><small>ZONE</small><br/><strong>UK-04</strong>\n        </td>\n      </tr>\n    </table>\n    <p class=\"tracking\">AV 2048 1170 42</p>\n  </section>\n</main>",
+    "css": "* { box-sizing: border-box; }\n      body { margin: 0; color: #122445; background: #ffffff; font-family: Arial, sans-serif; font-size: 11pt; line-height: 1.45; }\n      h1, h2, h3, p { margin-top: 0; }\n      h1 { margin-bottom: 12pt; font-size: 27pt; line-height: 1.05; }\n      h2 { margin-bottom: 8pt; font-size: 17pt; }\n      h3 { margin-bottom: 5pt; font-size: 11pt; text-transform: uppercase; letter-spacing: 0.06em; }\n      p { margin-bottom: 9pt; }\n      .eyebrow { color: #122445; font-size: 8pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }\n      .muted { color: #5a6679; }\n      .rule { height: 2pt; margin: 16pt 0; background: #122445; }\n      .card { padding: 12pt; border: 1pt solid #d7dde7; background: #f7f9fc; }\n      .page + .page { break-before: page; page-break-before: always; }\n      table { width: 100%; border-collapse: collapse; }\n      th, td { padding: 7pt; border-bottom: 1pt solid #d7dde7; text-align: left; vertical-align: top; }\n      th { color: #5a6679; font-size: 8pt; letter-spacing: 0.05em; text-transform: uppercase; }\n      \n      body { font-size: 9pt; }\n      .label { border: 2pt solid #122445; }\n      .label-row { padding: 10pt; border-bottom: 1pt solid #122445; }\n      .label-grid { width: 100%; border-collapse: collapse; }\n      .label-grid td { width: 50%; padding: 9pt; border-bottom: 1pt solid #122445; }\n      .label-grid td:first-child { border-right: 1pt solid #122445; }\n      .tracking { text-align: center; font-family: monospace; font-size: 12pt; letter-spacing: 0.08em; }",
+    "page": {
+      "format": [
+        297.6378,
+        419.5276
+      ],
+      "orientation": "portrait",
+      "unit": "pt",
+      "margin": 14
+    }
+  }
+}

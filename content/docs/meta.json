@@ -1,0 +1,15 @@
+{
+  "title": "Documentation",
+  "pages": [
+    "getting-started",
+    "guides",
+    "examples",
+    "api-reference",
+    "architecture",
+    "migration",
+    "---RESOURCES---",
+    "playground",
+    "---LLM---",
+    "[LLM index](/docs/llm.txt)"
+  ]
+}

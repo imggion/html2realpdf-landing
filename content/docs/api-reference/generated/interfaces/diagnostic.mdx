@@ -1,0 +1,41 @@
+---
+title: "Diagnostic"
+description: "Structured warning or error produced without losing successful PDF output."
+apiSymbol: "Diagnostic"
+apiKind: "interface"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Structured warning or error produced without losing successful PDF output.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export interface Diagnostic {
+    code: string;
+    severity: "warning" | "error";
+    message: string;
+    property?: string;
+    nodePath?: string;
+    phase?: "snapshot" | "parse" | "cascade" | "computed" | "layout" | "fragmentation" | "paint" | "pdf";
+    fallback?: string;
+}
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L129" line={129} />
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `code` | `string` | Yes | No | None | Stable machine-readable identifier. |
+| `severity` | `"warning" \| "error"` | Yes | No | None | Diagnostic severity assigned by the snapshot or native renderer. |
+| `message` | `string` | Yes | No | None | Human-readable explanation. |
+| `property` | `string` | No | No | None | CSS property associated with the diagnostic, when applicable. |
+| `nodePath` | `string` | No | No | None | Stable snapshot path to the affected node, when available. |
+| `phase` | `"snapshot" \| "parse" \| "cascade" \| "computed" \| "layout" \| "fragmentation" \| "paint" \| "pdf"` | No | No | None | Pipeline phase that produced the diagnostic. |
+| `fallback` | `string` | No | No | None | Fallback that preserved output despite the unsupported input. |

@@ -1,0 +1,567 @@
+---
+title: "CompatWorker"
+description: "Stateful, Promise-like compatibility chain."
+apiSymbol: "CompatWorker"
+apiKind: "class"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Stateful, Promise-like compatibility chain.
+
+The worker caches one `PdfDocument` until its source or options change.
+Raster-only html2pdf.js stages fail explicitly rather than silently changing
+the native PDF model.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export declare class CompatWorker implements PromiseLike<PdfDocument>
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L20" line={20} />
+
+## Methods
+
+### `from()`
+
+Sets the HTML source; canvas and image input stages are unsupported.
+
+<ApiSignature>
+
+```ts
+from(source: HtmlSource, type?: "string" | "element" | "canvas" | "img"): this;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `source` | `HtmlSource` | Yes | None | HTML string, mounted element, or ref-shaped value to render. |
+| `type` | `"string" \| "element" \| "canvas" \| "img"` | No | None | Requested input or output type. |
+
+#### Returns
+
+<ReturnType>`this`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L27" line={27} />
+
+### `set()`
+
+Shallow-merges supported compatibility options and invalidates cached output.
+
+<ApiSignature>
+
+```ts
+set(options: Html2PdfOptions): this;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `options` | `Html2PdfOptions` | Yes | None | Options for this operation. |
+
+#### Returns
+
+<ReturnType>`this`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L37" line={37} />
+
+### `using()`
+
+Alias for `set`, retained for html2pdf.js chain compatibility.
+
+<ApiSignature>
+
+```ts
+using(options: Html2PdfOptions): this;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `options` | `Html2PdfOptions` | Yes | None | Options for this operation. |
+
+#### Returns
+
+<ReturnType>`this`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L50" line={50} />
+
+### `to()`
+
+Advances to PDF output for `pdf` or `container` targets.
+
+<ApiSignature>
+
+```ts
+to(target: "pdf" | "container" | "canvas" | "img"): this;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `target` | `"pdf" \| "container" \| "canvas" \| "img"` | Yes | None | Target stage or preview element. |
+
+#### Returns
+
+<ReturnType>`this`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L61" line={61} />
+
+### `toPdf()`
+
+Schedules PDF rendering while preserving the fluent chain.
+
+<ApiSignature>
+
+```ts
+toPdf(): this;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+This API does not accept parameters.
+
+#### Returns
+
+<ReturnType>`this`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L67" line={67} />
+
+### `toContainer()`
+
+Compatibility no-op; no intermediate snapshot container is exposed.
+
+<ApiSignature>
+
+```ts
+toContainer(): this;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+This API does not accept parameters.
+
+#### Returns
+
+<ReturnType>`this`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L73" line={73} />
+
+### `toCanvas()`
+
+Always throws because full-page canvas output is intentionally unsupported.
+
+<ApiSignature>
+
+```ts
+toCanvas(): never;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+This API does not accept parameters.
+
+#### Returns
+
+<ReturnType>`never`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L78" line={78} />
+
+### `toImg()`
+
+Always throws because raster image output is intentionally unsupported.
+
+<ApiSignature>
+
+```ts
+toImg(): never;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+This API does not accept parameters.
+
+#### Returns
+
+<ReturnType>`never`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L83" line={83} />
+
+### `save()`
+
+Schedules a browser download using the explicit or configured filename.
+
+<ApiSignature>
+
+```ts
+save(filename?: string): this;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `filename` | `string` | No | `this.options.filename ?? "file.pdf"` | Download filename. |
+
+#### Returns
+
+<ReturnType>`this`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L88" line={88} />
+
+### `saveAs()`
+
+Alias for `save`.
+
+<ApiSignature>
+
+```ts
+saveAs(filename?: string): this;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `filename` | `string` | No | None | Download filename. |
+
+#### Returns
+
+<ReturnType>`this`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L94" line={94} />
+
+### `outputPdf()`
+
+Resolves PDF output in a compatibility encoding.
+
+<ApiSignature>
+
+```ts
+outputPdf(type?: "blob"): Promise<Blob>;
+outputPdf(type: "arraybuffer"): Promise<ArrayBuffer>;
+outputPdf(type: StringPdfOutputType): Promise<string>;
+outputPdf(type: PdfOutputType): Promise<string | Blob | ArrayBuffer>;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `type` | `PdfOutputType` | No | `"blob"` | Requested input or output type. |
+
+#### Returns
+
+<ReturnType>`Promise<string \| Blob \| ArrayBuffer>`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L109" line={109} />
+
+### `output()`
+
+Routes generic html2pdf.js output requests to PDF output.
+
+<ApiSignature>
+
+```ts
+output(type?: "blob", options?: unknown, source?: "pdf"): Promise<Blob>;
+output(type: "arraybuffer", options?: unknown, source?: "pdf"): Promise<ArrayBuffer>;
+output(type: StringPdfOutputType, options?: unknown, source?: "pdf"): Promise<string>;
+output(type: PdfOutputType | undefined, options: unknown, source: "img"): Promise<never>;
+output(type?: PdfOutputType, options?: unknown, source?: "pdf" | "img"): Promise<string | Blob | ArrayBuffer>;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `type` | `PdfOutputType` | No | None | Requested input or output type. |
+| `_options` | `unknown` | No | None | Options for this operation. |
+| `source` | `"pdf" \| "img"` | No | `"pdf"` | HTML string, mounted element, or ref-shaped value to render. |
+
+#### Returns
+
+<ReturnType>`Promise<string \| Blob \| ArrayBuffer>`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L127" line={127} />
+
+### `export()`
+
+Alias for `output`.
+
+<ApiSignature>
+
+```ts
+export(type?: "blob", options?: unknown, source?: "pdf"): Promise<Blob>;
+export(type: "arraybuffer", options?: unknown, source?: "pdf"): Promise<ArrayBuffer>;
+export(type: StringPdfOutputType, options?: unknown, source?: "pdf"): Promise<string>;
+export(type: PdfOutputType | undefined, options: unknown, source: "img"): Promise<never>;
+export(type?: PdfOutputType, options?: unknown, source?: "pdf" | "img"): Promise<string | Blob | ArrayBuffer>;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `type` | `PdfOutputType` | No | None | Requested input or output type. |
+| `options` | `unknown` | No | None | Options for this operation. |
+| `source` | `"pdf" \| "img"` | No | None | HTML string, mounted element, or ref-shaped value to render. |
+
+#### Returns
+
+<ReturnType>`Promise<string \| Blob \| ArrayBuffer>`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L138" line={138} />
+
+### `outputImg()`
+
+Returns a rejected promise because raster image output is unsupported.
+
+<ApiSignature>
+
+```ts
+outputImg(): Promise<never>;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+This API does not accept parameters.
+
+#### Returns
+
+<ReturnType>`Promise<never>`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L143" line={143} />
+
+### `get()`
+
+Resolves the cached PDF for `pdf`, or a configured compatibility option for
+any other key, then optionally invokes the legacy callback.
+
+<ApiSignature>
+
+```ts
+get(key: string, callback?: (value: unknown) => void): Promise<unknown>;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `key` | `string` | Yes | None | Compatibility option key. |
+| `callback` | `(value: unknown) => void` | No | None | Optional callback invoked with the resolved value. |
+
+#### Returns
+
+<ReturnType>`Promise<unknown>`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L151" line={151} />
+
+### `error()`
+
+Interrupts a chain by throwing the supplied message as an `Error`.
+
+<ApiSignature>
+
+```ts
+error(message: string): never;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `message` | `string` | Yes | None | Human-readable error message. |
+
+#### Returns
+
+<ReturnType>`never`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L160" line={160} />
+
+### `then()`
+
+Makes the chain awaitable and resolves it to the cached `PdfDocument`.
+
+<ApiSignature>
+
+```ts
+then<TResult1 = PdfDocument, TResult2 = never>(onFulfilled?: ((value: PdfDocument) => TResult1 | PromiseLike<TResult1>) | null, onRejected?: ((reason: unknown) => TResult2 | PromiseLike<TResult2>) | null): Promise<TResult1 | TResult2>;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `onFulfilled` | `((value: PdfDocument) => TResult1 \| PromiseLike<TResult1>) \| null` | No | None | Value passed to this API. |
+| `onRejected` | `((reason: unknown) => TResult2 \| PromiseLike<TResult2>) \| null` | No | None | Value passed to this API. |
+
+#### Returns
+
+<ReturnType>`Promise<TResult1 \| TResult2>`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L165" line={165} />
+
+### `thenCore()`
+
+Compatibility alias for `then`.
+
+<ApiSignature>
+
+```ts
+thenCore<TResult1 = PdfDocument, TResult2 = never>(onFulfilled?: ((value: PdfDocument) => TResult1 | PromiseLike<TResult1>) | null, onRejected?: ((reason: unknown) => TResult2 | PromiseLike<TResult2>) | null): Promise<TResult1 | TResult2>;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `onFulfilled` | `((value: PdfDocument) => TResult1 \| PromiseLike<TResult1>) \| null` | No | None | Value passed to this API. |
+| `onRejected` | `((reason: unknown) => TResult2 \| PromiseLike<TResult2>) \| null` | No | None | Value passed to this API. |
+
+#### Returns
+
+<ReturnType>`Promise<TResult1 \| TResult2>`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L173" line={173} />
+
+### `thenExternal()`
+
+Compatibility alias for `then`.
+
+<ApiSignature>
+
+```ts
+thenExternal<TResult1 = PdfDocument, TResult2 = never>(onFulfilled?: ((value: PdfDocument) => TResult1 | PromiseLike<TResult1>) | null, onRejected?: ((reason: unknown) => TResult2 | PromiseLike<TResult2>) | null): Promise<TResult1 | TResult2>;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `onFulfilled` | `((value: PdfDocument) => TResult1 \| PromiseLike<TResult1>) \| null` | No | None | Value passed to this API. |
+| `onRejected` | `((reason: unknown) => TResult2 \| PromiseLike<TResult2>) \| null` | No | None | Value passed to this API. |
+
+#### Returns
+
+<ReturnType>`Promise<TResult1 \| TResult2>`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L181" line={181} />
+
+### `run()`
+
+Compatibility alias for `then`.
+
+<ApiSignature>
+
+```ts
+run<TResult1 = PdfDocument, TResult2 = never>(onFulfilled?: ((value: PdfDocument) => TResult1 | PromiseLike<TResult1>) | null, onRejected?: ((reason: unknown) => TResult2 | PromiseLike<TResult2>) | null): Promise<TResult1 | TResult2>;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `onFulfilled` | `((value: PdfDocument) => TResult1 \| PromiseLike<TResult1>) \| null` | No | None | Value passed to this API. |
+| `onRejected` | `((reason: unknown) => TResult2 \| PromiseLike<TResult2>) \| null` | No | None | Value passed to this API. |
+
+#### Returns
+
+<ReturnType>`Promise<TResult1 \| TResult2>`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L189" line={189} />
+
+### `catch()`
+
+Handles a failed chain while preserving `PdfDocument` as the success type.
+
+<ApiSignature>
+
+```ts
+catch<TResult = never>(onRejected?: ((reason: unknown) => TResult | PromiseLike<TResult>) | null): Promise<PdfDocument | TResult>;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `onRejected` | `((reason: unknown) => TResult \| PromiseLike<TResult>) \| null` | No | None | Value passed to this API. |
+
+#### Returns
+
+<ReturnType>`Promise<PdfDocument \| TResult>`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L197" line={197} />
+
+### `catchExternal()`
+
+Compatibility alias for `catch`.
+
+<ApiSignature>
+
+```ts
+catchExternal<TResult = never>(onRejected?: ((reason: unknown) => TResult | PromiseLike<TResult>) | null): Promise<PdfDocument | TResult>;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `onRejected` | `((reason: unknown) => TResult \| PromiseLike<TResult>) \| null` | No | None | Value passed to this API. |
+
+#### Returns
+
+<ReturnType>`Promise<PdfDocument \| TResult>`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L202" line={202} />

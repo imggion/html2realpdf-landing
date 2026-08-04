@@ -1,0 +1,30 @@
+{
+  "slug": "event-ticket",
+  "title": "Event ticket",
+  "format": "10 × 4 in",
+  "orientation": "Landscape",
+  "pageCount": 1,
+  "fileSize": "102 KB",
+  "categories": [
+    "small-formats",
+    "custom-sizes"
+  ],
+  "filename": "event-ticket.pdf",
+  "pdfUrl": "/playground/event-ticket.pdf?v=avely-v1",
+  "thumbnailUrl": "/playground/event-ticket-page-1-avely-v1.png",
+  "thumbnailAlt": "Wide white and magenta Avely.me event ticket",
+  "sourceUrl": "/playground/event-ticket.json?v=avely-v1",
+  "source": {
+    "html": "<main aria-label=\"Avely.me event ticket\">\n  <table class=\"ticket\">\n    <tr>\n      <td class=\"ticket-main\">\n        <p class=\"eyebrow\">Avely.me 2026</p>\n        <h1>Designing for durable systems.</h1>\n        <table class=\"meta\">\n          <tr>\n            <td><strong>18 SEPT</strong><br/><span class=\"muted\">09:30</span>\n            </td>\n            <td><strong>ROME</strong><br/><span class=\"muted\">Auditorium 02</span>\n            </td>\n            <td><strong>SEAT</strong><br/><span class=\"muted\">B-14</span>\n            </td>\n          </tr>\n        </table>\n      </td>\n      <td class=\"ticket-code\">\n        <div class=\"qr\"></div><strong>AV26-B14</strong><br/><small>ADMIT ONE</small>\n      </td>\n    </tr>\n  </table>\n</main>",
+    "css": "* { box-sizing: border-box; }\n      body { margin: 0; color: #122445; background: #ffffff; font-family: Arial, sans-serif; font-size: 11pt; line-height: 1.45; }\n      h1, h2, h3, p { margin-top: 0; }\n      h1 { margin-bottom: 12pt; font-size: 27pt; line-height: 1.05; }\n      h2 { margin-bottom: 8pt; font-size: 17pt; }\n      h3 { margin-bottom: 5pt; font-size: 11pt; text-transform: uppercase; letter-spacing: 0.06em; }\n      p { margin-bottom: 9pt; }\n      .eyebrow { color: #e751d2; font-size: 8pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }\n      .muted { color: #5a6679; }\n      .rule { height: 2pt; margin: 16pt 0; background: #e751d2; }\n      .card { padding: 12pt; border: 1pt solid #d7dde7; background: #f7f9fc; }\n      .page + .page { break-before: page; page-break-before: always; }\n      table { width: 100%; border-collapse: collapse; }\n      th, td { padding: 7pt; border-bottom: 1pt solid #d7dde7; text-align: left; vertical-align: top; }\n      th { color: #5a6679; font-size: 8pt; letter-spacing: 0.05em; text-transform: uppercase; }\n      \n      body { background: #122445; color: #fff; }\n      .ticket { width: 100%; min-height: 248pt; border: 2pt solid #e751d2; border-collapse: collapse; }\n      .ticket td { border: 0; vertical-align: top; }\n      .ticket-main { padding: 24pt; }\n      .ticket-code { width: 150pt; padding: 18pt; border-left: 2pt dashed #e751d2 !important; background: #fff; color: #122445; text-align: center; }\n      .qr { width: 90pt; height: 90pt; margin: 0 auto 10pt; border: 9pt double #122445; background: #122445; }\n      .meta { width: 100%; margin-top: 22pt; }\n      .meta td { width: 33.333%; color: #ffffff; }",
+    "page": {
+      "format": [
+        288,
+        720
+      ],
+      "orientation": "landscape",
+      "unit": "pt",
+      "margin": 20
+    }
+  }
+}

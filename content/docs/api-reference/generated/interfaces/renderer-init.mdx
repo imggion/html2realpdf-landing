@@ -1,0 +1,33 @@
+---
+title: "RendererInit"
+description: "Configuration whose lifetime matches an explicit renderer instance."
+apiSymbol: "RendererInit"
+apiKind: "interface"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Configuration whose lifetime matches an explicit renderer instance.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export interface RendererInit {
+    execution?: "worker" | "main";
+    wasmUrl?: string | URL;
+    fonts?: readonly FontRegistration[];
+}
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L245" line={245} />
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `execution` | `"worker" \| "main"` | No | No | `worker` | Execution backend. Defaults to `worker`. |
+| `wasmUrl` | `string \| URL` | No | No | None | WASM asset override for deployments that cannot serve package-relative assets. |
+| `fonts` | `readonly FontRegistration[]` | No | No | None | Embeddable TrueType fonts registered once for every render. |

@@ -1,0 +1,41 @@
+---
+title: "Html2PdfOptions"
+description: "Options supported by the PDF-oriented html2pdf.js compatibility layer."
+apiSymbol: "Html2PdfOptions"
+apiKind: "interface"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Options supported by the PDF-oriented html2pdf.js compatibility layer.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export interface Html2PdfOptions {
+    margin?: Margin;
+    filename?: string;
+    enableLinks?: boolean;
+    pagebreak?: CompatPageBreakOptions;
+    jsPDF?: CompatJsPdfOptions;
+    html2canvas?: never;
+    image?: never;
+}
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L289" line={289} />
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `margin` | `Margin` | No | No | None | Page margins in html2pdf.js order. |
+| `filename` | `string` | No | No | None | Filename used by `save` when no method argument is supplied. |
+| `enableLinks` | `boolean` | No | No | None | Preserves HTTP(S), mail, telephone, and FTP links unless explicitly disabled. |
+| `pagebreak` | `CompatPageBreakOptions` | No | No | None | Compatibility pagination rules. |
+| `jsPDF` | `CompatJsPdfOptions` | No | No | None | Compatibility page geometry. |
+| `html2canvas` | `never` | No | No | None | Unsupported because this renderer does not use an html2canvas pipeline. |
+| `image` | `never` | No | No | None | Unsupported because PDF pages are not encoded as raster images. |

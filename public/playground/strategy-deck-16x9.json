@@ -1,0 +1,30 @@
+{
+  "slug": "strategy-deck-16x9",
+  "title": "Strategy deck",
+  "format": "16:9",
+  "orientation": "Landscape",
+  "pageCount": 4,
+  "fileSize": "107 KB",
+  "categories": [
+    "presentations",
+    "custom-sizes"
+  ],
+  "filename": "strategy-deck-16x9.pdf",
+  "pdfUrl": "/playground/strategy-deck-16x9.pdf?v=avely-v1",
+  "thumbnailUrl": "/playground/strategy-deck-16x9-page-1-avely-v1.png",
+  "thumbnailAlt": "Cover slide from a dark blue 16:9 strategy presentation",
+  "sourceUrl": "/playground/strategy-deck-16x9.json?v=avely-v1",
+  "source": {
+    "html": "<main aria-label=\"Avely.me strategy presentation\">\n  <section class=\"slide\">\n    <p class=\"eyebrow\">Quarterly strategy review · 2026</p>\n    <h1>Build the document layer teams trust.</h1>\n    <div class=\"rule\"></div>\n    <p class=\"muted\">Avely.me · Executive presentation</p>\n  </section>\n  <section class=\"slide\">\n    <p class=\"eyebrow\">01 · Momentum</p>\n    <h2>Growth is compounding across the core business.</h2>\n    <table class=\"slide-grid\">\n      <tr>\n        <td class=\"metric\"><span>Revenue</span><strong>€4.82M</strong>\n          <p class=\"muted\">+18.4% year over year</p>\n        </td>\n        <td class=\"metric\"><span>Customers</span><strong>28.6K</strong>\n          <p class=\"muted\">+11.8% year over year</p>\n        </td>\n        <td class=\"metric\"><span>Margin</span><strong>64.2%</strong>\n          <p class=\"muted\">+3.1 points</p>\n        </td>\n      </tr>\n    </table>\n  </section>\n  <section class=\"slide\">\n    <p class=\"eyebrow\">02 · Customer mix</p>\n    <h2>Enterprise expansion leads the next stage.</h2>\n    <table class=\"bar\">\n      <tr>\n        <td></td>\n        <td></td>\n        <td></td>\n      </tr>\n    </table>\n    <table class=\"slide-grid\">\n      <tr>\n        <td>\n          <h3>45% Enterprise</h3>\n          <p class=\"muted\">Expansion revenue rose 28%.</p>\n        </td>\n        <td>\n          <h3>33% Mid-market</h3>\n          <p class=\"muted\">Retention remains above 96%.</p>\n        </td>\n        <td>\n          <h3>22% SMB</h3>\n          <p class=\"muted\">Self-serve activation improved.</p>\n        </td>\n      </tr>\n    </table>\n  </section>\n  <section class=\"slide\">\n    <p class=\"eyebrow\">03 · Next move</p>\n    <h1>Ship one clear reporting system.</h1>\n    <p class=\"muted\">Standardize templates, preserve selectable content, and measure every exported document.</p>\n  </section>\n</main>",
+    "css": "* { box-sizing: border-box; }\n      body { margin: 0; color: #122445; background: #ffffff; font-family: Arial, sans-serif; font-size: 11pt; line-height: 1.45; }\n      h1, h2, h3, p { margin-top: 0; }\n      h1 { margin-bottom: 12pt; font-size: 27pt; line-height: 1.05; }\n      h2 { margin-bottom: 8pt; font-size: 17pt; }\n      h3 { margin-bottom: 5pt; font-size: 11pt; text-transform: uppercase; letter-spacing: 0.06em; }\n      p { margin-bottom: 9pt; }\n      .eyebrow { color: #f3a116; font-size: 8pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }\n      .muted { color: #5a6679; }\n      .rule { height: 2pt; margin: 16pt 0; background: #f3a116; }\n      .card { padding: 12pt; border: 1pt solid #d7dde7; background: #f7f9fc; }\n      .page + .page { break-before: page; page-break-before: always; }\n      table { width: 100%; border-collapse: collapse; }\n      th, td { padding: 7pt; border-bottom: 1pt solid #d7dde7; text-align: left; vertical-align: top; }\n      th { color: #5a6679; font-size: 8pt; letter-spacing: 0.05em; text-transform: uppercase; }\n      \n      body { background: #0d1d38; color: #fde9d3; }\n      .slide { width: 960pt; height: 540pt; padding: 52pt 60pt; background: #0d1d38; }\n      .slide + .slide { break-before: page; page-break-before: always; }\n      .slide h1 { max-width: 650pt; font-size: 52pt; }\n      .slide h1, .slide h2 { color: #fde9d3; }\n      .slide h2 { font-size: 34pt; }\n      .slide .muted { color: #aab6c8; }\n      .slide-grid { width: 100%; margin-top: 34pt; border-collapse: separate; border-spacing: 12pt; }\n      .slide-grid td { width: 33.333%; padding: 20pt; border: 1pt solid #35517a; background: #142b4e; color: #fde9d3; vertical-align: top; }\n      .slide-grid h3, .slide-grid span { color: #fde9d3; }\n      .metric strong { display: block; margin: 14pt 0 8pt; color: #f3a116; font-size: 34pt; }\n      .bar { width: 100%; height: 44pt; margin-top: 22pt; border-collapse: collapse; }\n      .bar td:nth-child(1) { width: 45%; background: #f3a116; }\n      .bar td:nth-child(2) { width: 33%; background: #6c9bd4; }\n      .bar td:nth-child(3) { width: 22%; background: #fde9d3; }",
+    "page": {
+      "format": [
+        540,
+        960
+      ],
+      "orientation": "landscape",
+      "unit": "pt",
+      "margin": 0
+    }
+  }
+}

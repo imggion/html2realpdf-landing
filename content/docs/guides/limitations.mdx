@@ -1,0 +1,44 @@
+---
+title: Known Limitations
+description: Understand the current browser, CSS, accessibility, and compatibility boundaries.
+---
+
+html2realpdf implements a documented subset of browser layout and PDF output. It is not a browser engine.
+
+## Browser execution only
+
+Rendering requires browser DOM and WebAssembly APIs. The package does not expose a Node.js or server renderer.
+
+## CSS coverage
+
+CSS support depends on the selected profile. Unsupported properties can produce warnings or errors. The [versioned CSS support matrix](https://github.com/imggion/html2realpdf/blob/main/docs/css-support.md) is the detailed contract.
+
+## SVG and canvas
+
+Supported SVG remains vector. Unsupported SVG rejects by default. `fallback: "rasterize-subtree"` can rasterize only the affected subtree after explicit opt-in.
+
+Canvas needs a `canvasToSvg` adapter for vector output. A raster canvas fallback also requires explicit opt-in.
+
+## Shadow DOM
+
+Open Shadow DOM can be flattened with `includeShadowDom: true`. Closed roots are not accessible to the snapshot.
+
+## Cancellation
+
+An `AbortSignal` is checked at stable boundaries. WebAssembly work already running synchronously cannot be preempted.
+
+## PDF accessibility
+
+The current output has machine-readable text and the in-page preview has accessible controls. The project does not claim PDF/UA or fully tagged PDF compliance.
+
+## html2pdf.js compatibility
+
+The default export supports PDF-oriented stages. It does not support the raster pipeline.
+
+<CompatibilityStatus status="unsupported">
+
+`toCanvas`, `toImg`, `outputImg`, canvas input, image input, `html2canvas` options, and raster `image` options are not supported.
+
+</CompatibilityStatus>
+
+See the [migration guide](../migration/from-html2pdf-js) for the supported chain.

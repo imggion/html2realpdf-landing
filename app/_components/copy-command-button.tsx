@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
+import { copyText } from "@/lib/copy-text";
 
 type CopyState = "idle" | "copied" | "error";
 
@@ -20,29 +21,6 @@ function CheckIcon() {
       <path d="m4 10 4 4 8-9" />
     </svg>
   );
-}
-
-async function copyText(text: string) {
-  if (navigator.clipboard?.writeText) {
-    try {
-      await navigator.clipboard.writeText(text);
-      return;
-    } catch {
-      // Some embedded browsers expose the API but deny clipboard permission.
-    }
-  }
-
-  const textarea = document.createElement("textarea");
-  textarea.value = text;
-  textarea.style.position = "fixed";
-  textarea.style.opacity = "0";
-  document.body.appendChild(textarea);
-  textarea.select();
-
-  const copied = document.execCommand("copy");
-  textarea.remove();
-
-  if (!copied) throw new Error("Copy command failed");
 }
 
 export function CopyCommandButton({ command }: Readonly<{ command: string }>) {

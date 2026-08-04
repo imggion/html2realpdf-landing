@@ -1,0 +1,33 @@
+---
+title: "CompatJsPdfOptions"
+description: "Page settings accepted through the html2pdf.js-compatible `jsPDF` option."
+apiSymbol: "CompatJsPdfOptions"
+apiKind: "interface"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Page settings accepted through the html2pdf.js-compatible `jsPDF` option.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export interface CompatJsPdfOptions {
+    unit?: LengthUnit;
+    format?: PageFormat;
+    orientation?: PageOrientation;
+}
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L267" line={267} />
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `unit` | `LengthUnit` | No | No | None | Unit shared by custom page geometry and margins. |
+| `format` | `PageFormat` | No | No | None | Named or custom page format forwarded to the modern page contract. |
+| `orientation` | `PageOrientation` | No | No | None | Page orientation forwarded to the modern page contract. |

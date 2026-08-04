@@ -1,0 +1,37 @@
+---
+title: "PageBreakRules"
+description: "Selector-driven pagination overrides compatible with html2pdf.js workflows."
+apiSymbol: "PageBreakRules"
+apiKind: "interface"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Selector-driven pagination overrides compatible with html2pdf.js workflows.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export interface PageBreakRules {
+    before?: string | readonly string[];
+    after?: string | readonly string[];
+    avoid?: string | readonly string[];
+    avoidAll?: boolean;
+    legacy?: boolean;
+}
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L165" line={165} />
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `before` | `string \| readonly string[]` | No | No | None | Selectors forced to begin on a new page. |
+| `after` | `string \| readonly string[]` | No | No | None | Selectors forced to end the current page. |
+| `avoid` | `string \| readonly string[]` | No | No | None | Selectors whose contents should avoid internal fragmentation. |
+| `avoidAll` | `boolean` | No | No | None | Applies `break-inside: avoid` to every element. |
+| `legacy` | `boolean` | No | No | None | Honors the legacy `.html2pdf__page-break` marker. |

@@ -1,0 +1,65 @@
+---
+title: "RenderOptions"
+description: "Options applied to one HTML snapshot and PDF render."
+apiSymbol: "RenderOptions"
+apiKind: "interface"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Options applied to one HTML snapshot and PDF render.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export interface RenderOptions {
+    page?: PageOptions;
+    strict?: boolean;
+    cssProfile?: CssProfile;
+    mediaType?: MediaType;
+    layoutContext?: LayoutContext;
+    viewport?: ViewportOptions;
+    unsupportedCss?: UnsupportedCssPolicy;
+    fallback?: FallbackPolicy;
+    canvasToSvg?: CanvasToSvg;
+    canvasFallback?: CanvasFallbackPolicy;
+    includeShadowDom?: boolean;
+    baseUrl?: string | URL;
+    resourcePolicy?: "error" | "omit";
+    resourceResolver?: ResourceResolver;
+    pageBreak?: PageBreakRules;
+    metadata?: PdfMetadata;
+    enableLinks?: boolean;
+    signal?: AbortSignal;
+    onProgress?: (progress: RenderProgress) => void;
+}
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L193" line={193} />
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `page` | `PageOptions` | No | No | None | Explicit page geometry; captured `@page` rules are used when omitted. |
+| `strict` | `boolean` | No | No | None | Promotes unsupported snapshot CSS to errors without selecting the `web` layout profile. An explicit `unsupportedCss` policy takes precedence. |
+| `cssProfile` | `CssProfile` | No | No | `document` | Layout profile. Defaults to `document`. |
+| `mediaType` | `MediaType` | No | No | `screen` | Media environment used for style resolution. Defaults to `screen`. |
+| `layoutContext` | `LayoutContext` | No | No | `source` | Root layout context. `source` preserves the mounted browser width; `page` resolves an implicit root width and auto inline margins against the PDF content box. Defaults to `source`. |
+| `viewport` | `ViewportOptions` | No | No | None | Isolated viewport used for media queries and responsive layout. |
+| `unsupportedCss` | `UnsupportedCssPolicy` | No | No | `error for strict mode and warn otherwise` | Unsupported-CSS policy; defaults to `error` for strict mode and `warn` otherwise. |
+| `fallback` | `FallbackPolicy` | No | No | `error` | Unsupported SVG policy. Defaults to `error`. |
+| `canvasToSvg` | `CanvasToSvg` | No | No | None | Optional bridge from live canvas content to validated SVG. |
+| `canvasFallback` | `CanvasFallbackPolicy` | No | No | `error` | Fallback when `canvasToSvg` returns `null`. Defaults to `error`. |
+| `includeShadowDom` | `boolean` | No | No | `false` | Flattens open Shadow DOM into the snapshot. Defaults to `false`. |
+| `baseUrl` | `string \| URL` | No | No | `the source document URL` | Base URL for relative resources. Defaults to the source document URL. |
+| `resourcePolicy` | `"error" \| "omit"` | No | No | `error` | Failed-resource policy. Defaults to `error`. |
+| `resourceResolver` | `ResourceResolver` | No | No | None | Resolver for protected, virtual, or otherwise unavailable resources. |
+| `pageBreak` | `PageBreakRules` | No | No | None | Selector-driven page-break overrides. |
+| `metadata` | `PdfMetadata` | No | No | None | PDF information dictionary fields. |
+| `enableLinks` | `boolean` | No | No | None | Preserves HTTP(S), mail, telephone, and FTP annotations unless explicitly set to `false`. |
+| `signal` | `AbortSignal` | No | No | None | Rejects the caller at snapshot and render boundaries when aborted. An already-running synchronous WASM render cannot be preempted. |
+| `onProgress` | `(progress: RenderProgress) => void` | No | No | None | Receives coarse phase-boundary progress, not per-page render progress. |

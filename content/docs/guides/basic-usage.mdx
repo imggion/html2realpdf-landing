@@ -1,0 +1,86 @@
+---
+title: Basic Browser Usage
+description: Choose an input form, render a document, and manage its lifetime.
+---
+
+Use `renderPdf` for a direct render. It creates and caches a package default Worker renderer.
+
+```ts
+import { renderPdf } from "@imggion/html2realpdf";
+
+const source = document.querySelector<HTMLElement>("#report");
+if (!source) throw new Error("Report not found");
+
+const pdf = await renderPdf(source);
+try {
+  pdf.download("report.pdf");
+} finally {
+  pdf.dispose();
+}
+```
+
+## Choose the input form
+
+### Mounted element
+
+Use a mounted element when the result depends on browser state.
+
+This form captures:
+
+- computed styles
+- live form values
+- pseudo-elements
+- canvas pixels
+- responsive rules
+- open Shadow DOM when enabled
+
+### Ref-shaped value
+
+React refs and other objects shaped like `{ current: Element | null }` are accepted. A null ref causes an `InvalidSourceError`.
+
+### HTML string
+
+Use a string for self-contained content that does not depend on the host page. External stylesheets in string input need a `resourceResolver`.
+
+## Report progress
+
+`onProgress` reports three coarse phases. It does not report progress for each PDF page.
+
+```ts
+const pdf = await renderPdf(source, {
+  onProgress(progress) {
+    console.log(progress.phase, progress.completed, progress.total);
+  },
+});
+```
+
+The phases are `snapshot`, `wasm`, and `complete`.
+
+## Cancel a render
+
+Pass an `AbortSignal`.
+
+```ts
+const controller = new AbortController();
+
+const promise = renderPdf(source, {
+  signal: controller.signal,
+});
+
+controller.abort();
+await promise;
+```
+
+Cancellation is checked at snapshot and render boundaries. Synchronous WebAssembly work that has already started cannot be interrupted.
+
+## Inspect diagnostics
+
+Successful output can still include warnings.
+
+```ts
+for (const diagnostic of pdf.diagnostics) {
+  console.log(diagnostic.severity, diagnostic.code, diagnostic.message);
+}
+```
+
+Set `unsupportedCss: "error"` when unsupported snapshot CSS must reject the render.

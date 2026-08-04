@@ -1,0 +1,47 @@
+---
+title: "WasmRenderError"
+description: "The WASM bridge or native renderer failed."
+apiSymbol: "WasmRenderError"
+apiKind: "class"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+The WASM bridge or native renderer failed.
+
+`status` preserves the native or bridge status code for logging and
+operational classification.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export declare class WasmRenderError extends Html2RealPdfError
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/errors.ts#L51" line={51} />
+
+## Constructor
+
+<ApiSignature>
+
+```ts
+constructor(message: string, status: number, options?: ErrorOptions);
+```
+
+</ApiSignature>
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `message` | `string` | Yes | None | Human-readable error message. |
+| `status` | `number` | Yes | None | Native renderer status or a negative bridge status. |
+| `options` | `ErrorOptions` | No | None | Optional error cause. |
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `__constructor` | `any` | Yes | No | None | Not documented. |
+| `status` | `number` | Yes | Yes | None | Native renderer status or a negative bridge status. |

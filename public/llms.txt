@@ -5,6 +5,8 @@
 ## Primary links
 
 - Website: https://html2realpdf.imggion.com/
+- Documentation: https://html2realpdf.imggion.com/docs
+- Documentation index for LLMs: https://html2realpdf.imggion.com/docs/llm.txt
 - Repository: https://github.com/imggion/html2realpdf
 - npm: https://www.npmjs.com/package/@imggion/html2realpdf
 - CSS support: https://github.com/imggion/html2realpdf/blob/main/docs/css-support.md

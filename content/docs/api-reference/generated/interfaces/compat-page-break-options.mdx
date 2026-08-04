@@ -1,0 +1,35 @@
+---
+title: "CompatPageBreakOptions"
+description: "Page-break settings accepted by the html2pdf.js compatibility layer."
+apiSymbol: "CompatPageBreakOptions"
+apiKind: "interface"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Page-break settings accepted by the html2pdf.js compatibility layer.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export interface CompatPageBreakOptions {
+    mode?: "css" | "legacy" | "avoid-all" | readonly ("css" | "legacy" | "avoid-all")[];
+    before?: string | readonly string[];
+    after?: string | readonly string[];
+    avoid?: string | readonly string[];
+}
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L277" line={277} />
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `mode` | `"css" \| "legacy" \| "avoid-all" \| readonly ("css" \| "legacy" \| "avoid-all")[]` | No | No | `css and legacy` | Compatibility modes. Defaults to `css` and `legacy`. |
+| `before` | `string \| readonly string[]` | No | No | None | Selectors forced to begin on a new page. |
+| `after` | `string \| readonly string[]` | No | No | None | Selectors forced to end the current page. |
+| `avoid` | `string \| readonly string[]` | No | No | None | Selectors whose contents should avoid internal fragmentation. |

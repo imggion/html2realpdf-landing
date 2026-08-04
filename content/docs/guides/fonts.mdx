@@ -1,0 +1,63 @@
+---
+title: Fonts
+description: Register reusable TrueType fonts on an explicit renderer.
+---
+
+Register font bytes when you create a renderer. The renderer owns the registrations and reuses them for every render.
+
+```ts
+import { createRenderer } from "@imggion/html2realpdf";
+
+const regular = await fetch("/fonts/Inter-Regular.ttf").then((response) =>
+  response.arrayBuffer(),
+);
+
+const renderer = await createRenderer({
+  fonts: [
+    {
+      family: "Inter",
+      data: regular,
+      weight: 400,
+      style: "normal",
+    },
+  ],
+});
+
+try {
+  const pdf = await renderer.render(`
+    <p style="font-family: Inter">Registered font text</p>
+  `);
+  try {
+    pdf.download("font-example.pdf");
+  } finally {
+    pdf.dispose();
+  }
+} finally {
+  renderer.dispose();
+}
+```
+
+## Registration fields
+
+<ApiTypeTable symbol="FontRegistration" />
+
+Font data accepts an `ArrayBuffer` or `Uint8Array`. The public registration contract is for complete TrueType font bytes.
+
+## Lifetime
+
+Fonts belong to the renderer, not one render. Keep the renderer for a batch of related documents, then dispose it.
+
+`renderPdf` uses a package default renderer that cannot accept custom fonts. Use `createRenderer` when font registration is required.
+
+## Family matching
+
+Use the same `family`, `weight`, and `style` values in the registration and the document CSS. Register each face that the document needs.
+
+```css
+.report {
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+}
+```
+
+If a glyph is not present in the selected face, the renderer can use its available fallback faces. Verify the scripts and glyphs used by your document.

@@ -1,0 +1,91 @@
+{
+  "generatedAt": "2026-08-04T18:52:43.444Z",
+  "assetRevision": "avely-v1",
+  "engine": "html2realpdf vendored WASM fixture renderer",
+  "fixtures": {
+    "receipt-80mm": {
+      "bytes": 103882,
+      "pages": 1,
+      "width": 226.772,
+      "height": 566.929,
+      "sha256": "ba0edaa0368b921ec5c55be90272eb435571cdc7a576a9a826eb774ce69e1250"
+    },
+    "strategy-deck-16x9": {
+      "bytes": 109154,
+      "pages": 4,
+      "width": 960,
+      "height": 540,
+      "sha256": "f8b25a58d5aaaf5772d1af975f07a18df76ea507368503700499d9848dcb7b2e"
+    },
+    "complex-invoice": {
+      "bytes": 112793,
+      "pages": 2,
+      "width": 595.2756,
+      "height": 841.8898,
+      "sha256": "29f529d7bc8a8cd284bfa5cb2604ae7764e923eb610bf93ae31243e584a6be89"
+    },
+    "analytics-report": {
+      "bytes": 114571,
+      "pages": 3,
+      "width": 595.2756,
+      "height": 841.8898,
+      "sha256": "081b0abee511eb1af7f4051cb26332e40b112d1647c8a9555d436c274c615359"
+    },
+    "presentation-deck": {
+      "bytes": 118310,
+      "pages": 4,
+      "width": 841.8898,
+      "height": 595.2756,
+      "sha256": "a3d09321c1af79290f6911aa8c459080f8611d44a9bfefafcbece2b2aa962ff5"
+    },
+    "rounded-operations": {
+      "bytes": 116619,
+      "pages": 2,
+      "width": 595.2756,
+      "height": 841.8898,
+      "sha256": "856e9e838ca375fbe42a9a5a9dec13da5f812d9facaeebcd22e6f77051342da4"
+    },
+    "resume-letter": {
+      "bytes": 108788,
+      "pages": 1,
+      "width": 612,
+      "height": 792,
+      "sha256": "d794f8b4697312004cc0f9ba2c04bb5621cf543c5f5483e3469a0dc35a10b56a"
+    },
+    "product-brief-a5": {
+      "bytes": 106738,
+      "pages": 2,
+      "width": 419.5276,
+      "height": 595.2756,
+      "sha256": "621b6cb0487bea907adfac8826ba20235f3d26139d5dda5a4123dea8f1e48f7f"
+    },
+    "event-ticket": {
+      "bytes": 103810,
+      "pages": 1,
+      "width": 720,
+      "height": 288,
+      "sha256": "0096545ec6934ca8b2666638a65cea2a9ff9a101a43fe3d25dfec5e0c33f2533"
+    },
+    "shipping-label-a6": {
+      "bytes": 104075,
+      "pages": 1,
+      "width": 297.6378,
+      "height": 419.5276,
+      "sha256": "a63e2fa7810f598028202b621b9b4ef22813c8e38dfb270bda4545417ca65cc3"
+    },
+    "certificate-landscape": {
+      "bytes": 102911,
+      "pages": 1,
+      "width": 792,
+      "height": 612,
+      "sha256": "e47cc4fd1595b34b4bedc4f0bde2b7d8aa9c301d934a8b4922be1664f8b27e6f"
+    },
+    "multilingual-report": {
+      "bytes": 107082,
+      "pages": 1,
+      "width": 595.2756,
+      "height": 841.8898,
+      "sha256": "1399b12f84916aa78b30304b09a6f7919c019be2a4f707370b56706a4c73cece"
+    }
+  }
+}

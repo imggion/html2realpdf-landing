@@ -1,0 +1,44 @@
+---
+title: "renderPdf"
+description: "Renders with a lazily created package-default Worker renderer."
+apiSymbol: "renderPdf"
+apiKind: "function"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Renders with a lazily created package-default Worker renderer.
+
+The default renderer is cached for the application lifetime and cannot be
+configured with custom fonts. Use `createRenderer` when deterministic
+backend disposal or renderer-level configuration is required. The returned
+document must still be disposed by the caller.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export declare function renderPdf(source: HtmlSource, options?: RenderOptions): Promise<PdfDocument>;
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/renderer.ts#L258" line={258} />
+
+## Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `source` | `HtmlSource` | Yes | None | HTML string, mounted element, or ref-shaped value to render. |
+| `options` | `RenderOptions` | No | `{}` | Options for this operation. |
+
+## Returns
+
+<ReturnType>`Promise<PdfDocument>`</ReturnType>
+
+## Example
+
+```ts
+const pdf = await renderPdf(document.querySelector("#invoice")!);
+try { pdf.download("invoice.pdf"); } finally { pdf.dispose(); }
+```
