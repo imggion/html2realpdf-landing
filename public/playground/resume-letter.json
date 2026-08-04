@@ -1,0 +1,29 @@
+{
+  "slug": "resume-letter",
+  "title": "Product designer resume",
+  "format": "Letter",
+  "orientation": "Portrait",
+  "pageCount": 1,
+  "fileSize": "106 KB",
+  "categories": [
+    "documents"
+  ],
+  "filename": "resume-letter.pdf",
+  "pdfUrl": "/playground/resume-letter.pdf?v=avely-v1",
+  "thumbnailUrl": "/playground/resume-letter-page-1-avely-v1.png",
+  "thumbnailAlt": "One-page product designer resume for Maya Chen",
+  "sourceUrl": "/playground/resume-letter.json?v=avely-v1",
+  "source": {
+    "html": "<main aria-label=\"Product designer resume\">\n  <section class=\"page\">\n    <table class=\"resume-header\">\n      <tr>\n        <td>\n          <p class=\"eyebrow\">Product designer</p>\n          <h1>Maya Chen</h1>\n        </td>\n        <td class=\"muted\">London, UK<br/>maya@example.com<br/>maya.design</td>\n      </tr>\n    </table>\n    <table class=\"resume-layout\">\n      <tr>\n        <td>\n          <h3>Profile</h3>\n          <p>Design systems lead focused on clear, inclusive tools for complex workflows.</p>\n          <h3>Skills</h3>\n          <p class=\"muted\">Product strategy<br/>Research<br/>Prototyping<br/>Design systems<br/>Accessibility</p>\n        </td>\n        <td>\n          <h2>Experience</h2>\n          <article class=\"resume-item\"><strong>Lead product designer · Avely.me</strong><span class=\"muted\">2023–Present</span>\n            <ul>\n              <li>Led a reporting platform used by 28,000 customers.</li>\n              <li>Reduced document setup time by 42%.</li>\n              <li>Built an accessible component system across five teams.</li>\n            </ul>\n          </article>\n          <article class=\"resume-item\"><strong>Senior product designer · Fieldwork</strong><span class=\"muted\">2020–2023</span>\n            <ul>\n              <li>Designed collaborative planning tools for distributed teams.</li>\n              <li>Introduced continuous research and quarterly usability benchmarks.</li>\n            </ul>\n          </article>\n          <h2>Selected work</h2>\n          <table class=\"work-grid\">\n            <tr>\n              <td>\n                <h3>Report builder</h3>\n                <p>Flexible layouts with predictable PDF export.</p>\n              </td>\n              <td>\n                <h3>Design system</h3>\n                <p>Shared patterns for product and documentation.</p>\n              </td>\n            </tr>\n          </table>\n        </td>\n      </tr>\n    </table>\n  </section>\n</main>",
+    "css": "* { box-sizing: border-box; }\n      body { margin: 0; color: #122445; background: #ffffff; font-family: Arial, sans-serif; font-size: 11pt; line-height: 1.45; }\n      h1, h2, h3, p { margin-top: 0; }\n      h1 { margin-bottom: 12pt; font-size: 27pt; line-height: 1.05; }\n      h2 { margin-bottom: 8pt; font-size: 17pt; }\n      h3 { margin-bottom: 5pt; font-size: 11pt; text-transform: uppercase; letter-spacing: 0.06em; }\n      p { margin-bottom: 9pt; }\n      .eyebrow { color: #2356d8; font-size: 8pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }\n      .muted { color: #5a6679; }\n      .rule { height: 2pt; margin: 16pt 0; background: #2356d8; }\n      .card { padding: 12pt; border: 1pt solid #d7dde7; background: #f7f9fc; }\n      .page + .page { break-before: page; page-break-before: always; }\n      table { width: 100%; border-collapse: collapse; }\n      th, td { padding: 7pt; border-bottom: 1pt solid #d7dde7; text-align: left; vertical-align: top; }\n      th { color: #5a6679; font-size: 8pt; letter-spacing: 0.05em; text-transform: uppercase; }\n      \n      .resume-header, .resume-layout, .work-grid { width: 100%; border-collapse: separate; }\n      .resume-header { border-bottom: 2pt solid #2356d8; }\n      .resume-header td { padding-bottom: 18pt; border: 0; vertical-align: top; }\n      .resume-header td:last-child { width: 170pt; text-align: right; }\n      .resume-layout { margin-top: 22pt; border-spacing: 14pt 0; }\n      .resume-layout > tbody > tr > td { border: 0; vertical-align: top; }\n      .resume-layout > tbody > tr > td:first-child { width: 150pt; }\n      .work-grid { border-spacing: 8pt; }\n      .work-grid td { width: 50%; padding: 12pt; border: 1pt solid #d7dde7; background: #f7f9fc; vertical-align: top; }\n      .resume-item { margin-bottom: 18pt; }\n      .resume-item strong { display: block; font-size: 12pt; }\n      ul { padding-left: 16pt; }",
+    "page": {
+      "format": [
+        612,
+        792
+      ],
+      "orientation": "portrait",
+      "unit": "pt",
+      "margin": 34
+    }
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "assetRevision": "avely-v1",
+  "examples": [
+    {
+      "slug": "receipt-80mm",
+      "title": "Cafe receipt",
+      "format": "80 mm",
+      "orientation": "Portrait",
+      "pageCount": 1,
+      "fileSize": "102 KB",
+      "categories": [
+        "small-formats",
+        "custom-sizes"
+      ],
+      "filename": "receipt-80mm.pdf",
+      "pdfUrl": "/playground/receipt-80mm.pdf?v=avely-v1",
+      "thumbnailUrl": "/playground/receipt-80mm-page-1-avely-v1.png",
+      "thumbnailAlt": "Narrow monochrome receipt from Avely.me",
+      "sourceUrl": "/playground/receipt-80mm.json?v=avely-v1"
+    },
+    {
+      "slug": "strategy-deck-16x9",
+      "title": "Strategy deck",
+      "format": "16:9",
+      "orientation": "Landscape",
+      "pageCount": 4,
+      "fileSize": "107 KB",
+      "categories": [
+        "presentations",
+        "custom-sizes"
+      ],
+      "filename": "strategy-deck-16x9.pdf",
+      "pdfUrl": "/playground/strategy-deck-16x9.pdf?v=avely-v1",
+      "thumbnailUrl": "/playground/strategy-deck-16x9-page-1-avely-v1.png",
+      "thumbnailAlt": "Cover slide from a dark blue 16:9 strategy presentation",
+      "sourceUrl": "/playground/strategy-deck-16x9.json?v=avely-v1"
+    },
+    {
+      "slug": "complex-invoice",
+      "title": "Studio invoice",
+      "format": "A4",
+      "orientation": "Portrait",
+      "pageCount": 2,
+      "fileSize": "111 KB",
+      "categories": [
+        "documents"
+      ],
+      "filename": "complex-invoice.pdf",
+      "pdfUrl": "/playground/complex-invoice.pdf?v=avely-v1",
+      "thumbnailUrl": "/playground/complex-invoice-page-1-avely-v1.png",
+      "thumbnailAlt": "First page of a blue and white studio invoice",
+      "sourceUrl": "/playground/complex-invoice.json?v=avely-v1"
+    },
+    {
+      "slug": "analytics-report",
+      "title": "Analytics report",
+      "format": "A4",
+      "orientation": "Portrait",
+      "pageCount": 3,
+      "fileSize": "112 KB",
+      "categories": [
+        "reports"
+      ],
+      "filename": "analytics-report.pdf",
+      "pdfUrl": "/playground/analytics-report.pdf?v=avely-v1",
+      "thumbnailUrl": "/playground/analytics-report-page-1-avely-v1.png",
+      "thumbnailAlt": "First page of the Avely.me analytics report",
+      "sourceUrl": "/playground/analytics-report.json?v=avely-v1"
+    },
+    {
+      "slug": "presentation-deck",
+      "title": "Product presentation",
+      "format": "A4",
+      "orientation": "Landscape",
+      "pageCount": 4,
+      "fileSize": "116 KB",
+      "categories": [
+        "presentations"
+      ],
+      "filename": "presentation-deck.pdf",
+      "pdfUrl": "/playground/presentation-deck.pdf?v=avely-v1",
+      "thumbnailUrl": "/playground/presentation-deck-page-1-avely-v1.png",
+      "thumbnailAlt": "Cover slide titled From operational data to confident decisions",
+      "sourceUrl": "/playground/presentation-deck.json?v=avely-v1"
+    },
+    {
+      "slug": "rounded-operations",
+      "title": "Operations review",
+      "format": "A4",
+      "orientation": "Portrait",
+      "pageCount": 2,
+      "fileSize": "114 KB",
+      "categories": [
+        "reports"
+      ],
+      "filename": "rounded-operations.pdf",
+      "pdfUrl": "/playground/rounded-operations.pdf?v=avely-v1",
+      "thumbnailUrl": "/playground/rounded-operations-page-1-avely-v1.png",
+      "thumbnailAlt": "First page of a service delivery health report",
+      "sourceUrl": "/playground/rounded-operations.json?v=avely-v1"
+    },
+    {
+      "slug": "resume-letter",
+      "title": "Product designer resume",
+      "format": "Letter",
+      "orientation": "Portrait",
+      "pageCount": 1,
+      "fileSize": "106 KB",
+      "categories": [
+        "documents"
+      ],
+      "filename": "resume-letter.pdf",
+      "pdfUrl": "/playground/resume-letter.pdf?v=avely-v1",
+      "thumbnailUrl": "/playground/resume-letter-page-1-avely-v1.png",
+      "thumbnailAlt": "One-page product designer resume for Maya Chen",
+      "sourceUrl": "/playground/resume-letter.json?v=avely-v1"
+    },
+    {
+      "slug": "product-brief-a5",
+      "title": "Product brochure",
+      "format": "A5",
+      "orientation": "Portrait",
+      "pageCount": 2,
+      "fileSize": "105 KB",
+      "categories": [
+        "documents",
+        "small-formats"
+      ],
+      "filename": "product-brief-a5.pdf",
+      "pdfUrl": "/playground/product-brief-a5.pdf?v=avely-v1",
+      "thumbnailUrl": "/playground/product-brief-a5-page-1-avely-v1.png",
+      "thumbnailAlt": "Warm beige cover of a compact notebook product brochure",
+      "sourceUrl": "/playground/product-brief-a5.json?v=avely-v1"
+    },
+    {
+      "slug": "event-ticket",
+      "title": "Event ticket",
+      "format": "10 × 4 in",
+      "orientation": "Landscape",
+      "pageCount": 1,
+      "fileSize": "102 KB",
+      "categories": [
+        "small-formats",
+        "custom-sizes"
+      ],
+      "filename": "event-ticket.pdf",
+      "pdfUrl": "/playground/event-ticket.pdf?v=avely-v1",
+      "thumbnailUrl": "/playground/event-ticket-page-1-avely-v1.png",
+      "thumbnailAlt": "Wide white and magenta Avely.me event ticket",
+      "sourceUrl": "/playground/event-ticket.json?v=avely-v1"
+    },
+    {
+      "slug": "shipping-label-a6",
+      "title": "Shipping label",
+      "format": "A6",
+      "orientation": "Portrait",
+      "pageCount": 1,
+      "fileSize": "103 KB",
+      "categories": [
+        "small-formats"
+      ],
+      "filename": "shipping-label-a6.pdf",
+      "pdfUrl": "/playground/shipping-label-a6.pdf?v=avely-v1",
+      "thumbnailUrl": "/playground/shipping-label-a6-page-1-avely-v1.png",
+      "thumbnailAlt": "Black and white Avely.me shipping label",
+      "sourceUrl": "/playground/shipping-label-a6.json?v=avely-v1"
+    },
+    {
+      "slug": "certificate-landscape",
+      "title": "Course certificate",
+      "format": "Letter",
+      "orientation": "Landscape",
+      "pageCount": 1,
+      "fileSize": "101 KB",
+      "categories": [
+        "documents",
+        "custom-sizes"
+      ],
+      "filename": "certificate-landscape.pdf",
+      "pdfUrl": "/playground/certificate-landscape.pdf?v=avely-v1",
+      "thumbnailUrl": "/playground/certificate-landscape-page-1-avely-v1.png",
+      "thumbnailAlt": "Cream landscape certificate for the Document Systems Masterclass",
+      "sourceUrl": "/playground/certificate-landscape.json?v=avely-v1"
+    },
+    {
+      "slug": "multilingual-report",
+      "title": "Multilingual brief",
+      "format": "A4",
+      "orientation": "Portrait",
+      "pageCount": 1,
+      "fileSize": "105 KB",
+      "categories": [
+        "documents",
+        "reports"
+      ],
+      "filename": "multilingual-report.pdf",
+      "pdfUrl": "/playground/multilingual-report.pdf?v=avely-v1",
+      "thumbnailUrl": "/playground/multilingual-report-page-1-avely-v1.png",
+      "thumbnailAlt": "Green and white multilingual international market brief",
+      "sourceUrl": "/playground/multilingual-report.json?v=avely-v1"
+    }
+  ]
+}

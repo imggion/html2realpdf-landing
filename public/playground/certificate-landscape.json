@@ -1,0 +1,30 @@
+{
+  "slug": "certificate-landscape",
+  "title": "Course certificate",
+  "format": "Letter",
+  "orientation": "Landscape",
+  "pageCount": 1,
+  "fileSize": "101 KB",
+  "categories": [
+    "documents",
+    "custom-sizes"
+  ],
+  "filename": "certificate-landscape.pdf",
+  "pdfUrl": "/playground/certificate-landscape.pdf?v=avely-v1",
+  "thumbnailUrl": "/playground/certificate-landscape-page-1-avely-v1.png",
+  "thumbnailAlt": "Cream landscape certificate for the Document Systems Masterclass",
+  "sourceUrl": "/playground/certificate-landscape.json?v=avely-v1",
+  "source": {
+    "html": "<main aria-label=\"Course completion certificate\">\n  <section class=\"certificate\">\n    <p class=\"eyebrow\">Certificate of completion</p>\n    <h1>Document Systems Masterclass</h1>\n    <p>This certifies that</p>\n    <p class=\"name\">Maya Chen</p>\n    <p>successfully completed the advanced programme in reliable document design and PDF production.</p>\n    <table class=\"signatures\">\n      <tr>\n        <td class=\"signature\">Programme director</td>\n        <td class=\"signature\">4 August 2026</td>\n      </tr>\n    </table>\n  </section>\n</main>",
+    "css": "* { box-sizing: border-box; }\n      body { margin: 0; color: #122445; background: #ffffff; font-family: Arial, sans-serif; font-size: 11pt; line-height: 1.45; }\n      h1, h2, h3, p { margin-top: 0; }\n      h1 { margin-bottom: 12pt; font-size: 27pt; line-height: 1.05; }\n      h2 { margin-bottom: 8pt; font-size: 17pt; }\n      h3 { margin-bottom: 5pt; font-size: 11pt; text-transform: uppercase; letter-spacing: 0.06em; }\n      p { margin-bottom: 9pt; }\n      .eyebrow { color: #c28b2c; font-size: 8pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }\n      .muted { color: #5a6679; }\n      .rule { height: 2pt; margin: 16pt 0; background: #c28b2c; }\n      .card { padding: 12pt; border: 1pt solid #d7dde7; background: #f7f9fc; }\n      .page + .page { break-before: page; page-break-before: always; }\n      table { width: 100%; border-collapse: collapse; }\n      th, td { padding: 7pt; border-bottom: 1pt solid #d7dde7; text-align: left; vertical-align: top; }\n      th { color: #5a6679; font-size: 8pt; letter-spacing: 0.05em; text-transform: uppercase; }\n      \n      body { background: #f8f2df; }\n      .certificate { min-height: 556pt; padding: 58pt; border: 6pt double #c28b2c; text-align: center; }\n      .certificate h1 { margin: 34pt auto 18pt; font-family: Georgia, serif; font-size: 42pt; }\n      .certificate .name { margin: 22pt 0; color: #8a5d10; font-family: Georgia, serif; font-size: 30pt; }\n      .signatures { width: 70%; margin: 54pt auto 0; border-collapse: separate; border-spacing: 34pt 0; }\n      .signature { width: 50%; padding-top: 8pt; border-top: 1pt solid #122445; text-align: center; }",
+    "page": {
+      "format": [
+        612,
+        792
+      ],
+      "orientation": "landscape",
+      "unit": "pt",
+      "margin": 28
+    }
+  }
+}

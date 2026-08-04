@@ -1,0 +1,30 @@
+{
+  "slug": "receipt-80mm",
+  "title": "Cafe receipt",
+  "format": "80 mm",
+  "orientation": "Portrait",
+  "pageCount": 1,
+  "fileSize": "102 KB",
+  "categories": [
+    "small-formats",
+    "custom-sizes"
+  ],
+  "filename": "receipt-80mm.pdf",
+  "pdfUrl": "/playground/receipt-80mm.pdf?v=avely-v1",
+  "thumbnailUrl": "/playground/receipt-80mm-page-1-avely-v1.png",
+  "thumbnailAlt": "Narrow monochrome receipt from Avely.me",
+  "sourceUrl": "/playground/receipt-80mm.json?v=avely-v1",
+  "source": {
+    "html": "<main aria-label=\"Cafe receipt\">\n  <section class=\"receipt\">\n    <h2>AVELY.ME</h2>\n    <p>Via Esempio 18 · Roma<br/>04/08/2026 · 10:42<br/>ORDER #2048</p>\n    <div class=\"dash\"></div>\n    <table>\n      <thead>\n        <tr>\n          <th>ITEM</th>\n          <th>EUR</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>2 × Espresso</td>\n          <td>4.40</td>\n        </tr>\n        <tr>\n          <td>Cornetto</td>\n          <td>2.20</td>\n        </tr>\n        <tr>\n          <td>Still water</td>\n          <td>1.50</td>\n        </tr>\n      </tbody>\n    </table>\n    <div class=\"dash\"></div>\n    <p class=\"total\">TOTAL EUR 8.10</p>\n    <p>VISA ·•••• 4242<br/>AUTH 892140</p>\n    <div class=\"dash\"></div>\n    <p>Thank you.<br/>avely.me</p>\n  </section>\n</main>",
+    "css": "* { box-sizing: border-box; }\n      body { margin: 0; color: #122445; background: #ffffff; font-family: Arial, sans-serif; font-size: 11pt; line-height: 1.45; }\n      h1, h2, h3, p { margin-top: 0; }\n      h1 { margin-bottom: 12pt; font-size: 27pt; line-height: 1.05; }\n      h2 { margin-bottom: 8pt; font-size: 17pt; }\n      h3 { margin-bottom: 5pt; font-size: 11pt; text-transform: uppercase; letter-spacing: 0.06em; }\n      p { margin-bottom: 9pt; }\n      .eyebrow { color: #122445; font-size: 8pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }\n      .muted { color: #5a6679; }\n      .rule { height: 2pt; margin: 16pt 0; background: #122445; }\n      .card { padding: 12pt; border: 1pt solid #d7dde7; background: #f7f9fc; }\n      .page + .page { break-before: page; page-break-before: always; }\n      table { width: 100%; border-collapse: collapse; }\n      th, td { padding: 7pt; border-bottom: 1pt solid #d7dde7; text-align: left; vertical-align: top; }\n      th { color: #5a6679; font-size: 8pt; letter-spacing: 0.05em; text-transform: uppercase; }\n      \n      body { font-family: monospace; font-size: 8.5pt; }\n      .receipt { text-align: center; }\n      .receipt table { margin: 16pt 0; }\n      .receipt th, .receipt td { padding: 5pt 0; border: 0; }\n      .receipt th:last-child, .receipt td:last-child { text-align: right; }\n      .dash { margin: 12pt 0; border-top: 1pt dashed #122445; }\n      .total { font-size: 13pt; font-weight: 700; }",
+    "page": {
+      "format": [
+        226.772,
+        566.929
+      ],
+      "orientation": "portrait",
+      "unit": "pt",
+      "margin": 14
+    }
+  }
+}
