@@ -475,7 +475,7 @@ export function PdfComparisonDemo() {
   return (
     <div className="demoWindow window" aria-busy={isBusy}>
       <div className="windowTitlebar">
-        <span>PDF_OUTPUT_LAB.EXE</span>
+        <span>PDF_OUTPUT_LAB</span>
         <span className="windowControls" aria-hidden="true">
           <i>_</i><i>□</i><i>×</i>
         </span>

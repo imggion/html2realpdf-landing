@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { codeToHtml } from "shiki";
 import { CopyCommandButton } from "@/app/_components/copy-command-button";
 import { PdfComparisonDemo } from "@/app/_components/pdf-comparison-demo";
@@ -225,6 +226,7 @@ export default async function Home() {
           </a>
 
           <nav className="primaryNav" aria-label="Primary navigation">
+            <Link href="/docs">Docs</Link>
             <a href="#why-real">Why real PDF</a>
             <a href="#compare">Compare</a>
             <a href="#quick-start">Quick start</a>
@@ -282,16 +284,9 @@ export default async function Home() {
                 Install from npm
                 <ArrowIcon />
               </TrackedOutboundLink>
-              <TrackedOutboundLink
-                className="button"
-                destination="github"
-                href={siteConfig.repository}
-                placement="hero"
-                rel="noreferrer"
-                target="_blank"
-              >
+              <Link className="button" href="/docs">
                 Read the docs
-              </TrackedOutboundLink>
+              </Link>
             </div>
 
             <div className="installLine" aria-label={`Install command: ${installCommand}`}>
@@ -631,6 +626,7 @@ export default async function Home() {
           <p>© {currentYear} Imggion</p>
         </div>
         <nav aria-label="Footer navigation">
+          <Link href="/docs">Docs</Link>
           <TrackedOutboundLink
             destination="github"
             href={siteConfig.repository}
