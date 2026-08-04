@@ -1,0 +1,64 @@
+---
+title: React Ref
+description: Render live React state through a mounted ref without a React wrapper package.
+---
+
+html2realpdf accepts a ref-shaped object. The package does not depend on React.
+
+```tsx
+"use client";
+
+import { forwardRef, useRef, useState } from "react";
+import { renderPdf } from "@imggion/html2realpdf";
+
+type ReportProps = {
+  customer: string;
+};
+
+const Report = forwardRef<HTMLElement, ReportProps>(function Report(
+  { customer },
+  ref,
+) {
+  return (
+    <article ref={ref}>
+      <h1>Customer report</h1>
+      <p>{customer}</p>
+    </article>
+  );
+});
+
+export function ReportScreen() {
+  const reportRef = useRef<HTMLElement>(null);
+  const [customer, setCustomer] = useState("Example Company");
+
+  async function download() {
+    if (!reportRef.current) return;
+
+    const pdf = await renderPdf(reportRef, {
+      cssProfile: "web",
+      mediaType: "print",
+    });
+
+    try {
+      pdf.download("customer-report.pdf");
+    } finally {
+      pdf.dispose();
+    }
+  }
+
+  return (
+    <>
+      <label>
+        Customer
+        <input value={customer} onChange={(event) => setCustomer(event.target.value)} />
+      </label>
+      <Report customer={customer} ref={reportRef} />
+      <button onClick={download} type="button">Download report</button>
+    </>
+  );
+}
+```
+
+The mounted element includes the current React state when the click handler runs.
+
+Keep the rendering call in the client. Do not pass the ref through a Server Component boundary.

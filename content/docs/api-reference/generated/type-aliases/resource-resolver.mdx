@@ -1,0 +1,25 @@
+---
+title: "ResourceResolver"
+description: "Resolves resources that cannot be fetched directly by the browser snapshot."
+apiSymbol: "ResourceResolver"
+apiKind: "type-alias"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Resolves resources that cannot be fetched directly by the browser snapshot.
+
+For stylesheets, a string is CSS source. For images, a string is a data URL
+or replacement URL. `null` leaves the request unresolved and applies
+`resourcePolicy`.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export type ResourceResolver = (request: ResourceRequest) => Blob | string | null | Promise<Blob | string | null>;
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L162" line={162} />

@@ -1,0 +1,14 @@
+{
+  "title": "Guides",
+  "pages": [
+    "basic-usage",
+    "configuration",
+    "fonts",
+    "pagination",
+    "images",
+    "links",
+    "preview",
+    "troubleshooting",
+    "limitations"
+  ]
+}

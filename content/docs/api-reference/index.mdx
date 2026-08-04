@@ -1,0 +1,42 @@
+---
+title: API Reference
+description: Public exports available from the @imggion/html2realpdf package root.
+---
+
+The TypeScript package root is the only public entry point.
+
+```ts
+import html2pdf, {
+  createRenderer,
+  renderPdf,
+  type RenderOptions,
+} from "@imggion/html2realpdf";
+```
+
+The generated reference follows `bindings/js/src/index.ts` and the package export map. It excludes raw Worker, snapshot, page normalization, and WebAssembly bridge modules that are not exported to package users.
+
+## Primary functions
+
+- [`renderPdf`](./generated/functions/render-pdf) renders through the package default Worker renderer.
+- [`createRenderer`](./generated/functions/create-renderer) creates an owned renderer.
+- [`html2pdf`](./generated/functions/html2pdf) creates the compatibility chain.
+
+## Result handles
+
+- [`PdfDocument`](./generated/classes/pdf-document) owns PDF bytes, object URLs, and previews.
+- [`PdfPreview`](./generated/classes/pdf-preview) controls the in-page canvas viewer.
+- [`Html2RealPdf`](./generated/classes/html2-real-pdf) is the reusable renderer returned by `createRenderer`.
+
+## Configuration
+
+- [`RenderOptions`](./generated/interfaces/render-options) controls one render.
+- [`RendererInit`](./generated/interfaces/renderer-init) controls renderer lifetime resources.
+- [`PageOptions`](./generated/interfaces/page-options) defines explicit page geometry.
+- [`PdfPreviewOptions`](./generated/interfaces/pdf-preview-options) configures the in-page viewer.
+- [`Html2PdfOptions`](./generated/interfaces/html2-pdf-options) contains the supported compatibility subset.
+
+## Errors
+
+All public wrapper errors extend [`Html2RealPdfError`](./generated/classes/html2-real-pdf-error). Its `code` value is stable for control flow and telemetry.
+
+Open the [generated API index](./generated) for every function, interface, type alias, and class.

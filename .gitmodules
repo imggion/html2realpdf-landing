@@ -1,0 +1,4 @@
+[submodule "vendor/html2realpdf"]
+	path = vendor/html2realpdf
+	url = https://github.com/imggion/html2realpdf.git
+	branch = main

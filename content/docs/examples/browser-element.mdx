@@ -1,0 +1,72 @@
+---
+title: Browser Element
+description: Render a mounted invoice with print styles and PDF metadata.
+---
+
+This example renders a mounted element. It keeps computed styles and link targets from the page.
+
+```html
+<article class="invoice" id="invoice">
+  <header>
+    <p>Example Company</p>
+    <h1>Invoice 42</h1>
+  </header>
+  <table>
+    <thead>
+      <tr><th>Item</th><th>Amount</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Consulting</td><td>EUR 120.00</td></tr>
+    </tbody>
+  </table>
+  <a href="https://example.com/invoices/42">Open invoice</a>
+</article>
+```
+
+```css
+@media print {
+  .invoice {
+    box-sizing: border-box;
+    width: 100%;
+    color: #122445;
+    background: #ffffff;
+    font: 10pt/1.45 Arial, sans-serif;
+  }
+
+  .invoice table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .invoice th,
+  .invoice td {
+    padding: 3mm;
+    border: 0.3mm solid #c7b8a8;
+    text-align: left;
+  }
+}
+```
+
+```ts
+import { renderPdf } from "@imggion/html2realpdf";
+
+const invoice = document.querySelector<HTMLElement>("#invoice");
+if (!invoice) throw new Error("Invoice not found");
+
+const pdf = await renderPdf(invoice, {
+  page: { format: "a4", unit: "mm", margin: [15, 12] },
+  mediaType: "print",
+  metadata: {
+    title: "Invoice 42",
+    creator: "Example billing application",
+  },
+});
+
+try {
+  pdf.download("invoice-42.pdf");
+} finally {
+  pdf.dispose();
+}
+```
+
+The element has no fixed page height. The page margin defines the available content box.

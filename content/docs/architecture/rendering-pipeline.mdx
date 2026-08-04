@@ -1,0 +1,32 @@
+---
+title: Rendering Pipeline
+description: Follow browser input through snapshot, layout, pagination, paint, and PDF output.
+---
+
+The public package has a browser-side snapshot layer and a Zig WebAssembly renderer.
+
+## Pipeline stages
+
+1. The TypeScript wrapper accepts a string, mounted element, or ref-shaped value.
+2. The browser snapshot resolves DOM state, supported CSS, resources, links, SVG, and canvas policy.
+3. The snapshot sends self-contained HTML and typed page data to WebAssembly.
+4. Zig parses HTML and CSS into its internal document and box structures.
+5. Layout and pagination create page fragments.
+6. Paint commands retain supported text, links, images, and vector graphics.
+7. The PDF writer returns bytes, a page count, and structured diagnostics.
+
+## Snapshot boundary
+
+Mounted input can capture computed styles, form values, pseudo-elements, canvas pixels, and open Shadow DOM. String input runs in an inert document and needs explicit resource handling for external stylesheets.
+
+The snapshot is also where browser-only concerns live. These include alternate media, viewport selection, URL resolution, and chart canvas adapters.
+
+## Document profile and web profile
+
+The `document` CSS profile is the default. The `web` and `strict` profiles enable the broader layout path. `strict` also changes the default unsupported CSS policy to `error`.
+
+## Result ownership
+
+WebAssembly returns bytes to the TypeScript wrapper. `PdfDocument` exposes defensive copies and owns previews and object URLs created through it.
+
+The reusable renderer has a longer lifetime. It owns the Worker or main-thread WebAssembly context and registered fonts.

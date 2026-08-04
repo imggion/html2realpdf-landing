@@ -1,0 +1,48 @@
+---
+title: "createRenderer"
+description: "Creates a reusable renderer with explicit backend and font ownership."
+apiSymbol: "createRenderer"
+apiKind: "function"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Creates a reusable renderer with explicit backend and font ownership.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export declare function createRenderer(init?: RendererInit): Promise<Html2RealPdf>;
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/renderer.ts#L229" line={229} />
+
+## Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `init` | `RendererInit` | No | `{}` | Renderer lifetime configuration. |
+
+## Returns
+
+<ReturnType>`Promise<Html2RealPdf>`</ReturnType>
+
+## Errors
+
+- `UnsupportedEnvironmentError` outside a browser or when the
+requested execution backend is unavailable.
+
+## Example
+
+```ts
+const renderer = await createRenderer({ fonts });
+try {
+  const pdf = await renderer.render(element);
+  try { pdf.download("report.pdf"); } finally { pdf.dispose(); }
+} finally {
+  renderer.dispose();
+}
+```

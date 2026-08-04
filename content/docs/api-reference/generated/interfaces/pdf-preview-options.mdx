@@ -1,0 +1,47 @@
+---
+title: "PdfPreviewOptions"
+description: "Display and rendering limits for `PdfDocument.preview`."
+apiSymbol: "PdfPreviewOptions"
+apiKind: "interface"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Display and rendering limits for `PdfDocument.preview`.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export interface PdfPreviewOptions {
+    showToolbar?: boolean;
+    padding?: number;
+    initialScale?: number | "fit-width";
+    minScale?: number;
+    maxScale?: number;
+    zoomStep?: number;
+    maxPixelRatio?: number;
+    ariaLabel?: string;
+    theme?: PdfPreviewTheme;
+    onProgress?: (completedPages: number, totalPages: number) => void;
+}
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/preview.ts#L11" line={11} />
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `showToolbar` | `boolean` | No | No | `true` | Whether to show the page summary and zoom toolbar. Defaults to `true`. |
+| `padding` | `number` | No | No | `28, or 16 on narrow screens` | Padding around the rendered pages in CSS pixels. Defaults to `28`, or `16` on narrow screens. |
+| `initialScale` | `number \| "fit-width"` | No | No | `fit-width` | Initial zoom or automatic fit. Defaults to `fit-width`. |
+| `minScale` | `number` | No | No | `0` | Lowest permitted zoom. Defaults to `0.25` and is never below `0.1`. |
+| `maxScale` | `number` | No | No | `3 and is never below minScale` | Highest permitted zoom. Defaults to `3` and is never below `minScale`. |
+| `zoomStep` | `number` | No | No | `0` | Zoom-button increment. Defaults to `0.25` and is never below `0.05`. |
+| `maxPixelRatio` | `number` | No | No | `2` | Device-pixel-ratio cap used for page canvases. Defaults to `2`. |
+| `ariaLabel` | `string` | No | No | `PDF preview` | Accessible label for the preview region. Defaults to `PDF preview`. |
+| `theme` | `PdfPreviewTheme` | No | No | `system and follows the browser preference` | Preview-control theme. Defaults to `system` and follows the browser preference. |
+| `onProgress` | `(completedPages: number, totalPages: number) => void` | No | No | None | Called after each page canvas completes rendering. |

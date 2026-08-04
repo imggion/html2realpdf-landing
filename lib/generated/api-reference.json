@@ -1,0 +1,1312 @@
+{
+  "generatedNotice": "This file is generated. Do not edit it directly.",
+  "packageName": "@imggion/html2realpdf",
+  "packageVersion": "0.1.14",
+  "symbols": {
+    "CanvasFallbackPolicy": {
+      "kind": "type-alias",
+      "summary": "Policy used when a canvas-to-SVG adapter intentionally returns `null`.",
+      "source": {
+        "line": 51,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L51"
+      },
+      "properties": []
+    },
+    "CanvasSvgSource": {
+      "kind": "type-alias",
+      "summary": "Complete SVG returned by a canvas adapter.",
+      "source": {
+        "line": 54,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L54"
+      },
+      "properties": []
+    },
+    "CanvasToSvg": {
+      "kind": "type-alias",
+      "summary": "Replaces a live canvas with vector SVG when the source library can export it.",
+      "source": {
+        "line": 79,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L79"
+      },
+      "properties": []
+    },
+    "CanvasToSvgError": {
+      "kind": "class",
+      "summary": "A canvas-to-SVG adapter threw or returned an invalid result.",
+      "source": {
+        "line": 72,
+        "path": "bindings/js/src/errors.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/errors.ts#L72"
+      },
+      "properties": [
+        {
+          "name": "__constructor",
+          "type": "any",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": ""
+        },
+        {
+          "name": "nodePath",
+          "type": "string",
+          "required": true,
+          "readonly": true,
+          "defaultValue": "",
+          "description": "Snapshot path of the canvas whose adapter failed."
+        }
+      ]
+    },
+    "CanvasToSvgRequest": {
+      "kind": "interface",
+      "summary": "Context passed to a canvas-to-SVG adapter.",
+      "source": {
+        "line": 57,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L57"
+      },
+      "properties": [
+        {
+          "name": "canvas",
+          "type": "HTMLCanvasElement",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Original live canvas, suitable for chart-library export APIs."
+        },
+        {
+          "name": "nodePath",
+          "type": "string",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Stable snapshot path used to identify failures and fallbacks."
+        },
+        {
+          "name": "cssWidth",
+          "type": "number",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Rendered canvas width in CSS pixels."
+        },
+        {
+          "name": "cssHeight",
+          "type": "number",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Rendered canvas height in CSS pixels."
+        },
+        {
+          "name": "bitmapWidth",
+          "type": "number",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Backing bitmap width."
+        },
+        {
+          "name": "bitmapHeight",
+          "type": "number",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Backing bitmap height."
+        }
+      ]
+    },
+    "CompatJsPdfOptions": {
+      "kind": "interface",
+      "summary": "Page settings accepted through the html2pdf.js-compatible `jsPDF` option.",
+      "source": {
+        "line": 267,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L267"
+      },
+      "properties": [
+        {
+          "name": "unit",
+          "type": "LengthUnit",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Unit shared by custom page geometry and margins."
+        },
+        {
+          "name": "format",
+          "type": "PageFormat",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Named or custom page format forwarded to the modern page contract."
+        },
+        {
+          "name": "orientation",
+          "type": "PageOrientation",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Page orientation forwarded to the modern page contract."
+        }
+      ]
+    },
+    "CompatPageBreakOptions": {
+      "kind": "interface",
+      "summary": "Page-break settings accepted by the html2pdf.js compatibility layer.",
+      "source": {
+        "line": 277,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L277"
+      },
+      "properties": [
+        {
+          "name": "mode",
+          "type": "\"css\" | \"legacy\" | \"avoid-all\" | readonly (\"css\" | \"legacy\" | \"avoid-all\")[]",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "css and legacy",
+          "description": "Compatibility modes. Defaults to `css` and `legacy`."
+        },
+        {
+          "name": "before",
+          "type": "string | readonly string[]",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Selectors forced to begin on a new page."
+        },
+        {
+          "name": "after",
+          "type": "string | readonly string[]",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Selectors forced to end the current page."
+        },
+        {
+          "name": "avoid",
+          "type": "string | readonly string[]",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Selectors whose contents should avoid internal fragmentation."
+        }
+      ]
+    },
+    "CompatWorker": {
+      "kind": "class",
+      "summary": "Stateful, Promise-like compatibility chain.",
+      "source": {
+        "line": 20,
+        "path": "bindings/js/src/compat.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L20"
+      },
+      "properties": []
+    },
+    "createRenderer": {
+      "kind": "function",
+      "summary": "Creates a reusable renderer with explicit backend and font ownership.",
+      "source": {
+        "line": 229,
+        "path": "bindings/js/src/renderer.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/renderer.ts#L229"
+      },
+      "properties": []
+    },
+    "CssProfile": {
+      "kind": "type-alias",
+      "summary": "Layout and CSS support profile.",
+      "source": {
+        "line": 36,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L36"
+      },
+      "properties": []
+    },
+    "Diagnostic": {
+      "kind": "interface",
+      "summary": "Structured warning or error produced without losing successful PDF output.",
+      "source": {
+        "line": 129,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L129"
+      },
+      "properties": [
+        {
+          "name": "code",
+          "type": "string",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Stable machine-readable identifier."
+        },
+        {
+          "name": "severity",
+          "type": "\"warning\" | \"error\"",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Diagnostic severity assigned by the snapshot or native renderer."
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Human-readable explanation."
+        },
+        {
+          "name": "property",
+          "type": "string",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "CSS property associated with the diagnostic, when applicable."
+        },
+        {
+          "name": "nodePath",
+          "type": "string",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Stable snapshot path to the affected node, when available."
+        },
+        {
+          "name": "phase",
+          "type": "\"snapshot\" | \"parse\" | \"cascade\" | \"computed\" | \"layout\" | \"fragmentation\" | \"paint\" | \"pdf\"",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Pipeline phase that produced the diagnostic."
+        },
+        {
+          "name": "fallback",
+          "type": "string",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Fallback that preserved output despite the unsupported input."
+        }
+      ]
+    },
+    "FallbackPolicy": {
+      "kind": "type-alias",
+      "summary": "Policy for SVG subtrees that cannot remain native PDF vectors.",
+      "source": {
+        "line": 48,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L48"
+      },
+      "properties": []
+    },
+    "FontRegistration": {
+      "kind": "interface",
+      "summary": "Embeddable TrueType font registered in a renderer-owned WASM context.",
+      "source": {
+        "line": 255,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L255"
+      },
+      "properties": [
+        {
+          "name": "family",
+          "type": "string",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "CSS family name used during font resolution."
+        },
+        {
+          "name": "data",
+          "type": "ArrayBuffer | Uint8Array",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Complete TrueType font bytes, copied into the native context."
+        },
+        {
+          "name": "weight",
+          "type": "number | \"normal\" | \"bold\"",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "400",
+          "description": "CSS font weight. Defaults to `400`."
+        },
+        {
+          "name": "style",
+          "type": "\"normal\" | \"italic\"",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "normal",
+          "description": "CSS font style. Defaults to `normal`."
+        }
+      ]
+    },
+    "html2pdf": {
+      "kind": "function",
+      "summary": "Creates an html2pdf.js-compatible PDF chain.",
+      "source": {
+        "line": 228,
+        "path": "bindings/js/src/compat.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L228"
+      },
+      "properties": []
+    },
+    "Html2PdfOptions": {
+      "kind": "interface",
+      "summary": "Options supported by the PDF-oriented html2pdf.js compatibility layer.",
+      "source": {
+        "line": 289,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L289"
+      },
+      "properties": [
+        {
+          "name": "margin",
+          "type": "Margin",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Page margins in html2pdf.js order."
+        },
+        {
+          "name": "filename",
+          "type": "string",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Filename used by `save` when no method argument is supplied."
+        },
+        {
+          "name": "enableLinks",
+          "type": "boolean",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Preserves HTTP(S), mail, telephone, and FTP links unless explicitly disabled."
+        },
+        {
+          "name": "pagebreak",
+          "type": "CompatPageBreakOptions",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Compatibility pagination rules."
+        },
+        {
+          "name": "jsPDF",
+          "type": "CompatJsPdfOptions",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Compatibility page geometry."
+        },
+        {
+          "name": "html2canvas",
+          "type": "never",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Unsupported because this renderer does not use an html2canvas pipeline."
+        },
+        {
+          "name": "image",
+          "type": "never",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Unsupported because PDF pages are not encoded as raster images."
+        }
+      ]
+    },
+    "Html2RealPdf": {
+      "kind": "class",
+      "summary": "Reusable renderer backed by one Worker or main-thread WASM context.",
+      "source": {
+        "line": 142,
+        "path": "bindings/js/src/renderer.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/renderer.ts#L142"
+      },
+      "properties": []
+    },
+    "Html2RealPdfError": {
+      "kind": "class",
+      "summary": "Base error carrying a machine-readable wrapper error code.",
+      "source": {
+        "line": 8,
+        "path": "bindings/js/src/errors.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/errors.ts#L8"
+      },
+      "properties": [
+        {
+          "name": "__constructor",
+          "type": "any",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": ""
+        },
+        {
+          "name": "code",
+          "type": "string",
+          "required": true,
+          "readonly": true,
+          "defaultValue": "",
+          "description": "Stable value suitable for control flow and telemetry."
+        }
+      ]
+    },
+    "HtmlSource": {
+      "kind": "type-alias",
+      "summary": "Input accepted by the snapshot boundary.",
+      "source": {
+        "line": 17,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L17"
+      },
+      "properties": []
+    },
+    "InvalidSourceError": {
+      "kind": "class",
+      "summary": "The source is not a string, mounted element, or non-null ref-like object.",
+      "source": {
+        "line": 29,
+        "path": "bindings/js/src/errors.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/errors.ts#L29"
+      },
+      "properties": [
+        {
+          "name": "__constructor",
+          "type": "any",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": ""
+        }
+      ]
+    },
+    "LayoutContext": {
+      "kind": "type-alias",
+      "summary": "Containing block used for the snapshotted root element.",
+      "source": {
+        "line": 42,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L42"
+      },
+      "properties": []
+    },
+    "LengthUnit": {
+      "kind": "type-alias",
+      "summary": "Units used for custom page dimensions and margins.",
+      "source": {
+        "line": 20,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L20"
+      },
+      "properties": []
+    },
+    "Margin": {
+      "kind": "type-alias",
+      "summary": "Page margins in the selected page unit.",
+      "source": {
+        "line": 98,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L98"
+      },
+      "properties": []
+    },
+    "MediaType": {
+      "kind": "type-alias",
+      "summary": "Media environment used while resolving styles and media queries.",
+      "source": {
+        "line": 39,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L39"
+      },
+      "properties": []
+    },
+    "PageBreakRules": {
+      "kind": "interface",
+      "summary": "Selector-driven pagination overrides compatible with html2pdf.js workflows.",
+      "source": {
+        "line": 165,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L165"
+      },
+      "properties": [
+        {
+          "name": "before",
+          "type": "string | readonly string[]",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Selectors forced to begin on a new page."
+        },
+        {
+          "name": "after",
+          "type": "string | readonly string[]",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Selectors forced to end the current page."
+        },
+        {
+          "name": "avoid",
+          "type": "string | readonly string[]",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Selectors whose contents should avoid internal fragmentation."
+        },
+        {
+          "name": "avoidAll",
+          "type": "boolean",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Applies `break-inside: avoid` to every element."
+        },
+        {
+          "name": "legacy",
+          "type": "boolean",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Honors the legacy `.html2pdf__page-break` marker."
+        }
+      ]
+    },
+    "PageFormat": {
+      "kind": "type-alias",
+      "summary": "Named physical page sizes or a custom `[width, height]` in the selected unit.",
+      "source": {
+        "line": 23,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L23"
+      },
+      "properties": []
+    },
+    "PageOptions": {
+      "kind": "interface",
+      "summary": "Explicit page geometry. Supplying this overrides captured `@page` geometry.",
+      "source": {
+        "line": 104,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L104"
+      },
+      "properties": [
+        {
+          "name": "format",
+          "type": "PageFormat",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "a4",
+          "description": "Page size. Defaults to `a4`."
+        },
+        {
+          "name": "orientation",
+          "type": "PageOrientation",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "portrait",
+          "description": "Page orientation. Defaults to `portrait`."
+        },
+        {
+          "name": "unit",
+          "type": "LengthUnit",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "pt",
+          "description": "Unit for custom dimensions and margins. Defaults to `pt`."
+        },
+        {
+          "name": "margin",
+          "type": "Margin",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "zero on every edge",
+          "description": "Page margins. Defaults to zero on every edge."
+        }
+      ]
+    },
+    "PageOrientation": {
+      "kind": "type-alias",
+      "summary": "Orientation applied after resolving the page format.",
+      "source": {
+        "line": 26,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L26"
+      },
+      "properties": []
+    },
+    "PdfDocument": {
+      "kind": "class",
+      "summary": "Successful PDF output returned by the renderer.",
+      "source": {
+        "line": 18,
+        "path": "bindings/js/src/pdf-document.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/pdf-document.ts#L18"
+      },
+      "properties": [
+        {
+          "name": "diagnostics",
+          "type": "readonly Diagnostic[]",
+          "required": true,
+          "readonly": true,
+          "defaultValue": "",
+          "description": "Diagnostics retained from both browser snapshotting and native rendering."
+        },
+        {
+          "name": "pageCount",
+          "type": "number",
+          "required": true,
+          "readonly": true,
+          "defaultValue": "",
+          "description": "Number of pages reported by the native renderer."
+        }
+      ]
+    },
+    "PdfMetadata": {
+      "kind": "interface",
+      "summary": "PDF information dictionary fields written by the native renderer.",
+      "source": {
+        "line": 179,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L179"
+      },
+      "properties": [
+        {
+          "name": "title",
+          "type": "string",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Document title."
+        },
+        {
+          "name": "author",
+          "type": "string",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Document author."
+        },
+        {
+          "name": "subject",
+          "type": "string",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Document subject."
+        },
+        {
+          "name": "keywords",
+          "type": "string | readonly string[]",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Search keywords, joined when supplied as an array."
+        },
+        {
+          "name": "creator",
+          "type": "string",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Application or service that created the document."
+        }
+      ]
+    },
+    "PdfOutputType": {
+      "kind": "type-alias",
+      "summary": "Output encodings supported by compatibility `output` methods.",
+      "source": {
+        "line": 307,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L307"
+      },
+      "properties": []
+    },
+    "PdfPreview": {
+      "kind": "class",
+      "summary": "Interactive canvas preview created and owned by a `PdfDocument`.",
+      "source": {
+        "line": 238,
+        "path": "bindings/js/src/preview.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/preview.ts#L238"
+      },
+      "properties": [
+        {
+          "name": "element",
+          "type": "HTMLElement",
+          "required": true,
+          "readonly": true,
+          "defaultValue": "",
+          "description": "Host element inserted into the preview target."
+        },
+        {
+          "name": "currentScale",
+          "type": "number",
+          "required": true,
+          "readonly": true,
+          "defaultValue": "",
+          "description": "Current logical PDF.js scale after option clamping."
+        },
+        {
+          "name": "currentTheme",
+          "type": "PdfPreviewTheme",
+          "required": true,
+          "readonly": true,
+          "defaultValue": "",
+          "description": "Current preview-control theme, including the default `system` mode."
+        }
+      ]
+    },
+    "PdfPreviewOptions": {
+      "kind": "interface",
+      "summary": "Display and rendering limits for `PdfDocument.preview`.",
+      "source": {
+        "line": 11,
+        "path": "bindings/js/src/preview.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/preview.ts#L11"
+      },
+      "properties": [
+        {
+          "name": "showToolbar",
+          "type": "boolean",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "true",
+          "description": "Whether to show the page summary and zoom toolbar. Defaults to `true`."
+        },
+        {
+          "name": "padding",
+          "type": "number",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "28, or 16 on narrow screens",
+          "description": "Padding around the rendered pages in CSS pixels. Defaults to `28`, or `16` on narrow screens."
+        },
+        {
+          "name": "initialScale",
+          "type": "number | \"fit-width\"",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "fit-width",
+          "description": "Initial zoom or automatic fit. Defaults to `fit-width`."
+        },
+        {
+          "name": "minScale",
+          "type": "number",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "0",
+          "description": "Lowest permitted zoom. Defaults to `0.25` and is never below `0.1`."
+        },
+        {
+          "name": "maxScale",
+          "type": "number",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "3 and is never below minScale",
+          "description": "Highest permitted zoom. Defaults to `3` and is never below `minScale`."
+        },
+        {
+          "name": "zoomStep",
+          "type": "number",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "0",
+          "description": "Zoom-button increment. Defaults to `0.25` and is never below `0.05`."
+        },
+        {
+          "name": "maxPixelRatio",
+          "type": "number",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "2",
+          "description": "Device-pixel-ratio cap used for page canvases. Defaults to `2`."
+        },
+        {
+          "name": "ariaLabel",
+          "type": "string",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "PDF preview",
+          "description": "Accessible label for the preview region. Defaults to `PDF preview`."
+        },
+        {
+          "name": "theme",
+          "type": "PdfPreviewTheme",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "system and follows the browser preference",
+          "description": "Preview-control theme. Defaults to `system` and follows the browser preference."
+        },
+        {
+          "name": "onProgress",
+          "type": "(completedPages: number, totalPages: number) => void",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Called after each page canvas completes rendering."
+        }
+      ]
+    },
+    "PdfPreviewTheme": {
+      "kind": "type-alias",
+      "summary": "Color theme used by the integrated PDF preview controls.",
+      "source": {
+        "line": 8,
+        "path": "bindings/js/src/preview.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/preview.ts#L8"
+      },
+      "properties": []
+    },
+    "RefLike": {
+      "kind": "type-alias",
+      "summary": "A structural ref accepted without making React a runtime dependency.",
+      "source": {
+        "line": 8,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L8"
+      },
+      "properties": []
+    },
+    "RendererInit": {
+      "kind": "interface",
+      "summary": "Configuration whose lifetime matches an explicit renderer instance.",
+      "source": {
+        "line": 245,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L245"
+      },
+      "properties": [
+        {
+          "name": "execution",
+          "type": "\"worker\" | \"main\"",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "worker",
+          "description": "Execution backend. Defaults to `worker`."
+        },
+        {
+          "name": "wasmUrl",
+          "type": "string | URL",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "WASM asset override for deployments that cannot serve package-relative assets."
+        },
+        {
+          "name": "fonts",
+          "type": "readonly FontRegistration[]",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Embeddable TrueType fonts registered once for every render."
+        }
+      ]
+    },
+    "RenderOptions": {
+      "kind": "interface",
+      "summary": "Options applied to one HTML snapshot and PDF render.",
+      "source": {
+        "line": 193,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L193"
+      },
+      "properties": [
+        {
+          "name": "page",
+          "type": "PageOptions",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Explicit page geometry; captured `@page` rules are used when omitted."
+        },
+        {
+          "name": "strict",
+          "type": "boolean",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Promotes unsupported snapshot CSS to errors without selecting the `web`\nlayout profile. An explicit `unsupportedCss` policy takes precedence."
+        },
+        {
+          "name": "cssProfile",
+          "type": "CssProfile",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "document",
+          "description": "Layout profile. Defaults to `document`."
+        },
+        {
+          "name": "mediaType",
+          "type": "MediaType",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "screen",
+          "description": "Media environment used for style resolution. Defaults to `screen`."
+        },
+        {
+          "name": "layoutContext",
+          "type": "LayoutContext",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "source",
+          "description": "Root layout context. `source` preserves the mounted browser width;\n`page` resolves an implicit root width and auto inline margins against the\nPDF content box. Defaults to `source`."
+        },
+        {
+          "name": "viewport",
+          "type": "ViewportOptions",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Isolated viewport used for media queries and responsive layout."
+        },
+        {
+          "name": "unsupportedCss",
+          "type": "UnsupportedCssPolicy",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "error for strict mode and warn otherwise",
+          "description": "Unsupported-CSS policy; defaults to `error` for strict mode and `warn` otherwise."
+        },
+        {
+          "name": "fallback",
+          "type": "FallbackPolicy",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "error",
+          "description": "Unsupported SVG policy. Defaults to `error`."
+        },
+        {
+          "name": "canvasToSvg",
+          "type": "CanvasToSvg",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Optional bridge from live canvas content to validated SVG."
+        },
+        {
+          "name": "canvasFallback",
+          "type": "CanvasFallbackPolicy",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "error",
+          "description": "Fallback when `canvasToSvg` returns `null`. Defaults to `error`."
+        },
+        {
+          "name": "includeShadowDom",
+          "type": "boolean",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "false",
+          "description": "Flattens open Shadow DOM into the snapshot. Defaults to `false`."
+        },
+        {
+          "name": "baseUrl",
+          "type": "string | URL",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "the source document URL",
+          "description": "Base URL for relative resources. Defaults to the source document URL."
+        },
+        {
+          "name": "resourcePolicy",
+          "type": "\"error\" | \"omit\"",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "error",
+          "description": "Failed-resource policy. Defaults to `error`."
+        },
+        {
+          "name": "resourceResolver",
+          "type": "ResourceResolver",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Resolver for protected, virtual, or otherwise unavailable resources."
+        },
+        {
+          "name": "pageBreak",
+          "type": "PageBreakRules",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Selector-driven page-break overrides."
+        },
+        {
+          "name": "metadata",
+          "type": "PdfMetadata",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "PDF information dictionary fields."
+        },
+        {
+          "name": "enableLinks",
+          "type": "boolean",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Preserves HTTP(S), mail, telephone, and FTP annotations unless explicitly set to `false`."
+        },
+        {
+          "name": "signal",
+          "type": "AbortSignal",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Rejects the caller at snapshot and render boundaries when aborted.\nAn already-running synchronous WASM render cannot be preempted."
+        },
+        {
+          "name": "onProgress",
+          "type": "(progress: RenderProgress) => void",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Receives coarse phase-boundary progress, not per-page render progress."
+        }
+      ]
+    },
+    "renderPdf": {
+      "kind": "function",
+      "summary": "Renders with a lazily created package-default Worker renderer.",
+      "source": {
+        "line": 258,
+        "path": "bindings/js/src/renderer.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/renderer.ts#L258"
+      },
+      "properties": []
+    },
+    "RenderPhase": {
+      "kind": "type-alias",
+      "summary": "Coarse rendering phases reported at stable cancellation boundaries.",
+      "source": {
+        "line": 116,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L116"
+      },
+      "properties": []
+    },
+    "RenderProgress": {
+      "kind": "interface",
+      "summary": "Progress notification for a rendering phase.",
+      "source": {
+        "line": 119,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L119"
+      },
+      "properties": [
+        {
+          "name": "phase",
+          "type": "RenderPhase",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Phase producing this notification."
+        },
+        {
+          "name": "completed",
+          "type": "number",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Completed work units within the phase."
+        },
+        {
+          "name": "total",
+          "type": "number",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Total work units within the phase."
+        }
+      ]
+    },
+    "ResourceLoadError": {
+      "kind": "class",
+      "summary": "An image, stylesheet, canvas, or SVG resource could not be materialized.",
+      "source": {
+        "line": 64,
+        "path": "bindings/js/src/errors.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/errors.ts#L64"
+      },
+      "properties": [
+        {
+          "name": "__constructor",
+          "type": "any",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": ""
+        }
+      ]
+    },
+    "ResourceRequest": {
+      "kind": "interface",
+      "summary": "Resource requested while materializing a self-contained snapshot.",
+      "source": {
+        "line": 147,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L147"
+      },
+      "properties": [
+        {
+          "name": "kind",
+          "type": "\"image\" | \"stylesheet\"",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Resource class. Fonts are registered on `createRenderer` instead."
+        },
+        {
+          "name": "url",
+          "type": "URL",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Absolute URL resolved against `baseUrl` or the source document."
+        }
+      ]
+    },
+    "ResourceResolver": {
+      "kind": "type-alias",
+      "summary": "Resolves resources that cannot be fetched directly by the browser snapshot.",
+      "source": {
+        "line": 162,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L162"
+      },
+      "properties": []
+    },
+    "UnsupportedCompatibilityFeatureError": {
+      "kind": "class",
+      "summary": "A requested html2pdf.js stage belongs to its unsupported raster pipeline.",
+      "source": {
+        "line": 85,
+        "path": "bindings/js/src/errors.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/errors.ts#L85"
+      },
+      "properties": [
+        {
+          "name": "__constructor",
+          "type": "any",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": ""
+        }
+      ]
+    },
+    "UnsupportedCssError": {
+      "kind": "class",
+      "summary": "Authored CSS or SVG cannot satisfy the selected strictness policy.",
+      "source": {
+        "line": 37,
+        "path": "bindings/js/src/errors.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/errors.ts#L37"
+      },
+      "properties": [
+        {
+          "name": "__constructor",
+          "type": "any",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": ""
+        }
+      ]
+    },
+    "UnsupportedCssPolicy": {
+      "kind": "type-alias",
+      "summary": "Action taken when an authored CSS property is outside the selected profile.",
+      "source": {
+        "line": 45,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L45"
+      },
+      "properties": []
+    },
+    "UnsupportedEnvironmentError": {
+      "kind": "class",
+      "summary": "Rendering was requested where browser DOM APIs are unavailable.",
+      "source": {
+        "line": 21,
+        "path": "bindings/js/src/errors.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/errors.ts#L21"
+      },
+      "properties": [
+        {
+          "name": "__constructor",
+          "type": "any",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": ""
+        }
+      ]
+    },
+    "ViewportOptions": {
+      "kind": "interface",
+      "summary": "Deterministic viewport used for responsive layout and media queries.",
+      "source": {
+        "line": 84,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L84"
+      },
+      "properties": [
+        {
+          "name": "width",
+          "type": "number",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Viewport width in CSS pixels. Values below one are clamped."
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Viewport height in CSS pixels. Values below one are clamped."
+        }
+      ]
+    },
+    "WasmRenderError": {
+      "kind": "class",
+      "summary": "The WASM bridge or native renderer failed.",
+      "source": {
+        "line": 51,
+        "path": "bindings/js/src/errors.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/errors.ts#L51"
+      },
+      "properties": [
+        {
+          "name": "__constructor",
+          "type": "any",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": ""
+        },
+        {
+          "name": "status",
+          "type": "number",
+          "required": true,
+          "readonly": true,
+          "defaultValue": "",
+          "description": "Native renderer status or a negative bridge status."
+        }
+      ]
+    }
+  }
+}

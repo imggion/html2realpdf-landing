@@ -1,0 +1,43 @@
+---
+title: PDF Preview
+description: Render the generated PDF into an in-page canvas viewer.
+---
+
+`PdfDocument.preview` replaces a target element with the package preview.
+
+```ts
+const pdf = await renderPdf(document.querySelector("#report")!);
+const target = document.querySelector<HTMLElement>("#pdf-preview");
+if (!target) throw new Error("Preview target not found");
+
+const preview = await pdf.preview(target, {
+  initialScale: "fit-width",
+  showToolbar: true,
+  theme: "system",
+});
+```
+
+The preview uses an isolated Shadow DOM subtree and canvas pages. It does not use the browser PDF plugin.
+
+## Preview options
+
+<ApiTypeTable symbol="PdfPreviewOptions" />
+
+The toolbar contains page status and zoom controls. The page area is keyboard focusable. Set `ariaLabel` when the surrounding context needs a more specific name.
+
+## Change scale or theme
+
+```ts
+await preview.setScale(1.25);
+await preview.fitToWidth();
+preview.setTheme("dark");
+```
+
+## Dispose in order
+
+```ts
+preview.dispose();
+pdf.dispose();
+```
+
+Disposing the document also disposes previews it still owns. Separate preview disposal is useful when you close the viewer but keep the PDF bytes.

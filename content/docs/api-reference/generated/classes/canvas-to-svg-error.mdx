@@ -1,0 +1,44 @@
+---
+title: "CanvasToSvgError"
+description: "A canvas-to-SVG adapter threw or returned an invalid result."
+apiSymbol: "CanvasToSvgError"
+apiKind: "class"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+A canvas-to-SVG adapter threw or returned an invalid result.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export declare class CanvasToSvgError extends Html2RealPdfError
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/errors.ts#L72" line={72} />
+
+## Constructor
+
+<ApiSignature>
+
+```ts
+constructor(message: string, nodePath: string, options?: ErrorOptions);
+```
+
+</ApiSignature>
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `message` | `string` | Yes | None | Human-readable error message. |
+| `nodePath` | `string` | Yes | None | Snapshot path of the canvas whose adapter failed. |
+| `options` | `ErrorOptions` | No | None | Optional error cause. |
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `__constructor` | `any` | Yes | No | None | Not documented. |
+| `nodePath` | `string` | Yes | Yes | None | Snapshot path of the canvas whose adapter failed. |

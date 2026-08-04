@@ -1,0 +1,80 @@
+---
+title: "Html2RealPdf"
+description: "Reusable renderer backed by one Worker or main-thread WASM context."
+apiSymbol: "Html2RealPdf"
+apiKind: "class"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Reusable renderer backed by one Worker or main-thread WASM context.
+
+Create instances with `createRenderer`. Fonts and execution mode belong to
+the renderer lifetime; each returned `PdfDocument` has its own shorter
+lifetime. Call `dispose` when the renderer is no longer needed.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export declare class Html2RealPdf
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/renderer.ts#L142" line={142} />
+
+## Methods
+
+### `render()`
+
+Snapshots browser state and renders one PDF.
+
+<ApiSignature>
+
+```ts
+render(source: HtmlSource, options?: RenderOptions): Promise<PdfDocument>;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `source` | `HtmlSource` | Yes | None | HTML string, mounted element, or ref-shaped value to render. |
+| `options` | `RenderOptions` | No | `{}` | Options for this operation. |
+
+#### Returns
+
+<ReturnType>`Promise<PdfDocument>`</ReturnType>
+
+#### Errors
+
+- `InvalidSourceError` when a ref is null or the source shape is invalid.
+- `UnsupportedCssError` when strict CSS or fallback policy rejects input.
+- `ResourceLoadError` when required resources cannot be materialized.
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/renderer.ts#L159" line={159} />
+
+### `dispose()`
+
+Terminates the owned backend and rejects future renders.
+
+<ApiSignature>
+
+```ts
+dispose(): void;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+This API does not accept parameters.
+
+#### Returns
+
+<ReturnType>`void`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/renderer.ts#L205" line={205} />

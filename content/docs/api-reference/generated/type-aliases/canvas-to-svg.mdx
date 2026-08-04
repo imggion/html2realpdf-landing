@@ -1,0 +1,24 @@
+---
+title: "CanvasToSvg"
+description: "Replaces a live canvas with vector SVG when the source library can export it."
+apiSymbol: "CanvasToSvg"
+apiKind: "type-alias"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Replaces a live canvas with vector SVG when the source library can export it.
+
+Returning `null` delegates to `canvasFallback`. Throwing or returning
+malformed SVG produces `CanvasToSvgError`.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export type CanvasToSvg = (request: CanvasToSvgRequest) => CanvasSvgSource | null | Promise<CanvasSvgSource | null>;
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L79" line={79} />

@@ -1,0 +1,4 @@
+{
+  "title": "Examples",
+  "pages": ["browser-element", "reusable-renderer", "react-ref"]
+}

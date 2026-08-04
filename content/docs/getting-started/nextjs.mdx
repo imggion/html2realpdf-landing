@@ -1,0 +1,72 @@
+---
+title: Next.js
+description: Call html2realpdf from a client component after its ref is mounted.
+---
+
+The package can be imported by a Next.js application. The render call needs a client component because it reads the DOM and starts a Worker.
+
+## Client component example
+
+```tsx
+"use client";
+
+import { useRef, useState } from "react";
+import { renderPdf } from "@imggion/html2realpdf";
+
+export function InvoiceDownload() {
+  const invoiceRef = useRef<HTMLElement>(null);
+  const [rendering, setRendering] = useState(false);
+
+  async function downloadInvoice() {
+    if (!invoiceRef.current || rendering) return;
+    setRendering(true);
+
+    try {
+      const pdf = await renderPdf(invoiceRef, {
+        cssProfile: "web",
+        mediaType: "print",
+        page: { format: "a4", unit: "mm", margin: [15, 12] },
+      });
+      try {
+        pdf.download("invoice.pdf");
+      } finally {
+        pdf.dispose();
+      }
+    } finally {
+      setRendering(false);
+    }
+  }
+
+  return (
+    <section>
+      <article ref={invoiceRef}>
+        <h1>Invoice 42</h1>
+        <p>Total: EUR 120.00</p>
+      </article>
+      <button disabled={rendering} onClick={downloadInvoice} type="button">
+        {rendering ? "Creating PDF..." : "Download PDF"}
+      </button>
+    </section>
+  );
+}
+```
+
+The event handler is the browser boundary. The component itself stays synchronous.
+
+## App Router rules
+
+- Put `"use client"` in the component that calls the rendering API.
+- Wait until the element or ref exists.
+- Keep document disposal in `finally`.
+- Use `createRenderer` in a long-lived client component when you need custom fonts or repeated renders.
+- Dispose that renderer during component cleanup.
+
+## Worker and WebAssembly assets
+
+The default package URL resolves the Worker and WebAssembly assets relative to the installed module. Use `wasmUrl` only when your deployment cannot serve that asset path.
+
+## Server Components
+
+Server Components can render the content that later becomes a PDF. Pass serializable data to a client component, mount the final element, then call html2realpdf there.
+
+Do not pass a DOM element through the Server Component boundary. DOM elements are not serializable.

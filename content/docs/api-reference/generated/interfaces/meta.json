@@ -1,0 +1,21 @@
+{
+  "title": "Interfaces",
+  "pages": [
+    "index",
+    "canvas-to-svg-request",
+    "compat-js-pdf-options",
+    "compat-page-break-options",
+    "diagnostic",
+    "font-registration",
+    "html2-pdf-options",
+    "page-break-rules",
+    "page-options",
+    "pdf-metadata",
+    "pdf-preview-options",
+    "renderer-init",
+    "render-options",
+    "render-progress",
+    "resource-request",
+    "viewport-options"
+  ]
+}

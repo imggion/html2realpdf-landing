@@ -1,0 +1,37 @@
+---
+title: Links
+description: Preserve supported browser links as PDF annotations.
+---
+
+Link annotations are enabled by default.
+
+```html
+<a href="https://example.com/invoices/42">Open invoice</a>
+<a href="mailto:billing@example.com">Email billing</a>
+```
+
+The browser snapshot accepts absolute `http`, `https`, `mailto`, `tel`, and `ftp` links.
+
+Relative links are resolved against `baseUrl` or the source document URL.
+
+```ts
+const pdf = await renderPdf(source, {
+  baseUrl: "https://example.com/reports/",
+});
+```
+
+## Disable annotations
+
+```ts
+const pdf = await renderPdf(source, {
+  enableLinks: false,
+});
+```
+
+The link text still renders, but the PDF annotation is not created.
+
+## Removed targets
+
+Active or local targets such as `javascript:`, `data:`, and `file:` are removed from PDF annotations.
+
+Use absolute public URLs when a PDF will be opened outside the application that created it.

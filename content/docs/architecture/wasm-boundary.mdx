@@ -1,0 +1,42 @@
+---
+title: WebAssembly Boundary
+description: Understand the high-level TypeScript contract around the internal WebAssembly bridge.
+---
+
+Package users work with `renderPdf`, `createRenderer`, and the returned handle classes. The low-level WebAssembly bridge is internal.
+
+## Default Worker backend
+
+`createRenderer()` selects Worker execution unless `execution: "main"` is passed. The Worker keeps synchronous WebAssembly work away from the browser UI thread.
+
+The wrapper resolves the default WebAssembly URL relative to the package module. `wasmUrl` is an escape hatch for deployments that serve the binary elsewhere.
+
+## Main-thread backend
+
+```ts
+const renderer = await createRenderer({
+  execution: "main",
+});
+```
+
+This backend uses the same high-level API. It is useful when Worker construction is unavailable, but its synchronous work can block interaction.
+
+## ABI and handles
+
+The internal bridge checks the renderer ABI and keeps native result handles paired with their owning context. Public result classes cannot be constructed directly.
+
+This ownership is reflected in the public API:
+
+- create a renderer
+- render a document
+- export or preview its bytes
+- dispose the document
+- dispose the renderer
+
+## Error conversion
+
+Bridge and native failures become `WasmRenderError`. The public error keeps a numeric status for logging. Snapshot policy failures use more specific wrapper error classes before the WebAssembly call.
+
+## Why raw symbols are omitted
+
+The package export map exposes only `dist/index.js` and its declaration file. Raw Worker, snapshot, page, and WebAssembly modules are build details. The generated API reference follows that export map.

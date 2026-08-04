@@ -1,0 +1,73 @@
+---
+title: Pagination
+description: Combine page geometry, authored CSS breaks, and narrow selector rules.
+---
+
+Define one page geometry contract. Use `page.margin` for application-owned reports, or rely on captured `@page` rules when you do not pass `page`.
+
+```ts
+const pdf = await renderPdf(report, {
+  page: { format: "a4", unit: "mm", margin: [12, 13, 12, 13] },
+  mediaType: "print",
+});
+```
+
+Do not duplicate the same margin in `page.margin`, `@page`, and root padding.
+
+## Author break rules in CSS
+
+Use a small set of classes.
+
+```css
+.pdf-flow {
+  break-inside: auto;
+}
+
+.pdf-atomic {
+  break-inside: avoid;
+}
+
+.pdf-keep-with-next {
+  break-after: avoid;
+}
+
+.pdf-break-before {
+  break-before: page;
+}
+```
+
+Apply avoidance only to content that can fit on one page. Long prose, lists, and tables need to fragment.
+
+## Add selector rules from JavaScript
+
+```ts
+const pdf = await renderPdf(report, {
+  pageBreak: {
+    before: [".chapter"],
+    after: [".cover"],
+    avoid: [".pdf-atomic"],
+    legacy: false,
+  },
+});
+```
+
+<ApiTypeTable symbol="PageBreakRules" />
+
+`avoidAll: true` applies avoidance to every element. It can create poor fragmentation in long documents. Prefer narrow selectors.
+
+## Tables
+
+Let the table and `tbody` fragment. Keep individual rows intact when they fit.
+
+```css
+thead,
+tr {
+  break-inside: avoid;
+}
+```
+
+Declare column tracks with `<colgroup>`. Avoid `overflow: hidden` on a frame that must split across pages.
+
+## Fixed page heights
+
+Do not simulate a page with a fixed pixel height. Page size is physical, while browser pixels depend on the selected unit and layout context.

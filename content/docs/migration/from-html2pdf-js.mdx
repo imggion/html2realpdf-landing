@@ -1,0 +1,77 @@
+---
+title: From html2pdf.js
+description: Move supported PDF-oriented chains to the html2realpdf compatibility export.
+---
+
+The default export implements a PDF-oriented subset of the html2pdf.js chain.
+
+```ts
+import html2pdf from "@imggion/html2realpdf";
+
+await html2pdf()
+  .set({
+    filename: "invoice.pdf",
+    margin: [10, 12],
+    jsPDF: {
+      format: "a4",
+      unit: "mm",
+      orientation: "portrait",
+    },
+  })
+  .from(document.querySelector("#invoice")!)
+  .save();
+```
+
+## Supported stages
+
+<CompatibilityStatus status="supported">
+
+Use `from`, `set`, `using`, `toPdf`, `save`, `saveAs`, `outputPdf`, `output`, and the Promise-like chain methods.
+
+</CompatibilityStatus>
+
+The page-break compatibility object supports `css`, `legacy`, and `avoid-all` modes plus `before`, `after`, and `avoid` selectors.
+
+## Unsupported raster stages
+
+<CompatibilityStatus status="unsupported">
+
+Do not use `toCanvas`, `toImg`, `outputImg`, canvas input, image input, `html2canvas` options, or raster `image` options. These operations throw `UnsupportedCompatibilityFeatureError`.
+
+</CompatibilityStatus>
+
+html2realpdf does not run a full-page canvas pipeline. It writes supported content as native PDF primitives.
+
+## Margin order
+
+One, two, and four value margins are accepted. Four values use this order:
+
+```ts
+[top, left, bottom, right]
+```
+
+This matches the compatibility contract. It does not match CSS shorthand order.
+
+## Move to the modern API
+
+Use `renderPdf` for new direct calls.
+
+```ts
+import { renderPdf } from "@imggion/html2realpdf";
+
+const pdf = await renderPdf(document.querySelector("#invoice")!, {
+  page: {
+    format: "a4",
+    unit: "mm",
+    margin: [10, 12],
+  },
+});
+
+try {
+  pdf.download("invoice.pdf");
+} finally {
+  pdf.dispose();
+}
+```
+
+The modern API makes document ownership, diagnostics, preview, resources, and renderer lifetime explicit.

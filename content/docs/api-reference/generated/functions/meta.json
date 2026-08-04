@@ -1,0 +1,9 @@
+{
+  "title": "Functions",
+  "pages": [
+    "index",
+    "create-renderer",
+    "html2pdf",
+    "render-pdf"
+  ]
+}

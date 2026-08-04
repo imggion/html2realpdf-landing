@@ -1,0 +1,43 @@
+---
+title: Installation
+description: Install the ESM package and import its public browser API.
+---
+
+Choose your package manager and install the package.
+
+<InstallCommand packageName="@imggion/html2realpdf" />
+
+## Import from the package root
+
+Use the public root export. Do not import files from `dist`.
+
+```ts
+import {
+  createRenderer,
+  renderPdf,
+  type RenderOptions,
+} from "@imggion/html2realpdf";
+```
+
+The package is ESM. It ships its TypeScript declarations, Worker module, WebAssembly binary, and PDF preview assets.
+
+## Browser requirements
+
+Rendering uses browser APIs. The default renderer needs these features:
+
+- DOM APIs
+- WebAssembly
+- Web Workers
+- `Blob` and object URLs
+
+The package can be imported while a framework renders on the server. Do not call `renderPdf` or `createRenderer` on the server.
+
+<CompatibilityStatus status="unsupported">
+
+Node.js rendering is not part of the public API. Use a browser surface for the render call.
+
+</CompatibilityStatus>
+
+## Next step
+
+Continue with the [quick start](./quick-start), or open the [Next.js guide](./nextjs) for a client component example.

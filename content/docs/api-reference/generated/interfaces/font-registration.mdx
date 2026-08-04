@@ -1,0 +1,35 @@
+---
+title: "FontRegistration"
+description: "Embeddable TrueType font registered in a renderer-owned WASM context."
+apiSymbol: "FontRegistration"
+apiKind: "interface"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Embeddable TrueType font registered in a renderer-owned WASM context.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export interface FontRegistration {
+    family: string;
+    data: ArrayBuffer | Uint8Array;
+    weight?: number | "normal" | "bold";
+    style?: "normal" | "italic";
+}
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L255" line={255} />
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `family` | `string` | Yes | No | None | CSS family name used during font resolution. |
+| `data` | `ArrayBuffer \| Uint8Array` | Yes | No | None | Complete TrueType font bytes, copied into the native context. |
+| `weight` | `number \| "normal" \| "bold"` | No | No | `400` | CSS font weight. Defaults to `400`. |
+| `style` | `"normal" \| "italic"` | No | No | `normal` | CSS font style. Defaults to `normal`. |

@@ -1,0 +1,37 @@
+---
+title: "PdfMetadata"
+description: "PDF information dictionary fields written by the native renderer."
+apiSymbol: "PdfMetadata"
+apiKind: "interface"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+PDF information dictionary fields written by the native renderer.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export interface PdfMetadata {
+    title?: string;
+    author?: string;
+    subject?: string;
+    keywords?: string | readonly string[];
+    creator?: string;
+}
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L179" line={179} />
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `title` | `string` | No | No | None | Document title. |
+| `author` | `string` | No | No | None | Document author. |
+| `subject` | `string` | No | No | None | Document subject. |
+| `keywords` | `string \| readonly string[]` | No | No | None | Search keywords, joined when supplied as an array. |
+| `creator` | `string` | No | No | None | Application or service that created the document. |

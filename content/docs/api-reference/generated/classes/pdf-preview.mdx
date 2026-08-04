@@ -1,0 +1,127 @@
+---
+title: "PdfPreview"
+description: "Interactive canvas preview created and owned by a `PdfDocument`."
+apiSymbol: "PdfPreview"
+apiKind: "class"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Interactive canvas preview created and owned by a `PdfDocument`.
+
+The viewer replaces the target's children with one isolated Shadow DOM
+subtree. Dispose it to cancel rendering, destroy PDF.js state, and clear the
+target. Construct previews through `PdfDocument.preview`.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export declare class PdfPreview
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/preview.ts#L238" line={238} />
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `element` | `HTMLElement` | Yes | Yes | None | Host element inserted into the preview target. |
+| `currentScale` | `number` | Yes | Yes | None | Current logical PDF.js scale after option clamping. |
+| `currentTheme` | `PdfPreviewTheme` | Yes | Yes | None | Current preview-control theme, including the default `system` mode. |
+
+## Methods
+
+### `setTheme()`
+
+Updates the preview-control theme without rerendering the PDF pages.
+
+<ApiSignature>
+
+```ts
+setTheme(theme: PdfPreviewTheme): void;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `theme` | `PdfPreviewTheme` | Yes | None | Preview control theme. |
+
+#### Returns
+
+<ReturnType>`void`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/preview.ts#L358" line={358} />
+
+### `setScale()`
+
+Sets a clamped scale and rerenders every page canvas.
+
+<ApiSignature>
+
+```ts
+setScale(value: number): Promise<void>;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `value` | `number` | Yes | None | Value to apply. |
+
+#### Returns
+
+<ReturnType>`Promise<void>`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/preview.ts#L367" line={367} />
+
+### `fitToWidth()`
+
+Fits the first page to the available viewer width and rerenders all pages.
+
+<ApiSignature>
+
+```ts
+fitToWidth(): Promise<void>;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+This API does not accept parameters.
+
+#### Returns
+
+<ReturnType>`Promise<void>`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/preview.ts#L376" line={376} />
+
+### `dispose()`
+
+Cancels active work, destroys PDF.js state, and clears the target.
+
+<ApiSignature>
+
+```ts
+dispose(): void;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+This API does not accept parameters.
+
+#### Returns
+
+<ReturnType>`void`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/preview.ts#L388" line={388} />

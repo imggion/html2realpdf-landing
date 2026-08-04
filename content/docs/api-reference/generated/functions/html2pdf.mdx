@@ -1,0 +1,44 @@
+---
+title: "html2pdf"
+description: "Creates an html2pdf.js-compatible PDF chain."
+apiSymbol: "html2pdf"
+apiKind: "function"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Creates an html2pdf.js-compatible PDF chain.
+
+Passing a source directly preserves html2pdf.js shorthand behavior and also
+schedules `save`. Call without a source when composing an explicit chain.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export declare function html2pdf(source?: HtmlSource, options?: Html2PdfOptions): CompatWorker;
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/compat.ts#L228" line={228} />
+
+## Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `source` | `HtmlSource` | No | None | HTML string, mounted element, or ref-shaped value to render. |
+| `options` | `Html2PdfOptions` | No | None | Options for this operation. |
+
+## Returns
+
+<ReturnType>`CompatWorker`</ReturnType>
+
+## Example
+
+```ts
+await html2pdf()
+  .set({ filename: "invoice.pdf", margin: [10, 12] })
+  .from(element)
+  .save();
+```

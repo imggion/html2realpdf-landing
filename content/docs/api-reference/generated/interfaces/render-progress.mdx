@@ -1,0 +1,33 @@
+---
+title: "RenderProgress"
+description: "Progress notification for a rendering phase."
+apiSymbol: "RenderProgress"
+apiKind: "interface"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Progress notification for a rendering phase.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export interface RenderProgress {
+    phase: RenderPhase;
+    completed: number;
+    total: number;
+}
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L119" line={119} />
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `phase` | `RenderPhase` | Yes | No | None | Phase producing this notification. |
+| `completed` | `number` | Yes | No | None | Completed work units within the phase. |
+| `total` | `number` | Yes | No | None | Total work units within the phase. |

@@ -1,0 +1,32 @@
+---
+title: "Margin"
+description: "Page margins in the selected page unit."
+apiSymbol: "Margin"
+apiKind: "type-alias"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Page margins in the selected page unit.
+
+Four values use html2pdf.js order `[top, left, bottom, right]`, not CSS
+shorthand order. Two values mean `[vertical, horizontal]`.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export type Margin = number | readonly [
+    vertical: number,
+    horizontal: number
+] | readonly [
+    top: number,
+    left: number,
+    bottom: number,
+    right: number
+];
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L98" line={98} />

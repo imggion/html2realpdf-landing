@@ -1,0 +1,39 @@
+---
+title: "CanvasToSvgRequest"
+description: "Context passed to a canvas-to-SVG adapter."
+apiSymbol: "CanvasToSvgRequest"
+apiKind: "interface"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+Context passed to a canvas-to-SVG adapter.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export interface CanvasToSvgRequest {
+    canvas: HTMLCanvasElement;
+    nodePath: string;
+    cssWidth: number;
+    cssHeight: number;
+    bitmapWidth: number;
+    bitmapHeight: number;
+}
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/types.ts#L57" line={57} />
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `canvas` | `HTMLCanvasElement` | Yes | No | None | Original live canvas, suitable for chart-library export APIs. |
+| `nodePath` | `string` | Yes | No | None | Stable snapshot path used to identify failures and fallbacks. |
+| `cssWidth` | `number` | Yes | No | None | Rendered canvas width in CSS pixels. |
+| `cssHeight` | `number` | Yes | No | None | Rendered canvas height in CSS pixels. |
+| `bitmapWidth` | `number` | Yes | No | None | Backing bitmap width. |
+| `bitmapHeight` | `number` | Yes | No | None | Backing bitmap height. |

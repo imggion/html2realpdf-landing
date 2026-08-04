@@ -1,0 +1,94 @@
+---
+title: Configuration
+description: Configure page geometry, CSS handling, resources, metadata, and rendering behavior.
+---
+
+Pass `RenderOptions` to `renderPdf` or `renderer.render`.
+
+```ts
+import { renderPdf, type RenderOptions } from "@imggion/html2realpdf";
+
+const options: RenderOptions = {
+  page: { format: "a4", unit: "mm", margin: [12, 13, 12, 13] },
+  cssProfile: "web",
+  mediaType: "print",
+  layoutContext: "page",
+  viewport: { width: 1200, height: 1600 },
+  fallback: "error",
+};
+
+const pdf = await renderPdf(document.querySelector("#report")!, options);
+```
+
+## Main render options
+
+This table is generated from the public `RenderOptions` interface.
+
+<ApiTypeTable
+  symbol="RenderOptions"
+  properties={[
+    "page",
+    "cssProfile",
+    "mediaType",
+    "layoutContext",
+    "viewport",
+    "unsupportedCss",
+    "fallback",
+    "resourcePolicy",
+    "pageBreak",
+    "metadata",
+    "enableLinks"
+  ]}
+/>
+
+The [complete generated interface](../api-reference/generated/interfaces/render-options) includes callbacks, Shadow DOM, canvas, and cancellation options.
+
+## Page geometry
+
+Use `page` to override captured `@page` geometry.
+
+```ts
+const options: RenderOptions = {
+  page: {
+    format: "letter",
+    orientation: "landscape",
+    unit: "in",
+    margin: [0.5, 0.6],
+  },
+};
+```
+
+Named `a4` and `letter` formats keep their physical dimensions. Custom `[width, height]` values use the selected unit.
+
+Four margin values use `[top, left, bottom, right]`. This follows the compatibility API, not CSS shorthand order.
+
+## CSS profiles
+
+`document` is the default. It targets stable paged document layout.
+
+`web` enables the broader browser layout profile.
+
+`strict` uses the broader profile and rejects unsupported snapshot CSS by default.
+
+The versioned [CSS support matrix](https://github.com/imggion/html2realpdf/blob/main/docs/css-support.md) lists current property coverage.
+
+## Deterministic responsive layout
+
+Set `viewport` when media queries or responsive styles affect the result. Set `mediaType` to `print` when the document uses print rules.
+
+Use `layoutContext: "page"` when an implicit root width and auto inline margins should resolve against the PDF content box.
+
+## Metadata
+
+Write PDF information fields with `metadata`.
+
+```ts
+const pdf = await renderPdf(source, {
+  metadata: {
+    title: "Quarterly report",
+    author: "Example Company",
+    keywords: ["report", "quarterly"],
+    creator: "Example dashboard",
+  },
+});
+```

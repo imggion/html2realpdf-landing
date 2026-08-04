@@ -1,0 +1,10 @@
+{
+  "title": "Generated API",
+  "pages": [
+    "index",
+    "functions",
+    "classes",
+    "interfaces",
+    "type-aliases"
+  ]
+}
