@@ -1,0 +1,2536 @@
+.docsApp,
+.docsCommandDialog {
+  --docs-page: #0d1d38;
+  --docs-page-raised: #142b4e;
+  --docs-inline: #182f55;
+}
+
+.docsApp {
+  min-height: 100svh;
+  background: var(--background);
+}
+
+.docsHeader {
+  position: sticky;
+  z-index: 150;
+  top: 0;
+  border-bottom: 1px solid var(--line-strong);
+  background: var(--background-deep);
+}
+
+.docsHeaderInner {
+  display: grid;
+  width: min(calc(100% - 32px), 1440px);
+  min-height: 68px;
+  margin: 0 auto;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 28px;
+}
+
+.docsBrand {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  gap: 11px;
+}
+
+.docsBrand img {
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+}
+
+.docsBrand span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.docsBrand strong {
+  font-size: 15px;
+  letter-spacing: -0.02em;
+}
+
+.docsBrand small,
+.docsBreadcrumb,
+.docsSidebarNav > p,
+.docsToc > p,
+.docsFooter,
+.docsPager span,
+.docsMobileToc summary {
+  font-family: var(--font-code);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.docsBrand small {
+  color: var(--primary);
+}
+
+.docsSiteNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.docsSiteNav a {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  padding-inline: 13px;
+  color: var(--muted);
+  font-family: var(--font-code);
+  font-size: 12px;
+}
+
+.docsSiteNav a[aria-current="page"],
+.docsSiteNav a:hover {
+  color: var(--foreground);
+}
+
+.docsHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.docsSearchTrigger,
+.docsSidebarToggle,
+.docsMenuTrigger {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 11px;
+  border: 1px solid var(--line-strong);
+  border-radius: 0;
+  background: var(--panel);
+  color: var(--foreground);
+  cursor: pointer;
+  font-family: var(--font-code);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.docsSearchTrigger:active,
+.docsSidebarToggle:active,
+.docsMenuTrigger:active,
+.docsDialogTitlebar button:active {
+  transform: scale(0.96);
+}
+
+.docsSearchTrigger kbd {
+  padding: 3px 5px;
+  border: 1px solid var(--line);
+  background: var(--background-deep);
+  color: var(--muted);
+  font: inherit;
+  font-size: 9px;
+}
+
+.docsMenuTrigger {
+  display: none;
+}
+
+.docsSidebarToggle {
+  width: 40px;
+  justify-content: center;
+  padding: 0;
+}
+
+.docsSidebarToggle svg {
+  width: 19px;
+  height: 19px;
+  stroke: currentColor;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-width: 1.5;
+}
+
+.docsSidebarToggle:hover,
+.docsSidebarToggle:focus-visible {
+  border-color: var(--primary);
+  color: var(--primary-soft);
+}
+
+.docsSidebarToggle[aria-expanded="true"] {
+  border-color: var(--primary);
+  background: var(--docs-page-raised);
+  color: var(--primary);
+}
+
+.docsSidebarDockToggle {
+  position: fixed;
+  z-index: 140;
+  top: 80px;
+  inset-inline-start: 208px;
+  box-shadow: 3px 3px 0 var(--shadow);
+}
+
+.docsWorkspace[data-sidebar="collapsed"] .docsSidebarDockToggle {
+  top: 50%;
+  width: 36px;
+  min-height: 56px;
+  margin-block-start: -28px;
+  inset-inline-start: 0;
+  border-color: var(--primary);
+  border-inline-start: 0;
+  background: var(--background-deep);
+  box-shadow: 4px 4px 0 var(--shadow);
+  color: var(--primary);
+}
+
+.docsWorkspace {
+  display: grid;
+  min-height: calc(100svh - 68px);
+  grid-template-columns: 260px minmax(0, 1fr);
+}
+
+.docsWorkspace[data-sidebar="collapsed"] {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.docsWorkspace[data-page="playground"] {
+  height: calc(100svh - 68px);
+  min-height: 0;
+}
+
+.docsSidebar {
+  position: sticky;
+  top: 68px;
+  height: calc(100svh - 68px);
+  overflow-y: auto;
+  border-inline-end: 1px solid var(--line-strong);
+  background: var(--background-deep);
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.docsSidebarNav {
+  padding: 22px 14px 40px;
+}
+
+.docsSidebarNav > p,
+.docsToc > p {
+  margin-bottom: 16px;
+  color: var(--primary);
+}
+
+.docsSidebarNav ul,
+.docsBreadcrumb ol,
+.docsToc ol,
+.docsMobileToc ol,
+.docsSearchResults {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.docsSidebarNav ul ul {
+  padding-inline-start: 11px;
+}
+
+.docsSidebarNav li {
+  min-width: 0;
+}
+
+.docsSidebarNav a {
+  display: flex;
+  min-height: 36px;
+  min-width: 0;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  color: var(--muted);
+  font-family: var(--font-code);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.docsSidebarNav a span {
+  color: var(--line-strong);
+  font-family: var(--font-code);
+}
+
+.docsSidebarNav a:hover,
+.docsSidebarNav a[aria-current="page"] {
+  background: var(--panel);
+  color: var(--foreground);
+}
+
+.docsSidebarNav a[aria-current="page"] {
+  box-shadow: inset 3px 0 0 var(--primary);
+}
+
+.docsSidebarFolder {
+  margin-block: 7px 13px;
+}
+
+.docsSidebarFolder summary {
+  min-height: 34px;
+  padding: 8px;
+  color: var(--foreground);
+  cursor: pointer;
+  font-family: var(--font-code);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.docsSidebarFolder summary::marker {
+  color: var(--primary);
+}
+
+.docsSidebarSeparator {
+  margin: 18px 8px 7px;
+  color: var(--primary);
+  font-family: var(--font-code);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.docsStage {
+  min-width: 0;
+}
+
+.docsContentGrid {
+  display: grid;
+  width: min(calc(100% - 48px), 1160px);
+  min-height: calc(100svh - 128px);
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 790px) minmax(180px, 230px);
+  justify-content: center;
+  gap: clamp(42px, 5vw, 74px);
+  padding-block: 38px 72px;
+  scroll-margin-top: 84px;
+}
+
+.docsArticleColumn {
+  min-width: 0;
+}
+
+.docsBreadcrumb {
+  margin-bottom: 25px;
+  color: var(--muted);
+}
+
+.docsBreadcrumb ol {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+}
+
+.docsBreadcrumb a:hover {
+  color: var(--foreground);
+}
+
+.docsPageHeader {
+  margin-bottom: 38px;
+}
+
+.docsPageMeta {
+  display: flex;
+  min-height: 40px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+.docsCopyActions {
+  position: relative;
+  z-index: 40;
+  flex: 0 0 auto;
+  font-family: var(--font-code);
+}
+
+.docsCopyMenu summary {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 9px;
+  padding: 0 11px;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  color: var(--foreground);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  list-style: none;
+}
+
+.docsCopyMenu summary::-webkit-details-marker {
+  display: none;
+}
+
+.docsCopyMenu summary::after {
+  color: var(--primary);
+  content: "▾";
+}
+
+.docsCopyMenu[open] summary {
+  border-color: var(--primary-soft);
+  background: var(--primary);
+  color: var(--ink);
+}
+
+.docsCopyMenu[open] summary::after {
+  color: var(--ink);
+  content: "▴";
+}
+
+.docsCopyList {
+  position: absolute;
+  top: calc(100% + 7px);
+  right: 0;
+  display: grid;
+  width: 218px;
+  gap: 3px;
+  padding: 5px;
+  border: 1px solid var(--line-strong);
+  background: var(--background-deep);
+  box-shadow: 7px 7px 0 var(--shadow);
+}
+
+.docsCopyList button {
+  display: grid;
+  width: 100%;
+  min-height: 42px;
+  grid-template-columns: 30px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  padding: 7px 9px;
+  border: 0;
+  background: transparent;
+  color: var(--foreground);
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  text-align: start;
+}
+
+.docsCopyList button:hover,
+.docsCopyList button:focus-visible {
+  background: var(--panel-raised);
+}
+
+.docsCopyList button:active {
+  transform: scale(0.96);
+}
+
+.docsCopyKind {
+  display: inline-grid;
+  min-height: 24px;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  color: var(--primary-soft);
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.docsCopyStatus {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.docsPageHeader h1 {
+  max-width: 780px;
+  margin: 10px 0 17px;
+  font-family: var(--font-code);
+  font-size: clamp(38px, 6vw, 66px);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+}
+
+.docsPageHeader p {
+  max-width: 690px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.docsProse {
+  padding: clamp(24px, 4vw, 48px);
+  border: 2px solid;
+  border-color: var(--line-strong) var(--shadow) var(--shadow) var(--line-strong);
+  background: var(--docs-page);
+  box-shadow: 10px 10px 0 var(--shadow);
+  color: var(--foreground);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.docsProse > :first-child {
+  margin-top: 0;
+}
+
+.docsProse > :last-child {
+  margin-bottom: 0;
+}
+
+.docsProse h2,
+.docsProse h3,
+.docsProse h4 {
+  position: relative;
+  scroll-margin-top: 92px;
+  color: var(--foreground);
+  font-family: var(--font-code);
+  line-height: 1.15;
+}
+
+.docsProse h2 {
+  margin: 54px 0 18px;
+  font-size: clamp(26px, 4vw, 35px);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+}
+
+.docsProse h3 {
+  margin: 34px 0 13px;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.docsProse h4 {
+  margin: 26px 0 10px;
+  font-family: var(--font-code);
+  font-size: 15px;
+}
+
+.docsHeadingAnchor {
+  display: inline-flex;
+  margin-inline-start: 10px;
+  color: var(--primary-soft);
+  font-family: var(--font-code);
+  font-size: 0.65em;
+  opacity: 0;
+}
+
+.docsProse h2:hover .docsHeadingAnchor,
+.docsProse h3:hover .docsHeadingAnchor,
+.docsHeadingAnchor:focus-visible {
+  opacity: 1;
+}
+
+.docsProse p,
+.docsProse ul,
+.docsProse ol,
+.docsProse table,
+.docsProse pre,
+.docsProse figure {
+  margin-bottom: 22px;
+}
+
+.docsProse ul,
+.docsProse ol {
+  padding-inline-start: 24px;
+}
+
+.docsProse li + li {
+  margin-top: 6px;
+}
+
+.docsProse a:not(.sourceLink):not(.docsHeadingAnchor) {
+  color: var(--primary-soft);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.docsProse a:hover {
+  color: var(--primary);
+}
+
+.docsProse :focus-visible,
+.docsPager a:focus-visible {
+  outline-color: var(--foreground);
+}
+
+.docsProse code:not(pre code),
+.apiReturnType code {
+  padding: 2px 5px;
+  border: 1px solid var(--line-strong);
+  background: var(--docs-inline);
+  color: var(--foreground);
+  font-family: var(--font-code);
+  font-size: 0.9em;
+  overflow-wrap: anywhere;
+}
+
+.docsProse pre,
+.docsProse figure:has(pre) {
+  max-width: 100%;
+  border: 2px solid #071127;
+  border-radius: 0;
+  background: #09172e !important;
+  color: #fde9d3;
+  scrollbar-color: var(--primary) #09172e;
+}
+
+.docsProse figure:has(pre) pre {
+  margin: 0;
+  border: 0;
+}
+
+.docsCodeBlock {
+  position: relative;
+  isolation: isolate;
+  max-width: 100%;
+}
+
+.docsProse pre {
+  padding: 20px;
+  overflow-x: auto;
+  font-family: var(--font-code);
+  font-size: 13px;
+  line-height: 1.65;
+  tab-size: 2;
+}
+
+.docsProse pre code {
+  font-family: inherit;
+}
+
+.docsProse .shiki span {
+  color: var(--shiki-dark);
+}
+
+.docsProse pre code .line {
+  display: inline-block;
+  min-width: 100%;
+}
+
+.docsCodeCopyButton {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  right: 10px;
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 0;
+  background: var(--docs-page-raised);
+  color: var(--foreground);
+  cursor: pointer;
+  font-family: var(--font-code);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.docsCodeCopyButton:hover,
+.docsCodeCopyButton:focus-visible {
+  border-color: var(--primary-soft);
+  background: var(--panel-raised);
+}
+
+.docsCodeCopyButton:active {
+  transform: scale(0.96);
+}
+
+.docsCodeCopyButton svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.docsCodeCopyStatus {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.docsProse table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.docsProse th,
+.docsProse td {
+  min-width: 120px;
+  padding: 10px 12px;
+  border: 1px solid var(--line-strong);
+  text-align: start;
+  vertical-align: top;
+}
+
+.docsProse th {
+  background: var(--docs-page-raised);
+  color: var(--foreground);
+  font-family: var(--font-code);
+  font-size: 11px;
+  letter-spacing: 0.035em;
+}
+
+.docsProse blockquote {
+  margin: 24px 0;
+  padding: 14px 18px;
+  border-inline-start: 5px solid var(--primary);
+  background: var(--docs-page-raised);
+}
+
+.docsContentGridGallery {
+  grid-template-columns: minmax(0, 1160px);
+}
+
+.docsContentGridGallery .docsPageMeta,
+.docsContentGridGallery > .docsToc,
+.docsContentGridGallery .docsMobileToc {
+  display: none;
+}
+
+.docsProseGallery {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.docsPlaygroundPage {
+  width: 100%;
+  min-height: calc(100svh - 68px);
+  scroll-margin-top: 68px;
+}
+
+.docsPlaygroundSurface {
+  min-height: inherit;
+}
+
+.docsPlaygroundPage .pdfPlaygroundResponsive[data-mode="workbench"],
+.docsPlaygroundPage .pdfPlaygroundResponsive[data-mode="workbench"] > .pdfPlayground {
+  height: calc(100svh - 68px);
+  min-height: 0;
+}
+
+.docsPlaygroundPage .pdfPlaygroundResponsive[data-mode="catalog"] {
+  width: min(calc(100% - 48px), 1160px);
+  margin: 0 auto;
+  padding-block: 38px 72px;
+}
+
+.pdfPlayground {
+  --playground-preview: #ad6500;
+  --playground-preview-hover: #925500;
+
+  container-type: inline-size;
+}
+
+.pdfPlayground p,
+.pdfPlayground ul,
+.pdfPlayground figure,
+.pdfPlayground h2,
+.pdfPlayground h3 {
+  margin: 0;
+}
+
+.pdfPlaygroundFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-block: 0 22px;
+}
+
+.pdfPlaygroundFilters button,
+.pdfPlaygroundCardActions button,
+.pdfPlaygroundCardActions a,
+.pdfPlaygroundDialogActions a,
+.pdfPlaygroundDialogActions button,
+.pdfPlaygroundPreviewError a {
+  min-height: 42px;
+  border: 1px solid var(--line-strong);
+  border-radius: 0;
+  font-family: var(--font-code);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  touch-action: manipulation;
+}
+
+.pdfPlaygroundFilters button {
+  padding-inline: 14px;
+  background: var(--panel);
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.pdfPlaygroundFilters button:hover,
+.pdfPlaygroundFilters button:focus-visible {
+  background: var(--docs-page-raised);
+  color: var(--foreground);
+}
+
+.pdfPlaygroundFilters button[aria-pressed="true"] {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--ink);
+}
+
+.pdfPlaygroundGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.pdfPlaygroundCard {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  border: 1px solid var(--line-strong);
+  background: var(--docs-page);
+  box-shadow: 6px 6px 0 var(--shadow);
+}
+
+.pdfPlaygroundThumbnail {
+  position: relative;
+  display: grid;
+  min-height: 238px;
+  overflow: hidden;
+  place-items: center;
+  border-bottom: 1px solid var(--line-strong);
+  background:
+    linear-gradient(rgb(253 233 211 / 8%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(253 233 211 / 8%) 1px, transparent 1px),
+    var(--background-deep);
+  background-size: 22px 22px;
+}
+
+.pdfPlaygroundThumbnail img {
+  padding: 22px;
+  object-fit: contain;
+  outline: 1px solid oklch(1 0 0 / 0.1);
+  outline-offset: -23px;
+}
+
+.pdfPlaygroundThumbnail > span {
+  position: absolute;
+  z-index: 1;
+  inset-block-start: 10px;
+  inset-inline-end: 10px;
+  padding: 4px 7px;
+  border: 1px solid var(--line-strong);
+  background: var(--background-deep);
+  color: var(--primary);
+  font-family: var(--font-code);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.pdfPlaygroundCardBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 17px;
+  padding: 20px;
+}
+
+.pdfPlaygroundCardHeading {
+  display: grid;
+  gap: 8px;
+}
+
+.docsProse .pdfPlaygroundCardHeading h3 {
+  margin: 0;
+  color: var(--foreground);
+  font-family: var(--font-code);
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.pdfPlaygroundMeta {
+  color: var(--primary-soft);
+  font-family: var(--font-code);
+  font-size: 12px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  line-height: 1.45;
+}
+
+.pdfPlaygroundCardActions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 3px;
+}
+
+.pdfPlaygroundCardActions button,
+.docsProse .pdfPlaygroundCardActions a,
+.docsProse .pdfPlaygroundDialogActions a,
+.docsProse .pdfPlaygroundPreviewError a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding-inline: 11px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.pdfPlaygroundCardActions button {
+  background: var(--playground-preview);
+  color: #ffffff;
+}
+
+.docsProse .pdfPlaygroundCardActions a {
+  background: var(--panel);
+  color: var(--foreground);
+}
+
+.pdfPlaygroundCardActions svg,
+.pdfPlaygroundDialogActions svg,
+.pdfPlaygroundPreviewError svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-width: 2;
+}
+
+.pdfPlaygroundCardActions button:hover,
+.pdfPlaygroundCardActions button:focus-visible {
+  background: var(--playground-preview-hover);
+}
+
+.docsProse .pdfPlaygroundCardActions a:hover,
+.docsProse .pdfPlaygroundCardActions a:focus-visible {
+  background: var(--docs-page-raised);
+  color: var(--foreground);
+}
+
+.pdfPlaygroundFilters button:active,
+.pdfPlaygroundCardActions button:active,
+.pdfPlaygroundCardActions a:active,
+.pdfPlaygroundDialogActions a:active,
+.pdfPlaygroundDialogActions button:active,
+.pdfPlaygroundPreviewError a:active {
+  transform: scale(0.96);
+}
+
+.pdfPlaygroundDialog {
+  width: min(calc(100% - 28px), 1180px);
+  height: min(900px, calc(100svh - 28px));
+  max-height: none;
+  padding: 3px;
+  overflow: hidden;
+  border: 2px solid;
+  border-color: var(--line-strong) var(--shadow) var(--shadow) var(--line-strong);
+  border-radius: 0;
+  background: var(--docs-page-raised);
+  box-shadow: 14px 14px 0 rgb(0 0 0 / 45%);
+  color: var(--foreground);
+  overscroll-behavior: contain;
+}
+
+.pdfPlaygroundDialog::backdrop {
+  background: rgb(4 12 28 / 82%);
+}
+
+.pdfPlaygroundDialogFrame {
+  display: grid;
+  height: 100%;
+  min-height: 0;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.pdfPlaygroundDialogHeader {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 10px 10px 10px 16px;
+  background: var(--primary);
+  color: var(--ink);
+}
+
+.pdfPlaygroundDialogHeader > div:first-child {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.pdfPlaygroundDialogHeader span,
+.pdfPlaygroundDialogHeader p {
+  font-family: var(--font-code);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.pdfPlaygroundDialogHeader strong {
+  overflow-wrap: anywhere;
+  font-family: var(--font-code);
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+.pdfPlaygroundDialogActions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.docsProse .pdfPlaygroundDialogActions a {
+  border-color: var(--ink);
+  background: var(--background-deep);
+  color: var(--foreground);
+}
+
+.pdfPlaygroundDialogActions button {
+  display: inline-grid;
+  width: 42px;
+  padding: 0;
+  place-items: center;
+  background: var(--background-deep);
+  color: var(--foreground);
+  cursor: pointer;
+}
+
+.docsProse .pdfPlaygroundDialogActions a:hover,
+.docsProse .pdfPlaygroundDialogActions a:focus-visible,
+.pdfPlaygroundDialogActions button:hover,
+.pdfPlaygroundDialogActions button:focus-visible {
+  background: var(--docs-page-raised);
+  color: var(--foreground);
+}
+
+.pdfPlaygroundPreviewViewport {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  background:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px),
+    var(--background-deep);
+  background-size: 28px 28px;
+  scrollbar-color: var(--primary) var(--background-deep);
+}
+
+.pdfPlaygroundPreviewFrame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #ffffff;
+}
+
+.pdfPlaygroundPreviewFrame[data-ready="false"] {
+  visibility: hidden;
+}
+
+.pdfPlaygroundPreviewLoading {
+  position: absolute;
+  z-index: 2;
+  inset: clamp(18px, 3vw, 34px);
+  display: grid;
+  width: min(calc(100% - 68px), 680px);
+  min-height: calc(100% - 68px);
+  align-content: start;
+  gap: 13px;
+  padding: 32px;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 8px 8px 0 rgb(0 0 0 / 30%);
+}
+
+.pdfPlaygroundPreviewLoading span {
+  display: block;
+  height: 15px;
+  background: #e9edf3;
+}
+
+.pdfPlaygroundPreviewLoading span:first-child {
+  width: 45%;
+  height: 34px;
+  margin-bottom: 14px;
+  background: #dce3ec;
+}
+
+.pdfPlaygroundPreviewLoading span:nth-child(2) {
+  width: 92%;
+}
+
+.pdfPlaygroundPreviewLoading span:nth-child(3) {
+  width: 70%;
+}
+
+.pdfPlaygroundPreviewError {
+  position: absolute;
+  z-index: 3;
+  inset-inline: 14px;
+  inset-block-start: 10vh;
+  display: grid;
+  width: min(100%, 460px);
+  gap: 10px;
+  justify-items: start;
+  padding: 28px;
+  margin: 0 auto;
+  border: 1px solid var(--danger);
+  background: var(--docs-page);
+  box-shadow: 7px 7px 0 var(--shadow);
+}
+
+.pdfPlaygroundPreviewError strong {
+  font-family: var(--font-code);
+  font-size: 18px;
+}
+
+.pdfPlaygroundPreviewError p {
+  color: var(--muted);
+}
+
+.docsProse .pdfPlaygroundPreviewError a {
+  margin-top: 8px;
+  background: var(--primary);
+  color: var(--ink);
+}
+
+.pdfPlayground :focus-visible,
+.pdfPlaygroundDialog :focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
+}
+
+@container (max-width: 880px) {
+  .pdfPlaygroundGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@container (max-width: 560px) {
+  .pdfPlaygroundGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pdfPlaygroundCardActions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pdfPlaygroundThumbnail {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 620px) {
+  .pdfPlaygroundDialog {
+    width: calc(100% - 12px);
+    height: calc(100svh - 12px);
+  }
+
+  .pdfPlaygroundDialogHeader {
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .pdfPlaygroundDialogHeader span,
+  .pdfPlaygroundDialogHeader p {
+    font-size: 8px;
+  }
+
+  .pdfPlaygroundDialogHeader strong {
+    font-size: 14px;
+  }
+
+  .docsProse .pdfPlaygroundDialogActions a {
+    width: 42px;
+    padding: 0;
+    font-size: 0;
+  }
+
+  .docsProse .pdfPlaygroundDialogActions a svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .pdfPlaygroundPreviewViewport {
+    min-height: 0;
+  }
+
+  .pdfPlaygroundPreviewLoading {
+    inset: 14px;
+    width: calc(100% - 28px);
+    min-height: calc(100% - 28px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pdfPlaygroundFilters button,
+  .pdfPlaygroundCardActions button,
+  .pdfPlaygroundCardActions a,
+  .pdfPlaygroundDialogActions a,
+  .pdfPlaygroundDialogActions button,
+  .pdfPlaygroundPreviewError a {
+    transition-property: background-color, color, transform;
+    transition-duration: 120ms;
+    transition-timing-function: ease-out;
+  }
+}
+
+.pdfPlaygroundResponsive {
+  min-width: 0;
+  container-type: inline-size;
+}
+
+.pdfPlaygroundWorkbenchLoading {
+  display: grid;
+  min-height: 720px;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  background: var(--background-deep);
+  color: var(--primary-soft);
+  font-family: var(--font-code);
+  font-size: 12px;
+}
+
+.pdfPlaygroundWorkbench {
+  display: grid;
+  height: clamp(720px, calc(100svh - 150px), 880px);
+  min-width: 0;
+  min-height: 720px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  background: var(--docs-page);
+  box-shadow: 8px 8px 0 var(--shadow);
+}
+
+.docsPlaygroundPage .pdfPlaygroundWorkbench,
+.docsPlaygroundPage .pdfPlaygroundWorkbenchLoading {
+  min-height: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+.docsPlaygroundPage .playgroundWorkbenchLeft {
+  grid-template-rows: minmax(0, 1.25fr) minmax(0, 1fr);
+}
+
+.playgroundWorkbenchLeft,
+.playgroundWorkbenchPreview,
+.playgroundWorkbenchEditor,
+.playgroundWorkbenchExamples,
+.playgroundCodeEditor,
+.playgroundCodeEditorPanel,
+.playgroundCodeEditorHost {
+  min-width: 0;
+  min-height: 0;
+}
+
+.playgroundWorkbenchLeft {
+  display: grid;
+  grid-template-rows: minmax(300px, 1.25fr) minmax(300px, 1fr);
+  border-inline-end: 1px solid var(--line-strong);
+}
+
+.playgroundWorkbenchEditor {
+  overflow: hidden;
+  border-block-end: 1px solid var(--line-strong);
+  background: var(--background-deep);
+}
+
+.playgroundCodeEditor {
+  display: grid;
+  height: 100%;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.playgroundCodeEditorToolbar {
+  display: flex;
+  min-height: 50px;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 12px;
+  padding-inline-end: 6px;
+  border-block-end: 1px solid var(--line-strong);
+  background: var(--docs-page-raised);
+}
+
+.playgroundCodeEditorTabs,
+.playgroundCodeEditorActions {
+  display: flex;
+  min-width: 0;
+  align-items: stretch;
+}
+
+.playgroundCodeEditorTabs {
+  overflow-x: auto;
+}
+
+.playgroundCodeEditorTabs button,
+.playgroundCodeEditorActions button,
+.playgroundWorkbenchFilters button,
+.playgroundWorkbenchExample,
+.playgroundWorkbenchPreviewHeader button {
+  border: 0;
+  border-radius: 0;
+  font-family: var(--font-code);
+  font-weight: 700;
+  touch-action: manipulation;
+}
+
+.playgroundCodeEditorTabs button {
+  position: relative;
+  min-width: 68px;
+  padding-inline: 13px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.playgroundCodeEditorTabs button::after {
+  position: absolute;
+  inset-inline: 10px;
+  inset-block-end: 0;
+  height: 3px;
+  background: transparent;
+  content: "";
+}
+
+.playgroundCodeEditorTabs button[aria-selected="true"] {
+  background: var(--background-deep);
+  color: var(--foreground);
+}
+
+.playgroundCodeEditorTabs button[aria-selected="true"]::after {
+  background: var(--primary);
+}
+
+.playgroundCodeEditorActions {
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+}
+
+.playgroundCodeEditorTheme {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+}
+
+.playgroundCodeEditorTheme select {
+  width: 112px;
+  min-height: 38px;
+  padding-inline: 9px 24px;
+  border: 1px solid var(--line-strong);
+  border-radius: 0;
+  background: var(--background-deep);
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--font-code);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.playgroundCodeEditorTheme select:hover {
+  background: var(--docs-page);
+  color: var(--foreground);
+}
+
+.playgroundCodeEditorTheme select:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.playgroundCodeEditorActions button {
+  min-height: 38px;
+  padding-inline: 11px;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  color: var(--foreground);
+  cursor: pointer;
+  font-size: 9px;
+}
+
+.playgroundCodeEditorActions .playgroundCodeEditorRun {
+  min-width: 62px;
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--ink);
+}
+
+.playgroundCodeEditorActions button:hover,
+.playgroundCodeEditorActions button:focus-visible,
+.playgroundCodeEditorTabs button:hover,
+.playgroundCodeEditorTabs button:focus-visible {
+  background: var(--docs-page);
+  color: var(--foreground);
+}
+
+.playgroundCodeEditorActions .playgroundCodeEditorRun:hover,
+.playgroundCodeEditorActions .playgroundCodeEditorRun:focus-visible {
+  background: var(--primary-soft);
+  color: var(--ink);
+}
+
+.playgroundCodeEditorPanel,
+.playgroundCodeEditorHost,
+.playgroundCodeEditorHost > .cm-editor {
+  height: 100%;
+}
+
+.playgroundCodeEditorPanel:focus-within {
+  box-shadow: inset 0 0 0 2px var(--primary);
+}
+
+.playgroundWorkbenchEditorLoading {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  background:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px),
+    var(--background-deep);
+  background-size: 28px 28px;
+  color: var(--primary-soft);
+  font-family: var(--font-code);
+  font-size: 11px;
+}
+
+.playgroundWorkbenchExamples {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  overflow: hidden;
+  background: var(--docs-page);
+}
+
+.playgroundWorkbenchExamplesHeader {
+  display: grid;
+  gap: 8px;
+  padding: 11px 12px 9px;
+  border-block-end: 1px solid var(--line);
+}
+
+.docsProse .playgroundWorkbenchExamplesHeader h2 {
+  margin: 0;
+  color: var(--foreground);
+  font-family: var(--font-code);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.playgroundWorkbenchFilters {
+  display: flex;
+  min-width: 0;
+  gap: 6px;
+  overflow-x: auto;
+  padding-block-end: 2px;
+  scrollbar-width: thin;
+}
+
+.playgroundWorkbenchFilters button {
+  min-height: 30px;
+  flex: 0 0 auto;
+  padding-inline: 9px;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 8px;
+}
+
+.playgroundWorkbenchFilters button:hover,
+.playgroundWorkbenchFilters button:focus-visible {
+  background: var(--docs-page-raised);
+  color: var(--foreground);
+}
+
+.playgroundWorkbenchFilters button[aria-pressed="true"] {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--ink);
+}
+
+.playgroundWorkbenchExampleGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-content: start;
+  padding: 12px 12px 18px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: var(--primary) var(--background-deep);
+}
+
+.playgroundWorkbenchExample {
+  display: grid;
+  min-height: 184px;
+  min-width: 0;
+  grid-template-rows: minmax(124px, 1fr) auto;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  color: var(--foreground);
+  cursor: pointer;
+  text-align: start;
+}
+
+.playgroundWorkbenchExample:hover,
+.playgroundWorkbenchExample:focus-visible {
+  background: var(--docs-page-raised);
+}
+
+.playgroundWorkbenchExample[data-selected="true"] {
+  border-color: var(--primary);
+  box-shadow: inset 0 -4px 0 var(--primary);
+}
+
+.playgroundWorkbenchExampleThumbnail {
+  position: relative;
+  display: block;
+  min-height: 124px;
+  overflow: hidden;
+  border-block-end: 1px solid var(--line-strong);
+  background: var(--background-deep);
+  outline: 1px solid oklch(1 0 0 / 0.1);
+  outline-offset: -1px;
+}
+
+.playgroundWorkbenchExampleThumbnail img {
+  padding: 10px;
+  object-fit: contain;
+}
+
+.playgroundWorkbenchExampleDetails {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 5px 10px;
+  padding: 10px 11px 12px;
+}
+
+.playgroundWorkbenchExampleDetails strong {
+  overflow-wrap: anywhere;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.playgroundWorkbenchExampleDetails > span {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 9px;
+  font-style: normal;
+  line-height: 1.35;
+}
+
+.playgroundWorkbenchExampleDetails em {
+  grid-column: 2;
+  grid-row: 1;
+  padding: 2px 5px;
+  background: var(--primary);
+  color: var(--ink);
+  font-size: 7px;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.playgroundWorkbenchPreview {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  background: var(--background-deep);
+}
+
+.playgroundWorkbenchPreviewHeader {
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 9px 10px 9px 14px;
+  border-block-end: 1px solid var(--line-strong);
+  background: var(--primary);
+  color: var(--ink);
+}
+
+.playgroundWorkbenchPreviewHeader > div {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.playgroundWorkbenchPreviewHeader span,
+.playgroundWorkbenchPreviewHeader small {
+  font-family: var(--font-code);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.playgroundWorkbenchPreviewHeader strong {
+  overflow-wrap: anywhere;
+  font-family: var(--font-code);
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.playgroundWorkbenchPreviewHeader small[data-state="error"] {
+  color: #7f1d1d;
+}
+
+.playgroundWorkbenchPreviewHeader button {
+  display: inline-flex;
+  min-height: 42px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding-inline: 13px;
+  border: 1px solid var(--ink);
+  background: var(--background-deep);
+  color: var(--foreground);
+  cursor: pointer;
+  font-size: 9px;
+}
+
+.playgroundWorkbenchPreviewHeader button:hover,
+.playgroundWorkbenchPreviewHeader button:focus-visible {
+  background: var(--docs-page-raised);
+}
+
+.playgroundWorkbenchPreviewHeader button:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+.playgroundWorkbenchPreviewHeader svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-width: 2;
+}
+
+.playgroundWorkbenchPreviewViewport {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px),
+    var(--background-deep);
+  background-size: 28px 28px;
+}
+
+.playgroundWorkbenchPreviewLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.playgroundWorkbenchPreviewLayer[data-active="true"] {
+  z-index: 2;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.playgroundWorkbenchPreviewLayer > * {
+  height: 100%;
+}
+
+.playgroundWorkbenchPreviewPlaceholder {
+  position: absolute;
+  z-index: 0;
+  inset: 24px;
+  display: grid;
+  align-content: start;
+  gap: 13px;
+  padding: 34px;
+  background: #ffffff;
+  box-shadow: 8px 8px 0 rgb(0 0 0 / 30%);
+}
+
+.playgroundWorkbenchPreviewPlaceholder span {
+  width: 88%;
+  height: 15px;
+  background: #e9edf3;
+}
+
+.playgroundWorkbenchPreviewPlaceholder span:first-child {
+  width: 48%;
+  height: 36px;
+  margin-block-end: 12px;
+  background: #dce3ec;
+}
+
+.playgroundWorkbenchPreviewPlaceholder span:last-child {
+  width: 68%;
+}
+
+.playgroundWorkbenchRenderingBadge {
+  position: absolute;
+  z-index: 4;
+  inset-block-start: 12px;
+  inset-inline-end: 12px;
+  padding: 7px 9px;
+  border: 1px solid var(--line-strong);
+  background: var(--background-deep);
+  box-shadow: 3px 3px 0 var(--shadow);
+  color: var(--primary-soft);
+  font-family: var(--font-code);
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.playgroundWorkbenchError {
+  position: absolute;
+  z-index: 5;
+  inset-inline: 14px;
+  inset-block-end: 14px;
+  display: grid;
+  gap: 4px;
+  padding: 11px 13px;
+  border: 1px solid var(--danger);
+  background: var(--docs-page);
+  box-shadow: 4px 4px 0 var(--shadow);
+  color: var(--foreground);
+  font-family: var(--font-code);
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+.playgroundWorkbenchError strong {
+  color: var(--danger);
+  font-size: 10px;
+}
+
+.playgroundCodeEditorTabs button:active,
+.playgroundCodeEditorActions button:active,
+.playgroundWorkbenchFilters button:active,
+.playgroundWorkbenchExample:active,
+.playgroundWorkbenchPreviewHeader button:active {
+  transform: scale(0.96);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .playgroundCodeEditorTabs button,
+  .playgroundCodeEditorActions button,
+  .playgroundWorkbenchFilters button,
+  .playgroundWorkbenchExample,
+  .playgroundWorkbenchPreviewHeader button {
+    transition-property: background-color, color, transform;
+    transition-duration: 120ms;
+    transition-timing-function: ease-out;
+  }
+}
+
+.apiSignature {
+  margin-block: 18px 26px;
+}
+
+.apiSignature pre,
+.apiSignature figure {
+  margin-bottom: 0;
+}
+
+.docsCallout,
+.compatibilityStatus {
+  display: grid;
+  margin-block: 22px;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  padding: 15px 17px;
+  border: 1px solid var(--line-strong);
+  background: var(--docs-page-raised);
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+
+.compatibilityStatus > span {
+  align-self: start;
+  padding: 3px 6px;
+  background: var(--primary);
+  color: var(--ink);
+  font-family: var(--font-code);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.docsCallout p,
+.compatibilityStatus p {
+  margin-bottom: 0;
+}
+
+.docsCallout {
+  grid-template-columns: 1fr;
+}
+
+.docsCallout > strong {
+  font-family: var(--font-code);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.docsCallout[data-type="warning"] {
+  border-color: var(--danger);
+  background: rgb(217 150 131 / 14%);
+}
+
+.compatibilityStatus[data-status="supported"] > span {
+  background: var(--success);
+}
+
+.compatibilityStatus[data-status="limited"] > span {
+  background: var(--primary);
+}
+
+.compatibilityStatus[data-status="unsupported"] > span {
+  background: var(--danger);
+}
+
+.sourceLink {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 9px;
+  border: 1px solid var(--line-strong);
+  background: var(--docs-inline);
+  color: var(--foreground);
+  font-family: var(--font-code);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.apiReturnType {
+  padding: 14px 16px;
+  border-inline-start: 5px solid var(--primary);
+  background: var(--docs-page-raised);
+}
+
+.apiTypeTable {
+  margin-block: 24px;
+  border: 2px solid var(--line-strong);
+  background: var(--docs-page);
+}
+
+.apiTypeTableHeader {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 7px 5px 11px;
+  background: var(--docs-page-raised);
+  color: var(--foreground);
+  font-family: var(--font-code);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.apiTypeTableHeader > code {
+  min-width: 0;
+  margin-inline-end: auto;
+  color: var(--primary-soft);
+  overflow-wrap: anywhere;
+}
+
+.apiTypeTableHeader .sourceLink {
+  min-height: 30px;
+  border-color: var(--foreground);
+  background: transparent;
+  color: var(--foreground);
+}
+
+.apiTypeTableScroll {
+  overflow-x: auto;
+}
+
+.apiTypeTable table {
+  display: table;
+  min-width: 720px;
+  margin: 0;
+}
+
+.docsInstallCommand {
+  display: grid;
+  max-width: 100%;
+  margin-block: 22px;
+  gap: 5px;
+  padding: 5px;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  background: var(--background-deep);
+  color: var(--muted);
+  font-family: var(--font-code);
+  font-size: 12px;
+}
+
+.packageManagerPicker {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.packageManagerPicker legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.packageManagerOptions {
+  display: flex;
+  overflow-x: auto;
+}
+
+.packageManagerOption {
+  position: relative;
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
+.packageManagerOption input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.packageManagerOption span {
+  display: inline-flex;
+  min-width: 68px;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 14px;
+  border-inline-end: 1px solid var(--line-strong);
+  color: var(--muted);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.packageManagerOption input:checked + span {
+  background: var(--foreground);
+  box-shadow:
+    inset -1px -1px 0 #8d8175,
+    inset 1px 1px 0 white;
+  color: var(--ink);
+}
+
+.packageManagerOption input:focus-visible + span {
+  position: relative;
+  z-index: 1;
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+}
+
+.packageInstallCommandRow {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.packageInstallCommandRow > code {
+  min-width: 0;
+  padding: 10px;
+  overflow-x: auto;
+  border: 0;
+  background: transparent;
+  color: var(--foreground);
+  white-space: nowrap;
+}
+
+.docsInstallCommand .copyCommandButton {
+  min-width: 94px;
+}
+
+.docsToc {
+  position: sticky;
+  top: 106px;
+  align-self: start;
+  max-height: calc(100svh - 132px);
+  overflow-y: auto;
+  padding: 15px 0;
+}
+
+.docsToc ol,
+.docsMobileToc ol {
+  display: grid;
+  gap: 2px;
+}
+
+.docsToc a,
+.docsMobileToc a {
+  display: block;
+  padding: 7px 9px;
+  color: var(--muted);
+  font-family: var(--font-code);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.docsToc a[data-active="true"],
+.docsToc a:hover,
+.docsMobileToc a[data-active="true"] {
+  color: var(--foreground);
+}
+
+.docsToc a[data-active="true"] {
+  box-shadow: inset 2px 0 0 var(--primary);
+}
+
+.docsMobileToc {
+  display: none;
+  margin-bottom: 28px;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+}
+
+.docsMobileToc summary {
+  min-height: 42px;
+  padding: 13px 14px;
+  color: var(--foreground);
+  cursor: pointer;
+}
+
+.docsMobileToc ol {
+  padding: 0 10px 12px;
+}
+
+.docsPager {
+  display: grid;
+  margin-top: 34px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.docsPager > a {
+  display: flex;
+  min-height: 88px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  padding: 15px 17px;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+}
+
+.docsPager > a:last-child {
+  text-align: end;
+}
+
+.docsPager span {
+  color: var(--primary);
+}
+
+.docsPager strong {
+  color: var(--foreground);
+  font-family: var(--font-code);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.docsFooter {
+  display: flex;
+  width: min(calc(100% - 48px), 1160px);
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 auto;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.docsDialog,
+.docsSearchCommand {
+  max-height: min(760px, calc(100svh - 32px));
+  padding: 3px;
+  overflow: hidden;
+  border: 2px solid;
+  border-color: var(--line-strong) var(--shadow) var(--shadow) var(--line-strong);
+  border-radius: 0;
+  background: var(--docs-page-raised);
+  box-shadow: 14px 14px 0 rgb(0 0 0 / 45%);
+  color: var(--foreground);
+}
+
+.docsDialog {
+  width: min(calc(100% - 28px), 680px);
+}
+
+.docsDialog::backdrop {
+  background: rgb(4 12 28 / 78%);
+}
+
+.docsCommandOverlay {
+  position: fixed;
+  z-index: 300;
+  inset: 0;
+  background: rgb(4 12 28 / 78%);
+}
+
+.docsCommandDialog {
+  position: fixed;
+  z-index: 301;
+  top: clamp(16px, 12vh, 120px);
+  left: 50%;
+  width: min(calc(100% - 28px), 680px);
+  max-height: min(760px, calc(100svh - 32px));
+  transform: translateX(-50%);
+  transform-origin: top center;
+}
+
+.docsSearchCommand {
+  width: 100%;
+}
+
+.docsDialogTitlebar {
+  display: flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 4px 5px 4px 10px;
+  background: var(--primary);
+  color: var(--ink);
+  font-family: var(--font-code);
+  font-size: 11px;
+}
+
+.docsDialogTitlebar button {
+  display: inline-grid;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid;
+  border-color: var(--line-strong) var(--shadow) var(--shadow) var(--line-strong);
+  border-radius: 0;
+  background: var(--background-deep);
+  color: var(--foreground);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.docsSearchForm {
+  display: grid;
+  gap: 8px;
+  padding: 18px 18px 10px;
+}
+
+.docsSearchForm label {
+  display: grid;
+  gap: 8px;
+  font-family: var(--font-code);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.docsSearchForm [cmdk-input] {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 2px solid var(--line-strong);
+  border-radius: 0;
+  background: var(--background-deep);
+  color: var(--foreground);
+  font: 16px var(--font-ui);
+}
+
+.docsSearchStatus {
+  min-height: 36px;
+  padding: 6px 18px 11px;
+  color: var(--muted);
+  font-family: var(--font-code);
+  font-size: 11px;
+}
+
+.docsSearchResults[cmdk-list] {
+  height: var(--cmdk-list-height);
+  max-height: min(420px, calc(100svh - 240px));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-padding-block: 9px;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.docsSearchResults [cmdk-list-sizer] {
+  display: grid;
+  gap: 9px;
+  padding: 0 18px 18px;
+}
+
+.docsSearchResult[cmdk-item] {
+  display: grid;
+  min-height: 66px;
+  grid-template-columns: 82px minmax(0, 1fr);
+  align-items: start;
+  gap: 13px;
+  padding: 13px;
+  border: 1px solid var(--line-strong);
+  background: var(--docs-page);
+  cursor: pointer;
+}
+
+.docsSearchResult[cmdk-item]:hover,
+.docsSearchResult[cmdk-item]:focus-visible,
+.docsSearchResult[cmdk-item][data-selected="true"] {
+  border-color: var(--primary-soft);
+  background: var(--docs-page-raised);
+}
+
+.docsSearchResult[cmdk-item][data-selected="true"] {
+  box-shadow: inset 3px 0 0 var(--primary);
+}
+
+.docsSearchMessage {
+  display: flex;
+  min-height: 66px;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border: 1px solid var(--line-strong);
+  background: var(--docs-page);
+  color: var(--muted);
+  font-family: var(--font-code);
+  font-size: 11px;
+  text-align: center;
+}
+
+.docsSearchResultType {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 4px 7px;
+  border: 1px solid transparent;
+  background: var(--primary);
+  color: var(--ink);
+  font-family: var(--font-code);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.docsSearchResultType[data-type="text"] {
+  border-color: #e47bd6;
+  background: #5b235c;
+  color: #ffe1fb;
+}
+
+.docsSearchResultType[data-type="heading"] {
+  border-color: #6c9bd4;
+  background: #17365f;
+  color: #cfe8ff;
+}
+
+.docsSearchResultIcon {
+  display: inline-grid;
+  width: 16px;
+  height: 16px;
+  place-items: center;
+  font-size: 10px;
+  line-height: 1;
+}
+
+.docsSearchResultIcon svg {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-width: 1.5;
+}
+
+.docsSearchResultContent {
+  display: grid;
+  min-width: 0;
+  gap: 5px;
+}
+
+.docsSearchResultContent strong {
+  min-width: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.docsSearchResultContent small {
+  color: var(--muted);
+  font-family: var(--font-code);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.docsMenuDialog {
+  width: min(calc(100% - 24px), 420px);
+  height: calc(100svh - 24px);
+  margin-inline-start: 12px;
+}
+
+.docsMenuDialog .docsSidebarNav {
+  height: calc(100% - 38px);
+  overflow-y: auto;
+  background: var(--background-deep);
+  color: var(--foreground);
+}
+
+@keyframes docsCommandOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes docsCommandOverlayOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes docsCommandDialogIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -6px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes docsCommandDialogOut {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(-50%, -3px) scale(0.99);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .docsCommandOverlay[data-state="open"] {
+    animation: docsCommandOverlayIn 160ms cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+
+  .docsCommandOverlay[data-state="closed"] {
+    animation: docsCommandOverlayOut 160ms cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+
+  .docsCommandDialog[data-state="open"] {
+    animation: docsCommandDialogIn 160ms cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+
+  .docsCommandDialog[data-state="closed"] {
+    animation: docsCommandDialogOut 160ms cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+
+  .docsSearchResults[cmdk-list] {
+    transition: height 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+}
+
+@media (max-width: 1120px) {
+  .docsContentGrid {
+    grid-template-columns: minmax(0, 790px);
+  }
+
+  .docsContentGrid > .docsToc,
+  .docsContentGrid > .docsMobileToc,
+  .docsArticleColumn > .docsToc {
+    display: none;
+  }
+
+  .docsArticleColumn > .docsMobileToc {
+    display: block;
+  }
+}
+
+@media (min-width: 1121px) {
+  .docsArticleColumn > .docsToc,
+  .docsArticleColumn > .docsMobileToc,
+  .docsContentGrid > .docsMobileToc {
+    display: none;
+  }
+}
+
+@media (max-width: 820px) {
+  .docsHeaderInner {
+    width: min(calc(100% - 24px), 1440px);
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+  }
+
+  .docsSiteNav,
+  .docsSidebarToggle,
+  .docsWorkspace > .docsSidebar {
+    display: none;
+  }
+
+  .docsMenuTrigger {
+    display: inline-flex;
+  }
+
+  .docsWorkspace {
+    display: block;
+  }
+
+  .docsContentGrid,
+  .docsFooter {
+    width: min(calc(100% - 28px), 790px);
+  }
+
+  .docsPlaygroundPage .pdfPlaygroundResponsive[data-mode="catalog"] {
+    width: min(calc(100% - 28px), 790px);
+  }
+}
+
+@media (max-width: 560px) {
+  .docsCommandDialog {
+    top: 12px;
+  }
+
+  .docsBrand img,
+  .docsBrand small,
+  .docsSearchTrigger kbd,
+  .docsSearchTrigger > span {
+    display: none;
+  }
+
+  .docsBrand {
+    min-width: 0;
+  }
+
+  .docsHeaderActions {
+    gap: 5px;
+  }
+
+  .docsSearchTrigger,
+  .docsMenuTrigger {
+    padding-inline: 9px;
+  }
+
+  .docsContentGrid {
+    padding-block-start: 25px;
+  }
+
+  .docsPlaygroundPage .pdfPlaygroundResponsive[data-mode="catalog"] {
+    padding-block-start: 25px;
+  }
+
+  .docsPageHeader {
+    margin-bottom: 28px;
+  }
+
+  .docsPageHeader p {
+    font-size: 15px;
+  }
+
+  .docsProse {
+    padding: 22px 18px;
+    font-size: 15px;
+  }
+
+  .docsProse pre {
+    padding: 16px;
+    font-size: 12px;
+  }
+
+  .docsSearchResult[cmdk-item] {
+    grid-template-columns: 74px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .docsPager {
+    grid-template-columns: 1fr;
+  }
+
+  .docsPager > a:last-child {
+    text-align: start;
+  }
+
+  .docsFooter {
+    min-height: 92px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .docsInstallCommand {
+    gap: 4px;
+  }
+
+  .compatibilityStatus {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (forced-colors: active) {
+  .docsSidebarNav a[aria-current="page"],
+  .docsToc a[data-active="true"] {
+    border-inline-start: 3px solid CanvasText;
+  }
+
+  .docsSearchResult[cmdk-item][data-selected="true"] {
+    outline: 2px solid CanvasText;
+    outline-offset: -2px;
+  }
+}

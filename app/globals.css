@@ -15,7 +15,7 @@
   --danger: #d99683;
   --shadow: #071127;
   --font-ui: Tahoma, Verdana, "Segoe UI", sans-serif;
-  --font-code: "Courier New", Courier, monospace;
+  --font-code: var(--font-jetbrains-mono), "SFMono-Regular", Consolas, monospace;
   --content: 1180px;
   --header-offset: 85px;
 }
