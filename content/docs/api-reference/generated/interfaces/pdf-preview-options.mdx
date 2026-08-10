@@ -24,18 +24,19 @@ export interface PdfPreviewOptions {
     ariaLabel?: string;
     theme?: PdfPreviewTheme;
     onProgress?: (completedPages: number, totalPages: number) => void;
+    onPageChange?: (currentPage: number, totalPages: number) => void;
 }
 ```
 
 </ApiSignature>
 
-<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/preview.ts#L11" line={11} />
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/preview.ts#L11" line={11} />
 
 ## Properties
 
 | Property | Type | Required | Read only | Default | Description |
 | --- | --- | --- | --- | --- | --- |
-| `showToolbar` | `boolean` | No | No | `true` | Whether to show the page summary and zoom toolbar. Defaults to `true`. |
+| `showToolbar` | `boolean` | No | No | `true` | Whether to show the page navigation and zoom toolbar. Defaults to `true`. |
 | `padding` | `number` | No | No | `28, or 16 on narrow screens` | Padding around the rendered pages in CSS pixels. Defaults to `28`, or `16` on narrow screens. |
 | `initialScale` | `number \| "fit-width"` | No | No | `fit-width` | Initial zoom or automatic fit. Defaults to `fit-width`. |
 | `minScale` | `number` | No | No | `0` | Lowest permitted zoom. Defaults to `0.25` and is never below `0.1`. |
@@ -45,3 +46,4 @@ export interface PdfPreviewOptions {
 | `ariaLabel` | `string` | No | No | `PDF preview` | Accessible label for the preview region. Defaults to `PDF preview`. |
 | `theme` | `PdfPreviewTheme` | No | No | `system and follows the browser preference` | Preview-control theme. Defaults to `system` and follows the browser preference. |
 | `onProgress` | `(completedPages: number, totalPages: number) => void` | No | No | None | Called after each page canvas completes rendering. |
+| `onPageChange` | `(currentPage: number, totalPages: number) => void` | No | No | None | Called once after initial loading and whenever the 1-based current page changes. |

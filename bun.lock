@@ -11,7 +11,7 @@
         "@codemirror/language": "^6.12.4",
         "@codemirror/state": "^6.7.1",
         "@codemirror/view": "^6.43.7",
-        "@imggion/html2realpdf": "^0.1.14",
+        "@imggion/html2realpdf": "0.2.0",
         "@lezer/highlight": "^1.2.3",
         "@vercel/analytics": "^2.0.1",
         "cmdk": "^1.1.1",
@@ -232,7 +232,7 @@
 
     "@img/sharp-win32-x64": ["@img/sharp-win32-x64@0.34.5", "", { "os": "win32", "cpu": "x64" }, "sha512-+29YMsqY2/9eFEiW93eqWnuLcWcufowXewwSNIT6UwZdUUCrM3oFjMWH/Z6/TMmb4hlFenmfAVbpWeup2jryCw=="],
 
-    "@imggion/html2realpdf": ["@imggion/html2realpdf@0.1.14", "", {}, "sha512-kyna5NRBVFrt18ufBjU1lnsBOR0WNYB0T9vu74rDHOntI8FLB8HbyH1wOQemaXbrHjXMFdf2cv7NIKZ6/T5J5A=="],
+    "@imggion/html2realpdf": ["@imggion/html2realpdf@0.2.0", "", {}, "sha512-knlC7kofaXuaAFXiLQYypTPwepHxClkcMi5ZanEVdIlvZMHJ4xZjzf9Px3j1PsPDFcEwj1jxCzXltac1nASgUg=="],
 
     "@jridgewell/gen-mapping": ["@jridgewell/gen-mapping@0.3.13", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.0", "@jridgewell/trace-mapping": "^0.3.24" } }, "sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA=="],
 

@@ -14,7 +14,7 @@
 
 ## Technical summary
 
-- Current release: 0.1.14.
+- Current release: 0.2.0.
 - Written in Zig and compiled to WebAssembly.
 - Ships a typed TypeScript API.
 - Accepts HTML strings, DOM elements, and mounted framework refs.

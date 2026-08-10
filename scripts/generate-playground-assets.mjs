@@ -13,7 +13,9 @@ import {
 const root = resolve(import.meta.dirname, "..");
 const outputDir = resolve(root, "public/playground");
 const assetRevision = "avely-v1";
+const rendererPackagePath = resolve(root, "node_modules/@imggion/html2realpdf/package.json");
 const wasmPath = resolve(root, "node_modules/@imggion/html2realpdf/dist/libhtml2realpdf.wasm");
+const rendererPackage = JSON.parse(await readFile(rendererPackagePath, "utf8"));
 const wasm = await readFile(wasmPath);
 const { instance } = await WebAssembly.instantiate(wasm, {});
 const api = instance.exports;
@@ -165,6 +167,7 @@ const manifest = {
   generatedAt: new Date().toISOString(),
   assetRevision,
   engine: "html2realpdf vendored WASM fixture renderer",
+  engineVersion: rendererPackage.version,
   fixtures: {},
 };
 const generatedCatalog = {
