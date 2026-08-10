@@ -5,6 +5,69 @@ import { loadPublicApi } from "./public-api.mjs";
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const docsRoot = path.join(repositoryRoot, "content/docs");
+const packageName = "@imggion/html2realpdf";
+
+function readJson(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, "utf8"));
+}
+
+function validateVersionConsistency(failures) {
+  const rootPackage = readJson(path.join(repositoryRoot, "package.json"));
+  const version = rootPackage.dependencies?.[packageName];
+  if (!version) {
+    failures.push(`${packageName}: dependency is missing from package.json`);
+    return;
+  }
+  if (!/^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/.test(version)) {
+    failures.push(`${packageName}: package.json must pin an exact version, found ${version}`);
+  }
+
+  const versionSources = [
+    [
+      "vendor package",
+      readJson(path.join(repositoryRoot, "vendor/html2realpdf/bindings/js/package.json")).version,
+    ],
+    [
+      "installed package",
+      readJson(path.join(repositoryRoot, "node_modules/@imggion/html2realpdf/package.json")).version,
+    ],
+    [
+      "generated API data",
+      readJson(path.join(repositoryRoot, "lib/generated/api-reference.json")).packageVersion,
+    ],
+    [
+      "playground manifest",
+      readJson(path.join(repositoryRoot, "public/playground/manifest.json")).engineVersion,
+    ],
+  ];
+  for (const [label, actual] of versionSources) {
+    if (actual !== version) failures.push(`${label}: expected version ${version}, found ${actual ?? "none"}`);
+  }
+
+  const siteConfig = fs.readFileSync(path.join(repositoryRoot, "lib/site.ts"), "utf8");
+  const siteVersion = siteConfig.match(/\bversion:\s*"([^"]+)"/)?.[1];
+  if (siteVersion !== version) {
+    failures.push(`site config: expected version ${version}, found ${siteVersion ?? "none"}`);
+  }
+
+  const llmsIndex = fs.readFileSync(path.join(repositoryRoot, "public/llms.txt"), "utf8");
+  const llmsVersion = llmsIndex.match(/Current release:\s*([0-9A-Za-z.-]+)\.\s*$/m)?.[1];
+  if (llmsVersion !== version) {
+    failures.push(`LLM index: expected version ${version}, found ${llmsVersion ?? "none"}`);
+  }
+
+  const patchDirectory = path.join(repositoryRoot, "patches");
+  const expectedPatch = `@imggion+html2realpdf+${version}.patch`;
+  const packagePatches = fs
+    .readdirSync(patchDirectory)
+    .filter((name) => name.startsWith("@imggion+html2realpdf+") && name.endsWith(".patch"));
+  if (!packagePatches.includes(expectedPatch)) {
+    failures.push(`${packageName}: missing patch ${expectedPatch}`);
+  }
+  for (const patch of packagePatches) {
+    if (patch !== expectedPatch) failures.push(`${packageName}: stale patch ${patch}`);
+  }
+}
 
 function listFiles(directory) {
   const files = [];
@@ -120,6 +183,7 @@ function validateLink({ filePath, href, routes, anchors, failures }) {
 if (!fs.existsSync(docsRoot)) throw new Error("Documentation directory is missing");
 
 const failures = [];
+validateVersionConsistency(failures);
 const allFiles = listFiles(docsRoot);
 const contentFiles = allFiles.filter((filePath) => /\.(?:md|mdx)$/.test(filePath));
 const routeMap = new Map();

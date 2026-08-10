@@ -8,6 +8,7 @@ const packageRoot = path.join(repositoryRoot, "vendor/html2realpdf/bindings/js")
 const packageJsonPath = path.join(packageRoot, "package.json");
 const entryPath = path.join(packageRoot, "src/index.ts");
 const sourceRoot = path.resolve(packageRoot, "../..");
+const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
 
 const typeFormatFlags =
   ts.TypeFormatFlags.NoTruncation |
@@ -99,7 +100,7 @@ function sourceFor(declaration) {
   return {
     line,
     path: relativePath,
-    url: `https://github.com/imggion/html2realpdf/blob/main/${relativePath}#L${line}`,
+    url: `https://github.com/imggion/html2realpdf/blob/v${packageJson.version}/${relativePath}#L${line}`,
   };
 }
 
@@ -276,7 +277,6 @@ function compilerErrors(program) {
 }
 
 export function loadPublicApi() {
-  const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
   const exportKeys = Object.keys(packageJson.exports ?? {});
   if (exportKeys.length !== 1 || exportKeys[0] !== ".") {
     throw new Error(`Expected one public root export, found: ${exportKeys.join(", ") || "none"}`);

@@ -1,7 +1,8 @@
 {
-  "generatedAt": "2026-08-04T18:52:43.444Z",
+  "generatedAt": "2026-08-10T15:56:47.428Z",
   "assetRevision": "avely-v1",
   "engine": "html2realpdf vendored WASM fixture renderer",
+  "engineVersion": "0.2.0",
   "fixtures": {
     "receipt-80mm": {
       "bytes": 103882,

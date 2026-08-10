@@ -22,7 +22,7 @@ export declare class PdfPreview
 
 </ApiSignature>
 
-<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/preview.ts#L238" line={238} />
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/preview.ts#L254" line={254} />
 
 ## Properties
 
@@ -30,6 +30,7 @@ export declare class PdfPreview
 | --- | --- | --- | --- | --- | --- |
 | `element` | `HTMLElement` | Yes | Yes | None | Host element inserted into the preview target. |
 | `currentScale` | `number` | Yes | Yes | None | Current logical PDF.js scale after option clamping. |
+| `currentPage` | `number` | Yes | Yes | None | Current 1-based page, synchronized with navigation and manual preview scrolling. |
 | `currentTheme` | `PdfPreviewTheme` | Yes | Yes | None | Current preview-control theme, including the default `system` mode. |
 
 ## Methods
@@ -56,7 +57,7 @@ setTheme(theme: PdfPreviewTheme): void;
 
 <ReturnType>`void`</ReturnType>
 
-<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/preview.ts#L358" line={358} />
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/preview.ts#L409" line={409} />
 
 ### `setScale()`
 
@@ -80,7 +81,7 @@ setScale(value: number): Promise<void>;
 
 <ReturnType>`Promise<void>`</ReturnType>
 
-<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/preview.ts#L367" line={367} />
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/preview.ts#L418" line={418} />
 
 ### `fitToWidth()`
 
@@ -102,7 +103,75 @@ This API does not accept parameters.
 
 <ReturnType>`Promise<void>`</ReturnType>
 
-<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/preview.ts#L376" line={376} />
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/preview.ts#L427" line={427} />
+
+### `previousPage()`
+
+Navigates to the preceding page without scrolling the host document.
+
+<ApiSignature>
+
+```ts
+previousPage(): void;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+This API does not accept parameters.
+
+#### Returns
+
+<ReturnType>`void`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/preview.ts#L439" line={439} />
+
+### `nextPage()`
+
+Navigates to the following page without scrolling the host document.
+
+<ApiSignature>
+
+```ts
+nextPage(): void;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+This API does not accept parameters.
+
+#### Returns
+
+<ReturnType>`void`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/preview.ts#L445" line={445} />
+
+### `goToPage()`
+
+Navigates to a 1-based page, clamped to the available document range.
+
+<ApiSignature>
+
+```ts
+goToPage(page: number): void;
+```
+
+</ApiSignature>
+
+#### Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `page` | `number` | Yes | None | Value passed to this API. |
+
+#### Returns
+
+<ReturnType>`void`</ReturnType>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/preview.ts#L451" line={451} />
 
 ### `dispose()`
 
@@ -124,4 +193,4 @@ This API does not accept parameters.
 
 <ReturnType>`void`</ReturnType>
 
-<SourceLink href="https://github.com/imggion/html2realpdf/blob/main/bindings/js/src/preview.ts#L388" line={388} />
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/preview.ts#L459" line={459} />

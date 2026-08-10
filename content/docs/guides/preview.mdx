@@ -23,7 +23,32 @@ The preview uses an isolated Shadow DOM subtree and canvas pages. It does not us
 
 <ApiTypeTable symbol="PdfPreviewOptions" />
 
-The toolbar contains page status and zoom controls. The page area is keyboard focusable. Set `ariaLabel` when the surrounding context needs a more specific name.
+The toolbar contains previous and next page controls, page status, and zoom controls. The page area is keyboard focusable. Set `ariaLabel` when the surrounding context needs a more specific name.
+
+## Navigate between pages
+
+`currentPage` is 1-based and stays synchronized with toolbar navigation and manual scrolling. `goToPage` rounds the requested page and clamps it to the document range.
+
+```ts
+const previousButton = document.querySelector<HTMLButtonElement>("#previous-page")!;
+const nextButton = document.querySelector<HTMLButtonElement>("#next-page")!;
+const pageStatus = document.querySelector<HTMLOutputElement>("#page-status")!;
+
+const preview = await pdf.preview(target, {
+  onPageChange(currentPage, totalPages) {
+    pageStatus.value = `Page ${currentPage} of ${totalPages}`;
+    previousButton.disabled = currentPage === 1;
+    nextButton.disabled = currentPage === totalPages;
+  },
+});
+
+previousButton.addEventListener("click", () => preview.previousPage());
+nextButton.addEventListener("click", () => preview.nextPage());
+preview.goToPage(3);
+console.log(preview.currentPage);
+```
+
+`onPageChange` runs after the initial preview loads and whenever the current page changes.
 
 ## Change scale or theme
 
