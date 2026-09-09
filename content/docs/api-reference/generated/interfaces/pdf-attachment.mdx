@@ -1,0 +1,39 @@
+---
+title: "PdfAttachment"
+description: "File embedded in one PDF; caller data is copied and never transferred or detached."
+apiSymbol: "PdfAttachment"
+apiKind: "interface"
+---
+
+{/* This file is generated. Do not edit it directly. */}
+File embedded in one PDF; caller data is copied and never transferred or detached.
+
+## Signature
+
+<ApiSignature>
+
+```ts
+export interface PdfAttachment {
+    name: string;
+    data: ArrayBuffer | Uint8Array;
+    mimeType?: string;
+    relationship?: "Source" | "Data" | "Alternative" | "Supplement" | "Unspecified";
+    description?: string;
+    modifiedAt?: Date;
+}
+```
+
+</ApiSignature>
+
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L324" line={324} />
+
+## Properties
+
+| Property | Type | Required | Read only | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `name` | `string` | Yes | No | None | Nonempty, unique filename. Unicode is preserved. |
+| `data` | `ArrayBuffer \| Uint8Array` | Yes | No | None | Original bytes; a Uint8Array embeds only its selected view. |
+| `mimeType` | `string` | No | No | `application/octet-stream` | MIME media type without parameters. Defaults to application/octet-stream. |
+| `relationship` | `"Source" \| "Data" \| "Alternative" \| "Supplement" \| "Unspecified"` | No | No | `Unspecified` | Relationship to the document. Defaults to Unspecified. |
+| `description` | `string` | No | No | None | Optional human-readable attachment description. |
+| `modifiedAt` | `Date` | No | No | None | Explicit modification time, stored in UTC with second precision; no date is invented. |

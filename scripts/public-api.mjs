@@ -2,12 +2,17 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import ts from "typescript";
+import { execFileSync } from "node:child_process";
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const packageRoot = path.join(repositoryRoot, "vendor/html2realpdf/bindings/js");
 const packageJsonPath = path.join(packageRoot, "package.json");
 const entryPath = path.join(packageRoot, "src/index.ts");
 const sourceRoot = path.resolve(packageRoot, "../..");
+const sourceRevision = execFileSync("git", ["rev-parse", "HEAD"], {
+  cwd: sourceRoot,
+  encoding: "utf8",
+}).trim();
 const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
 
 const typeFormatFlags =
@@ -100,7 +105,7 @@ function sourceFor(declaration) {
   return {
     line,
     path: relativePath,
-    url: `https://github.com/imggion/html2realpdf/blob/v${packageJson.version}/${relativePath}#L${line}`,
+    url: `https://github.com/imggion/html2realpdf/blob/${sourceRevision}/${relativePath}#L${line}`,
   };
 }
 
@@ -344,6 +349,7 @@ export function loadPublicApi() {
   return {
     packageName: packageJson.name,
     packageVersion: packageJson.version,
+    sourceRevision,
     entryPath,
     symbols,
   };

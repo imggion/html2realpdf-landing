@@ -15,6 +15,8 @@ import html2pdf, {
 
 The generated reference follows `bindings/js/src/index.ts` and the package export map. It excludes raw Worker, snapshot, page normalization, and WebAssembly bridge modules that are not exported to package users.
 
+Source links point to the exact submodule commit used to generate this reference. That source can include APIs added after the published npm release; check [PDF/A-3 source availability](../guides/pdfa) before using the archival and attachment options.
+
 ## Primary functions
 
 - [`renderPdf`](./generated/functions/render-pdf) renders through the package default Worker renderer.
@@ -34,6 +36,7 @@ The generated reference follows `bindings/js/src/index.ts` and the package expor
 - [`PageOptions`](./generated/interfaces/page-options) defines explicit page geometry.
 - [`PdfPreviewOptions`](./generated/interfaces/pdf-preview-options) configures the in-page viewer.
 - [`Html2PdfOptions`](./generated/interfaces/html2-pdf-options) contains the supported compatibility subset.
+- [`PdfAttachment`](./generated/interfaces/pdf-attachment) describes a file embedded in one render.
 
 ## Errors
 

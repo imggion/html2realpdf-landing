@@ -7,6 +7,7 @@
 - Website: https://html2realpdf.imggion.com/
 - Documentation: https://html2realpdf.imggion.com/docs
 - Documentation index for LLMs: https://html2realpdf.imggion.com/docs/llm.txt
+- PDF/A-3 compliance guide: https://html2realpdf.imggion.com/docs/guides/pdfa
 - Repository: https://github.com/imggion/html2realpdf
 - npm: https://www.npmjs.com/package/@imggion/html2realpdf
 - CSS support: https://github.com/imggion/html2realpdf/blob/main/docs/css-support.md
@@ -15,6 +16,7 @@
 ## Technical summary
 
 - Current release: 0.2.0.
+- The updated library source supports opt-in PDF/A-3u archival output and binary attachments; these APIs postdate npm 0.2.0. See the compliance guide for source availability and veraPDF validation.
 - Written in Zig and compiled to WebAssembly.
 - Ships a typed TypeScript API.
 - Accepts HTML strings, DOM elements, and mounted framework refs.
