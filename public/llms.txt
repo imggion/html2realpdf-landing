@@ -15,7 +15,8 @@
 
 ## Technical summary
 
-- Current release: 0.2.0.
+- Landing version: 0.3.0.
+- Playground engine: 0.2.0.
 - The updated library source supports opt-in PDF/A-3u archival output and binary attachments; these APIs postdate npm 0.2.0. See the compliance guide for source availability and veraPDF validation.
 - Written in Zig and compiled to WebAssembly.
 - Ships a typed TypeScript API.

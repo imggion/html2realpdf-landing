@@ -46,14 +46,18 @@ function validateVersionConsistency(failures) {
 
   const siteConfig = fs.readFileSync(path.join(repositoryRoot, "lib/site.ts"), "utf8");
   const siteVersion = siteConfig.match(/\bversion:\s*"([^"]+)"/)?.[1];
-  if (siteVersion !== version) {
-    failures.push(`site config: expected version ${version}, found ${siteVersion ?? "none"}`);
+  if (!siteVersion || !/^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/.test(siteVersion)) {
+    failures.push(`site config: expected an exact release version, found ${siteVersion ?? "none"}`);
   }
 
   const llmsIndex = fs.readFileSync(path.join(repositoryRoot, "public/llms.txt"), "utf8");
-  const llmsVersion = llmsIndex.match(/Current release:\s*([0-9A-Za-z.-]+)\.\s*$/m)?.[1];
-  if (llmsVersion !== version) {
-    failures.push(`LLM index: expected version ${version}, found ${llmsVersion ?? "none"}`);
+  const llmsVersion = llmsIndex.match(/Landing version:\s*([0-9A-Za-z.-]+)\.\s*$/m)?.[1];
+  if (llmsVersion !== siteVersion) {
+    failures.push(`LLM index: expected landing version ${siteVersion}, found ${llmsVersion ?? "none"}`);
+  }
+  const llmsEngineVersion = llmsIndex.match(/Playground engine:\s*([0-9A-Za-z.-]+)\.\s*$/m)?.[1];
+  if (llmsEngineVersion !== version) {
+    failures.push(`LLM index: expected playground version ${version}, found ${llmsEngineVersion ?? "none"}`);
   }
 
   const patchDirectory = path.join(repositoryRoot, "patches");
