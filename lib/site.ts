@@ -9,7 +9,7 @@ export const siteConfig = {
   title: "Real PDFs from HTML, Not Screenshots | html2realpdf",
   description:
     "Generate selectable, searchable PDFs from HTML in the browser. Open-source TypeScript library powered by Zig/WebAssembly—no headless browser required.",
-  version: "0.2.0",
+  version: "0.3.0",
   repository: "https://github.com/imggion/html2realpdf",
   npm: "https://www.npmjs.com/package/@imggion/html2realpdf",
   cssSupport:

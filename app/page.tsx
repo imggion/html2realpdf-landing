@@ -79,6 +79,13 @@ const faqs = [
       "The versioned CSS profiles cover document layout, pagination, tables, Flexbox, Grid, positioned layout, backgrounds, shadows, transforms, and supported SVG. The public CSS support matrix is the source of truth for exact coverage and current limits.",
   },
   {
+    question: "Can I generate PDF/A-3 compliant documents?",
+    answer:
+      'Yes. The updated renderer supports PDF/A-3u through conformance: "pdfa-3u", with embedded fonts, Unicode mappings, synchronized XMP metadata, and an sRGB color profile. You can also embed original files such as XML. The PDF/A guide covers source availability and how to validate your exported PDF with veraPDF.',
+    href: "/docs/guides/pdfa",
+    linkLabel: "Read the PDF/A-3 compliance guide",
+  },
+  {
     question: "Does it claim full PDF/UA compliance?",
     answer:
       "No. The current release provides machine-readable text and accessible preview controls, but it does not claim PDF/UA or fully tagged PDF compliance.",
@@ -271,6 +278,15 @@ export default async function Home() {
               graphics via Zig and WebAssembly—without a headless browser or screenshot
               pipeline.
             </p>
+
+            <Link className="heroCompliance" href="/docs/guides/pdfa">
+              <span className="heroComplianceTitle">
+                <CheckIcon />
+                <strong>PDF/A-3u compliance</strong>
+                <ArrowIcon />
+              </span>
+              <span>Archival PDFs with embedded files. Available in source. Read the guide.</span>
+            </Link>
 
             <div className="heroActions">
               <TrackedOutboundLink
@@ -581,6 +597,9 @@ export default async function Home() {
                   <i aria-hidden="true">+</i>
                 </summary>
                 <p>{faq.answer}</p>
+                {"href" in faq ? (
+                  <p><Link className="textLink" href={faq.href}>{faq.linkLabel} <ArrowIcon /></Link></p>
+                ) : null}
               </details>
             ))}
           </div>

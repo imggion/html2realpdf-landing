@@ -316,6 +316,39 @@ p {
   gap: 14px;
 }
 
+.heroCompliance {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 30px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--primary);
+  background: var(--background-deep);
+  color: var(--foreground);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.heroComplianceTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary-soft);
+  font-size: 17px;
+}
+
+.heroComplianceTitle svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.heroComplianceTitle svg:last-child {
+  margin-left: auto;
+}
+
 .installLine {
   display: flex;
   max-width: 580px;
@@ -1936,6 +1969,10 @@ p {
 
   .textLink:hover {
     color: var(--primary-soft);
+  }
+
+  .heroCompliance:hover {
+    background: var(--panel);
   }
 
   .useCaseGrid article:hover {

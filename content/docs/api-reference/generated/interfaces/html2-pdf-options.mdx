@@ -14,6 +14,9 @@ Options supported by the PDF-oriented html2pdf.js compatibility layer.
 
 ```ts
 export interface Html2PdfOptions {
+    metadata?: PdfMetadata;
+    conformance?: "pdfa-3u";
+    attachments?: readonly PdfAttachment[];
     margin?: Margin;
     filename?: string;
     enableLinks?: boolean;
@@ -26,12 +29,15 @@ export interface Html2PdfOptions {
 
 </ApiSignature>
 
-<SourceLink href="https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L289" line={289} />
+<SourceLink href="https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L293" line={293} />
 
 ## Properties
 
 | Property | Type | Required | Read only | Default | Description |
 | --- | --- | --- | --- | --- | --- |
+| `metadata` | `PdfMetadata` | No | No | None | Same metadata and archival options as RenderOptions. |
+| `conformance` | `"pdfa-3u"` | No | No | None | Not documented. |
+| `attachments` | `readonly PdfAttachment[]` | No | No | None | Not documented. |
 | `margin` | `Margin` | No | No | None | Page margins in html2pdf.js order. |
 | `filename` | `string` | No | No | None | Filename used by `save` when no method argument is supplied. |
 | `enableLinks` | `boolean` | No | No | None | Preserves HTTP(S), mail, telephone, and FTP links unless explicitly disabled. |

@@ -1,0 +1,110 @@
+---
+title: PDF/A-3 Compliance
+description: Generate PDF/A-3u documents, embed original files, and validate the exported PDF with veraPDF.
+---
+
+Set `conformance: "pdfa-3u"` to generate an archival PDF with embedded fonts, Unicode text mappings, synchronized XMP metadata, and an sRGB color profile. Supported text, SVG, and transparency remain native PDF content.
+
+<Callout title="Source availability">
+
+PDF/A-3u and attachments are included in the updated [library source](https://github.com/imggion/html2realpdf/tree/b6411e1cf311dd1b84b61a37d170b4b7969e7862), after the published `0.2.0` release used by this site's playground. The examples on this page require a build of that source or a subsequent release containing these APIs. The source package still declares `0.2.0`; the version number alone does not identify this feature.
+
+</Callout>
+
+## Render an archival PDF
+
+```ts
+import { renderPdf } from "@imggion/html2realpdf";
+
+const pdf = await renderPdf("<h1>Invoice #0042</h1><p>Total: EUR 7,200</p>", {
+  conformance: "pdfa-3u",
+  metadata: { title: "Invoice #0042", author: "ACME Studio" },
+});
+
+try {
+  pdf.download("invoice.pdf");
+} finally {
+  pdf.dispose();
+}
+```
+
+The option is independent of `cssProfile`. It works with `renderPdf`, `renderer.render`, Worker execution, and main-thread execution. The returned `PdfDocument` supports the same preview, download, and byte-export methods as an ordinary PDF.
+
+Omit `conformance` for ordinary PDF output. Incompatible resources reject the archival render; the renderer does not silently fall back to an ordinary PDF.
+
+## Embed original files
+
+Use `attachments` to keep XML, JSON, or other source files alongside the document. Each attachment belongs to one render and preserves the supplied bytes.
+
+```ts
+import { renderPdf, type PdfAttachment } from "@imggion/html2realpdf";
+
+const attachment: PdfAttachment = {
+  name: "invoice.xml",
+  data: new TextEncoder().encode('<invoice id="0042"><total>7200</total></invoice>'),
+  mimeType: "application/xml",
+  relationship: "Data",
+  description: "Source invoice data",
+};
+
+const pdf = await renderPdf("<h1>Invoice #0042</h1><p>Total: EUR 7,200</p>", {
+  conformance: "pdfa-3u",
+  attachments: [attachment],
+});
+
+try {
+  pdf.download("invoice-with-data.pdf");
+} finally {
+  pdf.dispose();
+}
+```
+
+<ApiTypeTable symbol="PdfAttachment" />
+
+Names must be nonempty and unique within a document. MIME types cannot include parameters such as `charset=utf-8`. The default MIME type is `application/octet-stream`; the default relationship is `Unspecified`. Supported relationships are `Source`, `Data`, `Alternative`, `Supplement`, and `Unspecified`.
+
+Pass a `Date` in `modifiedAt` only when you have a modification time to record. It is stored in UTC with second precision. An omitted date stays absent.
+
+The renderer copies only the selected `Uint8Array` view, or the complete `ArrayBuffer`. Caller buffers remain usable after Worker transfer. Attachments also work without `conformance`, but do not enable PDF/A on their own.
+
+## Use the compatibility API
+
+The html2pdf.js-compatible builder accepts the same `conformance`, `metadata`, and `attachments` options through `.set()`.
+
+```ts
+import html2pdf from "@imggion/html2realpdf";
+
+await html2pdf()
+  .set({
+    conformance: "pdfa-3u",
+    metadata: { title: "Archived report" },
+    filename: "report.pdf",
+  })
+  .from("<h1>Archived report</h1>")
+  .save();
+```
+
+## Validate the exported PDF
+
+Run [veraPDF](https://docs.verapdf.org/cli/validation/) against the downloaded file:
+
+```sh
+verapdf --flavour 3u --format text invoice.pdf
+verapdf --flavour 3b --format text invoice.pdf
+```
+
+The API emits PDF/A-3u, including Unicode mappings. You can also check that output against the PDF/A-3b profile; `"pdfa-3b"` is not a separate API option. A preview is a visual check, not a conformance validation.
+
+The library's [published validation report](https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/docs/assets/pdfa-3u-validation.png) shows one sample passing veraPDF 1.30.2 with 14,749 passed checks and zero failed checks. Validate your own final files, including any changes made after rendering.
+
+For contributors, `make test-pdfa` in the library repository runs the pinned veraPDF 1.30.2 gate after [contributor setup](https://github.com/imggion/html2realpdf/tree/b6411e1cf311dd1b84b61a37d170b4b7969e7862#contributing). It requires Java 17+, Poppler, curl, and unzip. The suite covers archival fixtures, text extraction, embedded fonts, exact attachment retrieval, and visual comparisons.
+
+## Limits and rejected inputs
+
+- CMYK JPEGs, missing glyphs, and fonts that prohibit outline embedding reject the archival render. Supply RGB images and suitable embeddable fonts.
+- Fonts that prohibit subsetting are embedded in full.
+- Empty or duplicate attachment names, malformed text or MIME types, unsupported relationships, and invalid dates fail explicitly.
+- Page dimensions must be between 3 and 14,400 points. Oversized metadata and other indivisible values can also reject serialization.
+- PDF/A-3u does not imply Tagged PDF, PDF/UA, digital signatures, or Factur-X compliance. Embedding XML alone does not establish an invoice format's compliance.
+
+See the pinned [implementation and validation contract](https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/docs/pdfa.md) for the complete limits, and [troubleshooting](./troubleshooting#pdfa-or-attachment-export-fails) for export errors.

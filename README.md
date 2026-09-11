@@ -16,9 +16,23 @@ The documentation is available at [http://localhost:3000/docs](http://localhost:
 Generate and validate the API reference before documentation work:
 
 ```sh
+git submodule update --init vendor/html2realpdf
 npm run docs:generate
 npm run docs:check
 ```
+
+To update the API source to the latest upstream `main`, run:
+
+```sh
+git submodule update --init --remote vendor/html2realpdf
+npm run docs:generate
+npm run docs:check
+```
+
+Commit the submodule pointer and regenerated reference together. Source links use
+the exact submodule commit, since upstream can add APIs before changing its package
+version. The PDF/A-3 guide documents the new source APIs and their availability;
+the interactive playground continues to use the pinned npm release.
 
 ## Production URL
 

@@ -37,6 +37,8 @@ This table is generated from the public `RenderOptions` interface.
     "resourcePolicy",
     "pageBreak",
     "metadata",
+    "conformance",
+    "attachments",
     "enableLinks"
   ]}
 />
@@ -92,3 +94,9 @@ const pdf = await renderPdf(source, {
   },
 });
 ```
+
+## PDF/A-3 and attachments
+
+The updated source adds `conformance: "pdfa-3u"` and per-render `attachments`. Archival output is opt-in and independent of the CSS profile. Attaching a file alone keeps ordinary PDF output.
+
+See [PDF/A-3 compliance](./pdfa) for source availability, complete examples, attachment options, and validation with veraPDF.

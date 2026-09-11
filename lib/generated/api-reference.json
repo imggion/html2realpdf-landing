@@ -2,6 +2,7 @@
   "generatedNotice": "This file is generated. Do not edit it directly.",
   "packageName": "@imggion/html2realpdf",
   "packageVersion": "0.2.0",
+  "sourceRevision": "b6411e1cf311dd1b84b61a37d170b4b7969e7862",
   "symbols": {
     "CanvasFallbackPolicy": {
       "kind": "type-alias",
@@ -9,7 +10,7 @@
       "source": {
         "line": 51,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L51"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L51"
       },
       "properties": []
     },
@@ -19,7 +20,7 @@
       "source": {
         "line": 54,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L54"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L54"
       },
       "properties": []
     },
@@ -29,7 +30,7 @@
       "source": {
         "line": 79,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L79"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L79"
       },
       "properties": []
     },
@@ -39,7 +40,7 @@
       "source": {
         "line": 72,
         "path": "bindings/js/src/errors.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/errors.ts#L72"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/errors.ts#L72"
       },
       "properties": [
         {
@@ -66,7 +67,7 @@
       "source": {
         "line": 57,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L57"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L57"
       },
       "properties": [
         {
@@ -123,9 +124,9 @@
       "kind": "interface",
       "summary": "Page settings accepted through the html2pdf.js-compatible `jsPDF` option.",
       "source": {
-        "line": 267,
+        "line": 271,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L267"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L271"
       },
       "properties": [
         {
@@ -158,9 +159,9 @@
       "kind": "interface",
       "summary": "Page-break settings accepted by the html2pdf.js compatibility layer.",
       "source": {
-        "line": 277,
+        "line": 281,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L277"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L281"
       },
       "properties": [
         {
@@ -203,7 +204,7 @@
       "source": {
         "line": 20,
         "path": "bindings/js/src/compat.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/compat.ts#L20"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/compat.ts#L20"
       },
       "properties": []
     },
@@ -211,9 +212,9 @@
       "kind": "function",
       "summary": "Creates a reusable renderer with explicit backend and font ownership.",
       "source": {
-        "line": 229,
+        "line": 239,
         "path": "bindings/js/src/renderer.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/renderer.ts#L229"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/renderer.ts#L239"
       },
       "properties": []
     },
@@ -223,7 +224,7 @@
       "source": {
         "line": 36,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L36"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L36"
       },
       "properties": []
     },
@@ -233,7 +234,7 @@
       "source": {
         "line": 129,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L129"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L129"
       },
       "properties": [
         {
@@ -300,7 +301,7 @@
       "source": {
         "line": 48,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L48"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L48"
       },
       "properties": []
     },
@@ -308,9 +309,9 @@
       "kind": "interface",
       "summary": "Embeddable TrueType font registered in a renderer-owned WASM context.",
       "source": {
-        "line": 255,
+        "line": 259,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L255"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L259"
       },
       "properties": [
         {
@@ -353,7 +354,7 @@
       "source": {
         "line": 228,
         "path": "bindings/js/src/compat.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/compat.ts#L228"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/compat.ts#L228"
       },
       "properties": []
     },
@@ -361,11 +362,35 @@
       "kind": "interface",
       "summary": "Options supported by the PDF-oriented html2pdf.js compatibility layer.",
       "source": {
-        "line": 289,
+        "line": 293,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L289"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L293"
       },
       "properties": [
+        {
+          "name": "metadata",
+          "type": "PdfMetadata",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Same metadata and archival options as RenderOptions."
+        },
+        {
+          "name": "conformance",
+          "type": "\"pdfa-3u\"",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": ""
+        },
+        {
+          "name": "attachments",
+          "type": "readonly PdfAttachment[]",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": ""
+        },
         {
           "name": "margin",
           "type": "Margin",
@@ -428,9 +453,9 @@
       "kind": "class",
       "summary": "Reusable renderer backed by one Worker or main-thread WASM context.",
       "source": {
-        "line": 142,
+        "line": 150,
         "path": "bindings/js/src/renderer.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/renderer.ts#L142"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/renderer.ts#L150"
       },
       "properties": []
     },
@@ -440,7 +465,7 @@
       "source": {
         "line": 8,
         "path": "bindings/js/src/errors.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/errors.ts#L8"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/errors.ts#L8"
       },
       "properties": [
         {
@@ -467,7 +492,7 @@
       "source": {
         "line": 17,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L17"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L17"
       },
       "properties": []
     },
@@ -477,7 +502,7 @@
       "source": {
         "line": 29,
         "path": "bindings/js/src/errors.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/errors.ts#L29"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/errors.ts#L29"
       },
       "properties": [
         {
@@ -496,7 +521,7 @@
       "source": {
         "line": 42,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L42"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L42"
       },
       "properties": []
     },
@@ -506,7 +531,7 @@
       "source": {
         "line": 20,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L20"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L20"
       },
       "properties": []
     },
@@ -516,7 +541,7 @@
       "source": {
         "line": 98,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L98"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L98"
       },
       "properties": []
     },
@@ -526,7 +551,7 @@
       "source": {
         "line": 39,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L39"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L39"
       },
       "properties": []
     },
@@ -536,7 +561,7 @@
       "source": {
         "line": 165,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L165"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L165"
       },
       "properties": [
         {
@@ -587,7 +612,7 @@
       "source": {
         "line": 23,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L23"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L23"
       },
       "properties": []
     },
@@ -597,7 +622,7 @@
       "source": {
         "line": 104,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L104"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L104"
       },
       "properties": [
         {
@@ -640,9 +665,68 @@
       "source": {
         "line": 26,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L26"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L26"
       },
       "properties": []
+    },
+    "PdfAttachment": {
+      "kind": "interface",
+      "summary": "File embedded in one PDF; caller data is copied and never transferred or detached.",
+      "source": {
+        "line": 324,
+        "path": "bindings/js/src/types.ts",
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L324"
+      },
+      "properties": [
+        {
+          "name": "name",
+          "type": "string",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Nonempty, unique filename. Unicode is preserved."
+        },
+        {
+          "name": "data",
+          "type": "ArrayBuffer | Uint8Array",
+          "required": true,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Original bytes; a Uint8Array embeds only its selected view."
+        },
+        {
+          "name": "mimeType",
+          "type": "string",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "application/octet-stream",
+          "description": "MIME media type without parameters. Defaults to application/octet-stream."
+        },
+        {
+          "name": "relationship",
+          "type": "\"Source\" | \"Data\" | \"Alternative\" | \"Supplement\" | \"Unspecified\"",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "Unspecified",
+          "description": "Relationship to the document. Defaults to Unspecified."
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Optional human-readable attachment description."
+        },
+        {
+          "name": "modifiedAt",
+          "type": "Date",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Explicit modification time, stored in UTC with second precision; no date is invented."
+        }
+      ]
     },
     "PdfDocument": {
       "kind": "class",
@@ -650,7 +734,7 @@
       "source": {
         "line": 18,
         "path": "bindings/js/src/pdf-document.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/pdf-document.ts#L18"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/pdf-document.ts#L18"
       },
       "properties": [
         {
@@ -677,7 +761,7 @@
       "source": {
         "line": 179,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L179"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L179"
       },
       "properties": [
         {
@@ -726,9 +810,9 @@
       "kind": "type-alias",
       "summary": "Output encodings supported by compatibility `output` methods.",
       "source": {
-        "line": 307,
+        "line": 315,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L307"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L315"
       },
       "properties": []
     },
@@ -738,7 +822,7 @@
       "source": {
         "line": 254,
         "path": "bindings/js/src/preview.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/preview.ts#L254"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/preview.ts#L254"
       },
       "properties": [
         {
@@ -781,7 +865,7 @@
       "source": {
         "line": 11,
         "path": "bindings/js/src/preview.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/preview.ts#L11"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/preview.ts#L11"
       },
       "properties": [
         {
@@ -880,7 +964,7 @@
       "source": {
         "line": 8,
         "path": "bindings/js/src/preview.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/preview.ts#L8"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/preview.ts#L8"
       },
       "properties": []
     },
@@ -890,7 +974,7 @@
       "source": {
         "line": 8,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L8"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L8"
       },
       "properties": []
     },
@@ -898,9 +982,9 @@
       "kind": "interface",
       "summary": "Configuration whose lifetime matches an explicit renderer instance.",
       "source": {
-        "line": 245,
+        "line": 249,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L245"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L249"
       },
       "properties": [
         {
@@ -935,7 +1019,7 @@
       "source": {
         "line": 193,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L193"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L193"
       },
       "properties": [
         {
@@ -1067,6 +1151,22 @@
           "description": "PDF information dictionary fields."
         },
         {
+          "name": "conformance",
+          "type": "\"pdfa-3u\"",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Opts into PDF/A-3u; incompatible resources reject the render without fallback."
+        },
+        {
+          "name": "attachments",
+          "type": "readonly PdfAttachment[]",
+          "required": false,
+          "readonly": false,
+          "defaultValue": "",
+          "description": "Embedded files for this render only; does not implicitly enable PDF/A."
+        },
+        {
           "name": "enableLinks",
           "type": "boolean",
           "required": false,
@@ -1096,9 +1196,9 @@
       "kind": "function",
       "summary": "Renders with a lazily created package-default Worker renderer.",
       "source": {
-        "line": 258,
+        "line": 268,
         "path": "bindings/js/src/renderer.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/renderer.ts#L258"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/renderer.ts#L268"
       },
       "properties": []
     },
@@ -1108,7 +1208,7 @@
       "source": {
         "line": 116,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L116"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L116"
       },
       "properties": []
     },
@@ -1118,7 +1218,7 @@
       "source": {
         "line": 119,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L119"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L119"
       },
       "properties": [
         {
@@ -1153,7 +1253,7 @@
       "source": {
         "line": 64,
         "path": "bindings/js/src/errors.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/errors.ts#L64"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/errors.ts#L64"
       },
       "properties": [
         {
@@ -1172,7 +1272,7 @@
       "source": {
         "line": 147,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L147"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L147"
       },
       "properties": [
         {
@@ -1199,7 +1299,7 @@
       "source": {
         "line": 162,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L162"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L162"
       },
       "properties": []
     },
@@ -1209,7 +1309,7 @@
       "source": {
         "line": 85,
         "path": "bindings/js/src/errors.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/errors.ts#L85"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/errors.ts#L85"
       },
       "properties": [
         {
@@ -1228,7 +1328,7 @@
       "source": {
         "line": 37,
         "path": "bindings/js/src/errors.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/errors.ts#L37"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/errors.ts#L37"
       },
       "properties": [
         {
@@ -1247,7 +1347,7 @@
       "source": {
         "line": 45,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L45"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L45"
       },
       "properties": []
     },
@@ -1257,7 +1357,7 @@
       "source": {
         "line": 21,
         "path": "bindings/js/src/errors.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/errors.ts#L21"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/errors.ts#L21"
       },
       "properties": [
         {
@@ -1276,7 +1376,7 @@
       "source": {
         "line": 84,
         "path": "bindings/js/src/types.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/types.ts#L84"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/types.ts#L84"
       },
       "properties": [
         {
@@ -1303,7 +1403,7 @@
       "source": {
         "line": 51,
         "path": "bindings/js/src/errors.ts",
-        "url": "https://github.com/imggion/html2realpdf/blob/v0.2.0/bindings/js/src/errors.ts#L51"
+        "url": "https://github.com/imggion/html2realpdf/blob/b6411e1cf311dd1b84b61a37d170b4b7969e7862/bindings/js/src/errors.ts#L51"
       },
       "properties": [
         {

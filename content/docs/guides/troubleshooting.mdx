@@ -63,3 +63,13 @@ Check the page geometry and root width first.
 - Remove `overflow: hidden` from content that must fragment.
 - Set a deterministic `viewport` for responsive layouts.
 - Use `layoutContext: "page"` when the root should size against the PDF content box.
+
+## PDF/A or attachment export fails
+
+First check [source availability](./pdfa). The published `0.2.0` package predates these options; the JavaScript bindings and WASM must come from the same PDF/A-capable build.
+
+`WasmRenderError` with status `-4` can indicate invalid conformance or attachment options. Use `"pdfa-3u"`, unique nonempty filenames, `ArrayBuffer` or `Uint8Array` data, a MIME type without parameters, a supported relationship, and a valid optional `Date`.
+
+For native archival failures, check the error message for CMYK JPEGs, missing glyphs, font embedding restrictions, or serialization limits. Correct the resource and render again. The renderer does not downgrade a failed archival request to ordinary PDF.
+
+Validate the final downloaded file with veraPDF. A successful preview does not establish conformance. See [PDF/A-3 compliance](./pdfa#validate-the-exported-pdf).

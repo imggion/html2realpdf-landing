@@ -31,6 +31,12 @@ An `AbortSignal` is checked at stable boundaries. WebAssembly work already runni
 
 The current output has machine-readable text and the in-page preview has accessible controls. The project does not claim PDF/UA or fully tagged PDF compliance.
 
+## PDF/A-3 archival output
+
+The updated source supports opt-in PDF/A-3u. This is separate from PDF accessibility and does not establish PDF/UA, signatures, or Factur-X compliance. Incompatible resources reject the archival render rather than falling back to ordinary PDF.
+
+See [PDF/A-3 compliance](./pdfa) for source availability, supported attachments, rejected inputs, and validation steps.
+
 ## html2pdf.js compatibility
 
 The default export supports PDF-oriented stages. It does not support the raster pipeline.

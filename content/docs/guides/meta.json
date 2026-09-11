@@ -3,6 +3,7 @@
   "pages": [
     "basic-usage",
     "configuration",
+    "pdfa",
     "fonts",
     "pagination",
     "images",

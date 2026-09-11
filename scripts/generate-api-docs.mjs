@@ -220,7 +220,9 @@ description: Public root exports generated from the TypeScript package source.
 
 {/* This file is generated. Do not edit it directly. */}
 
-This reference is generated from the public root export of \`${api.packageName}\` version \`${api.packageVersion}\`.
+This reference is generated from the public root export of \`${api.packageName}\` at [source commit \`${api.sourceRevision.slice(0, 7)}\`](https://github.com/imggion/html2realpdf/tree/${api.sourceRevision}).
+
+The source package declares version \`${api.packageVersion}\`. The pinned source can include APIs added after that npm release; see [PDF/A-3 compliance](/docs/guides/pdfa) for availability.
 
 Raw WASM bridge modules are not part of the package export map. They are not included here.
 
@@ -302,6 +304,7 @@ function apiData(api) {
       generatedNotice: "This file is generated. Do not edit it directly.",
       packageName: api.packageName,
       packageVersion: api.packageVersion,
+      sourceRevision: api.sourceRevision,
       symbols,
     },
     null,

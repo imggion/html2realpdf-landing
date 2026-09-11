@@ -10,6 +10,7 @@
     "html2-pdf-options",
     "page-break-rules",
     "page-options",
+    "pdf-attachment",
     "pdf-metadata",
     "pdf-preview-options",
     "renderer-init",
